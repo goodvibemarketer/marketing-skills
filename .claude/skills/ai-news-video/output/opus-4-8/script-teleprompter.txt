@@ -1,0 +1,19 @@
+Anthropic just shipped Claude Opus 4.8. And over the next few days you'll see a hundred videos telling you it's better at coding. That's true. But I think that's the boring bit.
+
+Every model release comes with a wall of benchmarks. Coding scores, agent scores, reasoning scores, all up and to the right. And if you're a marketer or a solo creator, none of that tells you what changes on Monday morning.
+
+Right. So let me cut through it. Three things in this release actually matter for the way you work. And the order I'm putting them in is deliberate.
+
+First. You can now control how hard Claude thinks. There's a new effort setting, right next to the model picker, and it's on every plan. Turn it down for quick jobs, a reword, a subject line, and it answers faster and burns through your limits slower. Turn it up for the hard stuff, a strategy doc, a tricky bit of analysis, and it'll think more deeply before it answers. You've got a dial now. Most people will leave it on default. You shouldn't.
+
+The effort dial is useful. But it's not the thing I actually came here to talk about.
+
+Second, and this is the one I actually care about. Opus 4.8 is more honest. Now I know that sounds soft, so let me be specific. Anthropic's own testing shows it's around four times less likely than the last version to let a flaw slip through without flagging it. It's more likely to tell you when it's not sure, and less likely to confidently make something up.
+
+Think about what that means for you. If you've ever had a model invent a statistic, or tell you a draft is finished when it's full of holes, this is the fix. For anyone using AI to do real work, a model that tells you when it's unsure is worth more than two points on a coding chart. That's the headline for me.
+
+Third, and this is the easy one. It's the same price as the last version. Same input cost, same output cost, better model. And if you use fast mode, that's now three times cheaper than it used to be. So this isn't a decision. It's an upgrade you've already got.
+
+And if you build with Claude Code like I do, there's a new dynamic workflows feature that lets it take on much bigger jobs in one go. I'll come back to that in a future video, it deserves its own.
+
+So. In a nutshell. Better judgement, a model that lies to you less, and an effort dial you should actually use. Same price. Go and turn the effort setting up on your next proper task and see the difference for yourself. I break this stuff down every week over on the newsletter, link's below. Right, that's me. Cheers.

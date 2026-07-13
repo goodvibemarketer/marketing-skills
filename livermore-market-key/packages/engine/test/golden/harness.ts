@@ -105,6 +105,53 @@ export interface ReplayOptions {
   /** Coupling: relax member thresholds when the book KP ledger recorded that day (DD-13). */
   coupling?: boolean;
   initialStates?: Partial<Record<InstrumentKey, LedgerState>>;
+  /** Warm-start each ledger from Chart One's header entries (default true). */
+  seedFromHeader?: boolean;
+}
+
+/**
+ * Warm-start a ledger from Chart One's carried-forward header entries
+ * (RULES.md §3, §9). The book's charts begin mid-history: the figures printed
+ * above the DATE row are the pivotal points and last-recorded prices from
+ * before the chart. Without this seed the engine would cold-anchor on the
+ * first data row and mis-read a trend continuation as a fresh start (DD-6).
+ *
+ * Interpretation (top-to-bottom = oldest-to-newest within a column):
+ *   - last[col] := the bottom-most header value for that column;
+ *   - active    := the column that the given `firstColumn` continues;
+ *   - pivot[col]:= the most recent underlined header entry for UT/DT/NR/NRC.
+ * The signal phase is left conservative (`none`), so early-chart signals only
+ * fire once the engine has observed a full pivot life-cycle within the charts.
+ */
+export function seedFromHeader(
+  headerEntries: FixtureCell[],
+  instrument: InstrumentKey,
+  firstColumn: FixtureColumn,
+): LedgerState {
+  const s = initialState();
+  const mine = headerEntries.filter((c) => c.instrument === instrument);
+  const cols: FixtureColumn[] = ['SR', 'NR', 'UT', 'DT', 'NRC', 'SRC'];
+  for (const col of cols) {
+    const entries = mine.filter((c) => c.column === col);
+    if (entries.length > 0) {
+      s.last[col] = parsePrice(entries[entries.length - 1]!.price);
+    }
+    if (col === 'UT' || col === 'DT' || col === 'NR' || col === 'NRC') {
+      const underlined = entries.filter((c) => c.underline !== 'none');
+      const pp = underlined[underlined.length - 1];
+      if (pp) {
+        s.pivot[col] = {
+          price: parsePrice(pp.price),
+          color: pp.underlineColor === 'red' ? 'red' : 'black',
+          setOn: 'header',
+          confirmedThrough: false,
+        };
+      }
+    }
+  }
+  s.active = firstColumn;
+  s.anchor = null;
+  return s;
 }
 
 /** Replay all fixtures as one continuous series and diff against the book. */
@@ -113,10 +160,31 @@ export function replayCharts(fixtures: ChartFixture[], opts: ReplayOptions = {})
   const kpCfg = opts.kpCfg ?? BOOK_KP;
   const coupling = opts.coupling ?? true;
 
+  const allRows = fixtures.flatMap((f) => f.rows);
+
+  // Determine each instrument's first recorded column (to warm-start from the
+  // Chart One header, unless the caller supplied explicit initial states).
+  const firstColumnOf = (inst: InstrumentKey): FixtureColumn | null => {
+    for (const row of allRows) {
+      const cell = row.cells.find((c) => c.instrument === inst);
+      if (cell) return cell.column;
+    }
+    return null;
+  };
+
+  const header = fixtures.find((f) => f.chart === 1)?.headerEntries ?? [];
+  const seed = (inst: InstrumentKey): LedgerState => {
+    if (opts.initialStates?.[inst]) return opts.initialStates[inst]!;
+    if (opts.seedFromHeader === false) return initialState();
+    const fc = firstColumnOf(inst);
+    if (!fc || header.length === 0) return initialState();
+    return seedFromHeader(header, inst, fc);
+  };
+
   const states: Record<InstrumentKey, LedgerState> = {
-    US: opts.initialStates?.US ?? initialState(),
-    BS: opts.initialStates?.BS ?? initialState(),
-    KP: opts.initialStates?.KP ?? initialState(),
+    US: seed('US'),
+    BS: seed('BS'),
+    KP: seed('KP'),
   };
   const events: Record<InstrumentKey, EngineEvent[]> = { US: [], BS: [], KP: [] };
   const mismatches: Mismatch[] = [];
@@ -124,7 +192,6 @@ export function replayCharts(fixtures: ChartFixture[], opts: ReplayOptions = {})
   let totalEntries = 0;
   let matchedEntries = 0;
 
-  const allRows = fixtures.flatMap((f) => f.rows);
 
   for (const row of allRows) {
     const byInstrument = new Map<InstrumentKey, FixtureCell[]>();

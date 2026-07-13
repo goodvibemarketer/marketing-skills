@@ -384,6 +384,8 @@ review), **m** = minor.
 | DD-15 | M | Base for percent thresholds | The price the book measures the distance from: leg extreme `last[active]` for swing triggers; the pivotal point itself for confirmation/graduation/danger comparisons | The book's point-distances are always anchored at a recorded extreme or a pivotal point; percentages inherit the same anchors. |
 | DD-16 | m | Float determinism / property tests | Prices are IEEE-754 doubles (exact for eighths); percent comparisons use an epsilon of `1e-9 × base` to absorb multiplication noise; property tests assert identical column sequences across absolute price scalings | Keeps the engine dependency-free; eighths and powers-of-two scale exactly, epsilon covers decimal scalings. |
 | DD-17 | m | Book annotation errata | Fixtures store the book's rule citations verbatim plus `correctedRuleRef` where the citation contradicts Chapter IX's printed lettering (first instance: Chart One, 1938-04-02, cited "6-B", actual 6-C) | The golden masters must assert against the *rules*, not typos, while preserving the source faithfully. |
+| DD-18 | M | A pre-existing natural-column pivot (`PP[NRC]`/`PP[NR]`) can outlive the leg that created it and wrongly force a rule-5b/5a graduation on a much later, unrelated swing | The natural-column pivot is **consumed** when the trend graduates: recording a figure in `DT` clears `PP[NRC]`; recording in `UT` clears `PP[NR]`. It is re-established only by the next rule-4b/4d underline. Also: rules 5a/5b are same-direction continuations (§4 Step 1) only — the transition day (§4 Step 3) is governed purely by rules 6a–d | Confirmed by Chart One+Two, Bethlehem 1938-04-29…05-26: after a full down→up→down cycle the stale pre-chart `PP[NRC]` (50⅛) otherwise forces DT entries where the book records Natural Reaction. Clearing the consumed pivot reproduces the book. |
+| DD-19 | M | *(explored, reverted)* Does a rally out of the Downward Trend record in Secondary Rally when a standing Natural Rally pivot is unbeaten? | **Reverted.** A literal rule 6-C (rally out of DT → Natural Rally) is used. The book's actual Secondary-Rally placement here is governed by **Key Price group confirmation**, not a per-instrument pivot test — see the open item in §12. Modelling it per-instrument mis-fires (it made Chart One's legitimate 1938-04-02 fresh Natural Rally into a Secondary Rally). Rows where the book uses Secondary Rally under group confirmation are catalogued as `knownDivergences` pending the §12 decision | The distinguishing evidence (§12) is that Bethlehem/U.S. Steel graduate SR→NR exactly when the combined Key Price clears its own pivot (101), not on any single-stock condition. |
 
 ## 11. Book rule index → spec cross-reference
 
@@ -399,3 +401,44 @@ review), **m** = minor.
 | 8 (pivotal points, double lines) | §5 |
 | 9a–9c (watch signals near pivotal points) | §6 |
 | 10a–10f (confirmations and danger signals) | §6 |
+
+## 12. Open item for review — does Key Price confirmation govern column placement?
+
+**Status: material design question, flagged for sign-off (not resolved unilaterally).**
+
+The golden-master fit against Charts One–Three surfaced a behavior the book relies on
+that the current per-instrument engine does not model. In June 1938 both U.S. Steel and
+Bethlehem Steel rally out of their second downtrend, but the book records those rallies
+in the **Secondary Rally** column, not Natural Rally — and only promotes them to Natural
+Rally / Upward Trend on 1938-06-23/24. The trigger is unambiguous in the data:
+
+- The combined **Key Price** Natural-Rally pivot is 101 (set 1938-04-16).
+- The members' combined price crosses 101 on 1938-06-23 (U.S. 51¼ + Bethlehem 53¼ = 104½).
+- That is exactly the day both members graduate Secondary Rally → Natural Rally.
+- By contrast, on 1938-04-02 both go straight to Natural Rally, because the Key Price
+  itself was making a *fresh* rally (its earlier pivots stale after its own downtrend to
+  78) — there was no standing Key Price pivot to hold them in the secondary column.
+
+In other words, **the book uses the Secondary columns partly to encode "the combined
+Key Price has not yet confirmed this move,"** which is precisely the book's headline
+risk-control idea (and the subject of the Phase 6.5 experiment).
+
+This collides with the build brief's architecture, which specifies a **pure,
+per-instrument rule engine** and treats group confirmation as a measurable **trade-policy
+toggle** (Phase 6.1/6.5), not part of recording. Two ways to reconcile:
+
+- **(A) Keep recording per-instrument (current design).** Each instrument's ledger
+  follows Chapter IX literally; the four June rows where the book uses group-confirmed
+  Secondary Rally are catalogued as `knownDivergences`. Group confirmation lives entirely
+  in the signal/trade-policy layer, where it can be toggled and measured. Engine stays
+  I/O-free and reusable; ~96% of charted cells reproduce exactly.
+- **(B) Couple member recording to the Key Price ledger.** `step()` for a group member
+  would additionally consult the group's Key Price state to choose Secondary vs Natural
+  columns, reproducing the book's ledger exactly but making a member's ledger depend on
+  its group (and complicating membership changes / archival replays).
+
+**Recommendation: (A).** It matches the brief's separation of concerns, keeps the engine
+pure and independently reusable, and still lets us *measure* group confirmation's value
+(Phase 6.5) rather than baking it into the ledger. The cost is a handful of documented,
+faithfully-explained divergences in the historical ledger view. Awaiting your call before
+finalizing the golden master.

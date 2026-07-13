@@ -149,7 +149,11 @@ export function seedFromHeader(
       }
     }
   }
-  s.active = firstColumn;
+  // active = the column of the bottom-most (most recent) header entry: the
+  // pre-chart leg the engine continues from. The first data row is frequently
+  // a transition OUT of this leg (e.g. BS NR 56 7/8 → SRC 50 1/4 via rule 6h),
+  // so the first *recorded* column is the wrong choice.
+  s.active = mine.length > 0 ? mine[mine.length - 1]!.column : firstColumn;
   s.anchor = null;
   return s;
 }

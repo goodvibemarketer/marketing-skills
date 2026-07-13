@@ -133,8 +133,9 @@ describe('rule 6g: Secondary Rally', () => {
     const o = run([b(100), b(112), b(100.5, 100), b(106), b(98.5, 98)]);
     const r = run([b(104.5, 104)], BOOK, o.state); // 98 + 6 = 104 ≤ 104.5, but 104.5 < last NR 106 → SR
     expect(recordings(r.events)).toEqual([{ column: 'SR', price: 104.5, rule: '6g' }]);
-    // no underline for secondary entries (DD-9)
-    expect(underlines(r.events).filter((u) => u.column === 'NRC')).toHaveLength(1); // 4b under NRC 98 still fires
+    // A rally routing to Secondary Rally draws NO 4b underline under NRC — rule
+    // 4b fires only on a rally into Natural Rally or Upward Trend (DD-9/DD-19).
+    expect(underlines(r.events).filter((u) => u.column === 'NRC')).toHaveLength(0);
     const r2 = run([b(106.5, 106.2)], BOOK, r.state); // exceeds last NR 106 → resume NR
     expect(recordings(r2.events)).toEqual([{ column: 'NR', price: 106.5, rule: '6g-resume' }]);
   });

@@ -56,6 +56,12 @@ export function step(
   const record = (column: Column, price: number, rule: string): void => {
     s.last[column] = price;
     s.active = column;
+    // Trend graduation consumes the opposing natural-column pivot (DD-18):
+    // once a downtrend is being recorded, the reaction low that rule 5b watched
+    // is used up and must not keep forcing DT entries on a later, unrelated
+    // reaction. It is re-established only by a fresh rule-4b/4d underline.
+    if (column === 'DT') s.pivot.NRC = null;
+    if (column === 'UT') s.pivot.NR = null;
     events.push({ type: 'RECORD', date, column, price, ink: inkFor(column), rule });
   };
 
@@ -176,9 +182,6 @@ export function step(
             if (s.last.DT !== null && lt(bar.low, s.last.DT)) {
               dest = 'DT';
               rule = `6e${couplingTag}`;
-            } else if (s.pivot.NRC !== null && lte(bar.low, confDownTarget(s.pivot.NRC.price, cfg))) {
-              dest = 'DT';
-              rule = `5b${couplingTag}`;
             } else {
               dest = 'NRC';
               rule = `6a${couplingTag}`;
@@ -188,9 +191,6 @@ export function step(
             if (s.last.DT !== null && lt(bar.low, s.last.DT)) {
               dest = 'DT';
               rule = `${fromRule}-tail${couplingTag}`;
-            } else if (s.pivot.NRC !== null && lte(bar.low, confDownTarget(s.pivot.NRC.price, cfg))) {
-              dest = 'DT';
-              rule = `5b${couplingTag}`;
             } else if (s.last.NRC === null || lt(bar.low, s.last.NRC)) {
               dest = 'NRC';
               rule = `${fromRule}${couplingTag}`;
@@ -200,16 +200,16 @@ export function step(
             }
           }
           // Underlines / pivotal points for the column being left (rules 4a, 4d).
-          // The trigger is "the first reaction of ~6 points from the last price
-          // recorded in the [UT/NR] column" — it fires on the threshold swing
-          // regardless of whether recording resumes in the natural or secondary
-          // column. The underline sits under the UT/NR figure, never the
-          // secondary figure, so DD-9 holds.
+          // Rule 4d fires only when the reaction begins recording in the Natural
+          // Reaction OR Downward Trend column — NOT when it routes to a Secondary
+          // Reaction. The book chart confirms this: Bethlehem's NR 56 7/8 carries
+          // NO underline because its reaction went straight to SRC (1938-03-23).
+          // A reaction out of UT always routes to NRC/DT, so 4a always fires.
           if (active === 'UT') {
             underline('UT', 'red', '4a');
             s.upPhase = 'firstCounter';
             signal('SELL_WATCH', '9c', 'UT');
-          } else if (active === 'NR') {
+          } else if (active === 'NR' && (dest === 'NRC' || dest === 'DT')) {
             underline('NR', 'black', '4d');
             s.watchNRPending = true;
           }
@@ -242,12 +242,16 @@ export function step(
           let dest: Column;
           let rule: string;
           if (active === 'DT') {
+            // Rule 6-C: the first rally out of the Downward Trend is a Natural
+            // Rally (or straight to UT if it clears the last UT figure). NOTE:
+            // the book also records a rally out of DT in the Secondary Rally
+            // column when a Natural Rally pivot from the current cycle is still
+            // in play and the Key Price has not confirmed — see the "Key Price
+            // confirmation" open item in RULES.md §12. That behavior is not yet
+            // modelled; such rows are catalogued as knownDivergences.
             if (s.last.UT !== null && gt(bar.high, s.last.UT)) {
               dest = 'UT';
               rule = `6f${couplingTag}`;
-            } else if (s.pivot.NR !== null && gte(bar.high, confUpTarget(s.pivot.NR.price, cfg))) {
-              dest = 'UT';
-              rule = `5a${couplingTag}`;
             } else {
               dest = 'NR';
               rule = `6c${couplingTag}`;
@@ -257,9 +261,6 @@ export function step(
             if (s.last.UT !== null && gt(bar.high, s.last.UT)) {
               dest = 'UT';
               rule = `${fromRule}-tail${couplingTag}`;
-            } else if (s.pivot.NR !== null && gte(bar.high, confUpTarget(s.pivot.NR.price, cfg))) {
-              dest = 'UT';
-              rule = `5a${couplingTag}`;
             } else if (s.last.NR === null || gt(bar.high, s.last.NR)) {
               dest = 'NR';
               rule = `${fromRule}${couplingTag}`;
@@ -268,13 +269,15 @@ export function step(
               rule = `6g${couplingTag}`;
             }
           }
-          // Rules 4c, 4b — see the mirror note above; fires on the threshold
-          // rally from the DT/NRC extreme regardless of destination column.
+          // Rules 4c, 4b — mirror of 4a/4d above. Rule 4b fires only when the
+          // rally begins recording in the Natural Rally OR Upward Trend column,
+          // never on a routing to Secondary Rally. A rally out of DT always
+          // routes to NR/UT/SR — 4c fires whenever leaving DT for NR/UT.
           if (active === 'DT') {
             underline('DT', 'black', '4c');
             s.downPhase = 'firstCounter';
             signal('BUY_WATCH', '9a', 'DT');
-          } else if (active === 'NRC') {
+          } else if (active === 'NRC' && (dest === 'NR' || dest === 'UT')) {
             underline('NRC', 'red', '4b');
             s.watchNRCPending = true;
           }

@@ -15,6 +15,7 @@ import {
   type EngineConfig,
   type EngineEvent,
   type LedgerState,
+  capsFromKeyPriceColumn,
   initialState,
   isUp,
   parsePrice,
@@ -154,6 +155,13 @@ export function seedFromHeader(
   // a transition OUT of this leg (e.g. BS NR 56 7/8 → SRC 50 1/4 via rule 6h),
   // so the first *recorded* column is the wrong choice.
   s.active = mine.length > 0 ? mine[mine.length - 1]!.column : firstColumn;
+  // Seed the last trend direction from the most recent UT/DT header entry
+  // (drives the §12 counter-trend confirmation cap).
+  for (let i = mine.length - 1; i >= 0; i--) {
+    const c = mine[i]!.column;
+    if (c === 'UT') { s.lastTrendDir = 'up'; break; }
+    if (c === 'DT') { s.lastTrendDir = 'down'; break; }
+  }
   s.anchor = null;
   return s;
 }
@@ -207,9 +215,10 @@ export function replayCharts(fixtures: ChartFixture[], opts: ReplayOptions = {})
 
     // KP first (self-contained), then members with coupling hints.
     const dayEvents: Partial<Record<InstrumentKey, EngineEvent[]>> = {};
-    let hints: CouplingHints | undefined;
 
     const kpCells = byInstrument.get('KP');
+    let up = false;
+    let down = false;
     if (kpCells && kpCells.length > 0) {
       const price = parsePrice(kpCells[0]!.price);
       const bar: Bar = { date: row.date, open: price, high: price, low: price, close: price };
@@ -217,18 +226,20 @@ export function replayCharts(fixtures: ChartFixture[], opts: ReplayOptions = {})
       states.KP = r.state;
       events.KP.push(...r.events);
       dayEvents.KP = r.events;
-      if (coupling) {
-        let up = false;
-        let down = false;
-        for (const e of r.events) {
-          if (e.type === 'RECORD') {
-            if (isUp(e.column)) up = true;
-            else down = true;
-          }
+      for (const e of r.events) {
+        if (e.type === 'RECORD') {
+          if (isUp(e.column)) up = true;
+          else down = true;
         }
-        hints = { kpRecordedUp: up, kpRecordedDown: down };
       }
     }
+    // §12 confirmation caps derive from the Key Price's persistent commitment
+    // column (it holds across days it does not record); DD-13 record flags
+    // reflect only today's Key Price recording.
+    const caps = capsFromKeyPriceColumn(states.KP.active);
+    const hints: CouplingHints | undefined = coupling
+      ? { kpRecordedUp: up, kpRecordedDown: down, kpUpCap: caps.up, kpDownCap: caps.down }
+      : undefined;
 
     for (const inst of ['US', 'BS'] as const) {
       const cells = byInstrument.get(inst);

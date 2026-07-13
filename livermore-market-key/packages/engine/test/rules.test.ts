@@ -352,6 +352,71 @@ describe('DD-3: one figure per day; continuation beats reversal on a wide bar', 
   });
 });
 
+describe('§12 Key Price group confirmation — counter-trend commitment cap', () => {
+  // A counter-trend rally (out of a downtrend, with a standing NR pivot) that
+  // would post Natural Rally is demoted toward Secondary Rally until the Key
+  // Price confirms the change.
+  function downtrendWithNrPivot() {
+    const s = initialState();
+    s.active = 'DT';
+    s.last.DT = 90;
+    s.last.NR = 100;
+    s.lastTrendDir = 'down';
+    s.pivot.NR = { price: 100, color: 'black', setOn: '2000-01-01', confirmedThrough: false };
+    return s;
+  }
+  const rally = b(96, 96, '2000-02-01'); // 90 + 6 = 96: a counter-trend rally out of DT
+
+  it('demotes the rally to Secondary Rally when the Key Price is still not rallying (cap = SR)', () => {
+    const r = step(downtrendWithNrPivot(), rally, BOOK, {
+      kpRecordedUp: false,
+      kpRecordedDown: false,
+      kpUpCap: 1,
+      kpDownCap: 3,
+    });
+    expect(recordings(r.events).map((x) => x.column)).toEqual(['SR']);
+  });
+
+  it('allows Natural Rally once the Key Price has itself reached Natural Rally (cap = NR)', () => {
+    const r = step(downtrendWithNrPivot(), rally, BOOK, {
+      kpRecordedUp: true,
+      kpRecordedDown: false,
+      kpUpCap: 2,
+      kpDownCap: 1,
+    });
+    expect(recordings(r.events).map((x) => x.column)).toEqual(['NR']);
+  });
+
+  it('does not gate an ungrouped instrument (no caps) — records Natural Rally', () => {
+    const r = step(downtrendWithNrPivot(), rally, BOOK);
+    expect(recordings(r.events).map((x) => x.column)).toEqual(['NR']);
+  });
+
+  it('never gates a with-trend reaction: a reaction under a downtrend posts Natural Reaction even with KP up', () => {
+    // active NR (a counter-rally within a downtrend), lastTrendDir still 'down';
+    // a reaction is *with* the downtrend, so the KP-up cap must not demote it.
+    const s = initialState();
+    s.active = 'NR';
+    s.last.NR = 100;
+    s.last.DT = 90;
+    s.lastTrendDir = 'down';
+    const reaction = b(94, 94, '2000-03-01'); // 100 - 6 = 94 → Natural Reaction
+    const r = step(s, reaction, BOOK, { kpRecordedUp: true, kpRecordedDown: false, kpUpCap: 2, kpDownCap: 1 });
+    expect(recordings(r.events).map((x) => x.column)).toEqual(['NRC']);
+  });
+
+  it('never gates trend resumption: a new low below last DT posts Downward Trend regardless of the cap', () => {
+    const s = initialState();
+    s.active = 'NRC';
+    s.last.NRC = 92;
+    s.last.DT = 90;
+    s.lastTrendDir = 'up'; // pretend the prior trend was up so the cap *would* apply if it were a change
+    const newLow = b(89, 89, '2000-04-01'); // below last DT 90 → rule 6-E resumption
+    const r = step(s, newLow, BOOK, { kpRecordedUp: false, kpRecordedDown: false, kpUpCap: 1, kpDownCap: 1 });
+    expect(recordings(r.events).map((x) => x.column)).toEqual(['DT']);
+  });
+});
+
 describe('price fraction helpers', () => {
   it('parses and formats eighths', () => {
     expect(parsePrice('43 1/2')).toBe(43.5);

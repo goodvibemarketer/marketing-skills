@@ -12,7 +12,15 @@ import { existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { formatMismatches, loadFixtures, replayCharts } from './harness.js';
+import { BOOK_KP, BOOK_STOCK, formatMismatches, loadFixtures, replayCharts } from './harness.js';
+
+// DD-2 book-mode tolerance: Livermore's charts treat "approximately six points"
+// with up to one eighth of hand-rounding (e.g. the Key Price's 78→89⅞ = 11⅞
+// counts as the 12-point basis on 1938-04-02). ⅛ is the finest price tick and
+// sits on a wide plateau (⅛…1 all reproduce the charts), so it is not curve-fit.
+const BOOK_TOL = 0.125;
+const stockCfg = { ...BOOK_STOCK, swingTolerance: BOOK_TOL };
+const kpCfg = { ...BOOK_KP, swingTolerance: BOOK_TOL * 2 };
 
 const here = dirname(fileURLToPath(import.meta.url));
 const fixturesDir = join(here, '..', 'fixtures');
@@ -24,7 +32,7 @@ describe.skipIf(!hasFixtures)('golden master — book Charts One–Sixteen (fixe
   it('reproduces the book column placements with no unexplained divergences', () => {
     const fixtures = loadFixtures(fixturesDir);
     expect(fixtures.length).toBeGreaterThan(0);
-    const report = replayCharts(fixtures);
+    const report = replayCharts(fixtures, { stockCfg, kpCfg });
 
     if (report.unexplained.length > 0) {
       throw new Error(
@@ -38,7 +46,7 @@ describe.skipIf(!hasFixtures)('golden master — book Charts One–Sixteen (fixe
 
   it('matches a high fraction of the book entries exactly (engine faithfulness)', () => {
     const fixtures = loadFixtures(fixturesDir);
-    const report = replayCharts(fixtures);
+    const report = replayCharts(fixtures, { stockCfg, kpCfg });
     // The book is a hand ledger; a few catalogued divergences are expected,
     // but the overwhelming majority of column placements must match.
     const ratio = report.matchedEntries / Math.max(1, report.totalEntries);

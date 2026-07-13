@@ -368,7 +368,7 @@ review), **m** = minor.
 | ID | M/m | Question | Resolution | Rationale |
 |----|-----|----------|------------|-----------|
 | DD-1 | m | "approximately six points", "three or more points" | strict `≥ threshold` comparisons everywhere | Build brief mandates `>= threshold`; rule 5/10 already say "or more". |
-| DD-2 | M | The charts sometimes record swings slightly under 6 (e.g. 5⅝) | `swingTolerance` config, default **0** in production; book-replay mode uses the smallest tolerance that reproduces the charts (fitted in Phase 3, expected ≈ ½ point; p. 85 shows Livermore treating 5½ as qualifying *via the Key Price*, DD-13) | Keeps production strict while letting golden masters validate the logic rather than Livermore's hand-rounding. |
+| DD-2 | M | The charts sometimes record swings slightly under the basis (e.g. the Key Price's 78→89⅞ = 11⅞ treated as the 12-point basis on 1938-04-02) | `swingTolerance` config, default **0** in production; book-replay mode uses **⅛ point** (0.125), fitted in Phase 3 against Charts One–Three. This is the finest price tick and sits on a wide plateau (⅛…1 pt all reproduce the charts), so it is robust, not curve-fit. The Key Price uses 2× the tolerance, matching its 2× basis | Keeps production strict while letting the golden master validate the *logic* rather than Livermore's hand-rounding to the nearest eighth. |
 | DD-3 | M | A wide-range day can satisfy continuation *and* reversal (order unknowable from OHLC) | At most one recorded figure per instrument per day; steps evaluated in the order §4 (same-direction upgrade → continuation → counter-swing). If both continuation and counter-swing qualify, continuation wins and the counter-swing is re-evaluated on later bars against the updated extreme | Deterministic; trend-direction-first matches the book's practice of recording the extreme "in the direction of the trend"; the reversal fires the next day if real. |
 | DD-4 | m | Which price is recorded | The day's high for up-direction columns, low for down-direction columns; never the close | Book p. 86 verbatim; the fetcher must supply OHLC. |
 | DD-5 | m | Crypto daily bar boundary | UTC `[00:00, 24:00)`, evaluated at 00:05 UTC; stored in config; changing it forces full replay | Crypto trades 24/7; any boundary is a convention — it just has to be immutable. |
@@ -402,9 +402,62 @@ review), **m** = minor.
 | 9a–9c (watch signals near pivotal points) | §6 |
 | 10a–10f (confirmations and danger signals) | §6 |
 
-## 12. Open item for review — does Key Price confirmation govern column placement?
+## 12. Key Price group confirmation governs column placement (RESOLVED — option B)
 
-**Status: material design question, flagged for sign-off (not resolved unilaterally).**
+**Decision (owner, 2026-07):** stay maximally faithful to the book. Key Price group
+confirmation is a first-class part of recording, not merely a trade-policy toggle — "a
+positive change of the trend must be confirmed by the action of the Key Price" (Ch. VIII,
+p. 85). A grouped instrument may not commit to a trend change until the combined Key Price
+confirms it. This is the book's central risk-control idea, so the tool enforces it.
+
+### The confirmation rule (the "commitment cap")
+
+Each up-side column has a commitment level — `SR` < `NR` < `UT` (1 < 2 < 3); the down side
+mirrors — `SRC` < `NRC` < `DT`. When recording a grouped instrument, its column is chosen
+by the per-instrument rules of §4, then **capped at the Key Price's own current commitment
+level on that side**:
+
+- Key Price in `SR` (or any down column, i.e. not yet rallying) → member capped at `SR`.
+- Key Price in `NR` → member capped at `NR`.
+- Key Price in `UT` → no cap (member may reach `UT`).
+- Down side mirrors with `SRC`/`NRC`/`DT`.
+
+**Resumption exception.** The cap applies only to a *change* of trend. A member that
+records a new extreme beyond its own last trend-column figure — rule 6-E (`low` < last
+`DT`) or rule 6-F (`high` > last `UT`), and trend-column continuations — is *resuming* an
+already-established trend, not changing it, so it records in the trend column **regardless
+of the Key Price**. This is why on 1938-05-27 Bethlehem drops into `DT` (a new low below
+its prior `DT` low of 40) while the Key Price is still in `NRC`, yet in June no member may
+enter `UT` until the Key Price does.
+
+### Evidence (Charts One–Three)
+
+- Lockstep graduation: on 1938-06-20…22 U.S. Steel, Bethlehem, and the Key Price are all
+  in `SR`; U.S. Steel alone would post `NR` on 06-21 (49⅞ > its 49 pivot) but the Key
+  Price (96⅜ < its 101 pivot) holds it in `SR`. All three graduate to `NR` on 06-23 (Key
+  Price 104½ > 101) and to `UT` on 06-24 (Key Price 108⅞).
+- No false gating of continuations: 1938-05-27 Bethlehem `DT` while Key Price `NRC`
+  (resumption exception); 1938-03-25 all three enter `DT` together (continuation / 6-E).
+- Fresh rallies pass immediately: 1938-04-02 both members post `NR` because the Key Price
+  was itself posting a fresh `NR` (89⅞) — cap = `NR`, no demotion.
+
+### Implementation
+
+`step()` accepts the group's Key Price commitment on each side via the coupling hint
+(`kpUpCap`, `kpDownCap`); `stepGroup()` steps the Key Price ledger first and derives the
+caps from its resulting column, then steps the members. Standalone (ungrouped) instruments
+pass no caps and record purely per §4 — the engine stays pure and the member↔group coupling
+is confined to the hint argument, so archival replays and membership changes remain a
+matter of which caps are supplied. The golden master runs in grouped mode so the book's own
+three-ledger chart validates the confirmation logic end-to-end.
+
+### (Superseded) recommendation
+
+The pre-decision analysis had recommended option A (keep recording per-instrument, catalog
+the June rows as divergences, model confirmation only in the trade-policy layer). The owner
+chose fidelity over that separation; option B above is authoritative. Group confirmation is
+still independently *measurable* — Phase 6.5 compares grouped vs per-instrument runs by
+toggling whether the caps are supplied.
 
 The golden-master fit against Charts One–Three surfaced a behavior the book relies on
 that the current per-instrument engine does not model. In June 1938 both U.S. Steel and

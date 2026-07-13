@@ -17,6 +17,8 @@ import {
   initialState,
   inkFor,
   isUp,
+  upLevel,
+  downLevel,
 } from './types.js';
 import {
   confDownTarget,
@@ -60,9 +62,50 @@ export function step(
     // once a downtrend is being recorded, the reaction low that rule 5b watched
     // is used up and must not keep forcing DT entries on a later, unrelated
     // reaction. It is re-established only by a fresh rule-4b/4d underline.
-    if (column === 'DT') s.pivot.NRC = null;
-    if (column === 'UT') s.pivot.NR = null;
+    if (column === 'DT') {
+      s.pivot.NRC = null;
+      s.lastTrendDir = 'down';
+    }
+    if (column === 'UT') {
+      s.pivot.NR = null;
+      s.lastTrendDir = 'up';
+    }
     events.push({ type: 'RECORD', date, column, price, ink: inkFor(column), rule });
+  };
+
+  // Key Price group-confirmation cap (§12). A grouped instrument may not commit
+  // to a trend change beyond the Key Price's own commitment level. `resumption`
+  // = true means the move is a new extreme beyond the last trend figure
+  // (rule 6-E/6-F / trend continuation) — resumption of an established trend,
+  // never gated. Returns the (possibly demoted) column.
+  const capColumn = (column: Column, resumption: boolean): Column => {
+    if (resumption || !coupling) return column;
+    const up = upLevel(column);
+    if (up > 0) {
+      // Only a *counter-trend* rally (against a prior downtrend) is a potential
+      // trend change needing Key Price confirmation. A rally with the prevailing
+      // uptrend never demotes.
+      if (s.lastTrendDir !== 'down') return column;
+      const capRaw = coupling.kpUpCap;
+      if (capRaw === undefined || up <= capRaw) return column;
+      return capRaw >= 2 ? 'NR' : 'SR';
+    }
+    const down = downLevel(column);
+    if (down > 0) {
+      // Mirror: only a reaction against a prior uptrend is gated.
+      if (s.lastTrendDir !== 'up') return column;
+      const capRaw = coupling.kpDownCap;
+      if (capRaw === undefined || down <= capRaw) return column;
+      return capRaw >= 2 ? 'NRC' : 'SRC';
+    }
+    return column;
+  };
+
+  /** Record a trend *change* (cappable) column, demoting per the §12 cap. Returns the recorded column. */
+  const recordCapped = (column: Column, price: number, rule: string): Column => {
+    const c = capColumn(column, false);
+    record(c, price, c === column ? rule : `${rule} →${c} (KP-gate §12)`);
+    return c;
   };
 
   const underline = (column: 'UT' | 'DT' | 'NR' | 'NRC', color: 'red' | 'black', rule: string): void => {
@@ -130,11 +173,10 @@ export function step(
       s.pivot.NR !== null &&
       gte(bar.high, confUpTarget(s.pivot.NR.price, cfg))
     ) {
-      record('UT', bar.high, '5a');
-      s.watchNRPending = false;
+      if (recordCapped('UT', bar.high, '5a') === 'UT') s.watchNRPending = false;
       recordedSameDir = true;
     } else if (active === 'SR' && s.last.NR !== null && gt(bar.high, s.last.NR)) {
-      record('NR', bar.high, '6g-resume');
+      recordCapped('NR', bar.high, '6g-resume');
       recordedSameDir = true;
     } else if (lastActive !== null && gt(bar.high, lastActive)) {
       record(active, bar.high, '6-continuation');
@@ -150,11 +192,10 @@ export function step(
       s.pivot.NRC !== null &&
       lte(bar.low, confDownTarget(s.pivot.NRC.price, cfg))
     ) {
-      record('DT', bar.low, '5b');
-      s.watchNRCPending = false;
+      if (recordCapped('DT', bar.low, '5b') === 'DT') s.watchNRCPending = false;
       recordedSameDir = true;
     } else if (active === 'SRC' && s.last.NRC !== null && lt(bar.low, s.last.NRC)) {
-      record('NRC', bar.low, '6h-resume');
+      recordCapped('NRC', bar.low, '6h-resume');
       recordedSameDir = true;
     } else if (lastActive !== null && lt(bar.low, lastActive)) {
       record(active, bar.low, '6-continuation');
@@ -197,6 +238,16 @@ export function step(
             } else {
               dest = 'SRC';
               rule = `6h${couplingTag}`;
+            }
+          }
+          // Key Price confirmation cap (§12): demote a trend *change* (into NRC)
+          // to Secondary Reaction until the Key Price confirms. A new low below
+          // last DT (`6e`/`-tail`) is trend resumption and is never gated.
+          {
+            const capped = capColumn(dest, /6e|tail/.test(rule));
+            if (capped !== dest) {
+              dest = capped;
+              rule = `${rule} →${capped} (KP-gate §12)`;
             }
           }
           // Underlines / pivotal points for the column being left (rules 4a, 4d).
@@ -242,13 +293,10 @@ export function step(
           let dest: Column;
           let rule: string;
           if (active === 'DT') {
-            // Rule 6-C: the first rally out of the Downward Trend is a Natural
-            // Rally (or straight to UT if it clears the last UT figure). NOTE:
-            // the book also records a rally out of DT in the Secondary Rally
-            // column when a Natural Rally pivot from the current cycle is still
-            // in play and the Key Price has not confirmed — see the "Key Price
-            // confirmation" open item in RULES.md §12. That behavior is not yet
-            // modelled; such rows are catalogued as knownDivergences.
+            // Rule 6-C: a rally out of the Downward Trend records in Natural
+            // Rally (or straight to UT if it clears the last UT figure). The
+            // Key Price confirmation cap below then demotes it to Secondary
+            // Rally when the Key Price has not yet confirmed the change (§12).
             if (s.last.UT !== null && gt(bar.high, s.last.UT)) {
               dest = 'UT';
               rule = `6f${couplingTag}`;
@@ -267,6 +315,16 @@ export function step(
             } else {
               dest = 'SR';
               rule = `6g${couplingTag}`;
+            }
+          }
+          // Key Price confirmation cap (§12): demote a trend *change* (into NR
+          // or UT) toward Secondary Rally until the Key Price confirms. A new
+          // high above last UT (`6f`/`-tail`) is trend resumption, never gated.
+          {
+            const capped = capColumn(dest, /6f|tail/.test(rule));
+            if (capped !== dest) {
+              dest = capped;
+              rule = `${rule} →${capped} (KP-gate §12)`;
             }
           }
           // Rules 4c, 4b — mirror of 4a/4d above. Rule 4b fires only when the

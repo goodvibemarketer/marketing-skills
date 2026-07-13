@@ -50,12 +50,44 @@ export interface EngineConfig {
   swingTolerance?: number;
 }
 
-/** Cross-ledger coupling hints for Key Price group members (§7, DD-13). */
+/**
+ * Commitment level of a column on one side of the ledger (§12): the up side is
+ * `SR`(1) < `NR`(2) < `UT`(3); the down side mirrors `SRC`(1) < `NRC`(2) < `DT`(3).
+ */
+export type Commitment = 1 | 2 | 3;
+
+/** Cross-ledger coupling hints for Key Price group members (§7, DD-13, §12). */
 export interface CouplingHints {
-  /** The group's Key Price ledger recorded an up-direction figure today. */
+  /** The group's Key Price ledger recorded an up-direction figure today (DD-13). */
   kpRecordedUp: boolean;
-  /** The group's Key Price ledger recorded a down-direction figure today. */
+  /** The group's Key Price ledger recorded a down-direction figure today (DD-13). */
   kpRecordedDown: boolean;
+  /**
+   * Key Price group-confirmation cap (§12). The member may commit no further up
+   * the up-side ladder than the Key Price itself: 1 = only `SR`, 2 = up to `NR`,
+   * 3 = up to `UT`. Omitted for ungrouped instruments (no cap).
+   */
+  kpUpCap?: Commitment;
+  /** Key Price confirmation cap on the down side: 1 = only `SRC`, 2 = to `NRC`, 3 = to `DT`. */
+  kpDownCap?: Commitment;
+}
+
+/** Up-side commitment level of a column, or 0 if it is a down-side column. */
+export function upLevel(col: Column): 0 | Commitment {
+  return col === 'SR' ? 1 : col === 'NR' ? 2 : col === 'UT' ? 3 : 0;
+}
+
+/** Down-side commitment level of a column, or 0 if it is an up-side column. */
+export function downLevel(col: Column): 0 | Commitment {
+  return col === 'SRC' ? 1 : col === 'NRC' ? 2 : col === 'DT' ? 3 : 0;
+}
+
+/** The Key Price's active column → the caps it imposes on members (§12). */
+export function capsFromKeyPriceColumn(active: Column | null): { up: Commitment; down: Commitment } {
+  return {
+    up: active === 'UT' ? 3 : active === 'NR' ? 2 : 1,
+    down: active === 'DT' ? 3 : active === 'NRC' ? 2 : 1,
+  };
 }
 
 export interface PivotalPoint {
@@ -100,6 +132,14 @@ export interface LedgerState {
   watchNRCPending: boolean;
   /** Pre-anchor running extremes (DD-6). */
   anchor: { hi: number; hiDate: string; lo: number; loDate: string } | null;
+  /**
+   * Direction of the last trend-column entry ('up' = last recorded UT,
+   * 'down' = last recorded DT). Used by the §12 Key Price confirmation cap,
+   * which gates only *counter-trend* moves (a rally against a downtrend, or a
+   * reaction against an uptrend) — with-trend continuations never need
+   * confirmation. Null before any trend column has been recorded.
+   */
+  lastTrendDir: 'up' | 'down' | null;
 }
 
 /* ------------------------------------------------------------------ */
@@ -174,5 +214,6 @@ export function initialState(): LedgerState {
     watchNRPending: false,
     watchNRCPending: false,
     anchor: null,
+    lastTrendDir: null,
   };
 }

@@ -1,0 +1,531 @@
+{
+ "chart": 3,
+ "bookPages": [
+  106,
+  107
+ ],
+ "chartTitle": "CHART THREE",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "topmost header line; red figure with heavy double black underline",
+   "price": "38"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "topmost header line",
+   "price": "40"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "topmost header line",
+   "price": "78"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "second header line",
+   "price": "49"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "second header line",
+   "price": "52"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "second header line",
+   "price": "101"
+  },
+  {
+   "instrument": "US",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "note": "third header line; 39 1/4 + 39 3/4 = 79 matches KP NRC header",
+   "price": "39 1/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "third header line; second entry in BS Downward Trend column, below the 40",
+   "price": "39 3/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "note": "third header line",
+   "price": "79"
+  },
+  {
+   "instrument": "BS",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "note": "fourth header line, level with the handwritten year 1938; aligns with the BS Secondary Rally entries of June 20-22 below it",
+   "price": "46 1/2"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1938-06-20",
+   "dateLabel": "20",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "45 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "48 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "93 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-21",
+   "dateLabel": "21",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "46 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "49 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "96 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-22",
+   "dateLabel": "22",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "48 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "50 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "99 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-23",
+   "dateLabel": "23",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "51 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "53 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "104 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-24",
+   "dateLabel": "24",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "53 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "55 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "108 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-25",
+   "dateLabel": "SAT25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "54 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "58 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "113"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-29",
+   "dateLabel": "29",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "56 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "60 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "117"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-30",
+   "dateLabel": "30",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "58 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "61 5/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "note": "the full-width red grid line runs just below this figure; it is not a drawn underline",
+     "price": "120"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-01",
+   "dateLabel": "JULY1",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "59"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "note": "no BS entry this day; 59 + prior BS 61 5/8 = 120 5/8",
+     "price": "120 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-02",
+   "dateLabel": "SAT.2",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "60 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "62 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "123 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-07",
+   "dateLabel": "7",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "61 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "no BS entry this day; 61 3/4 + 62 1/2 = 124 1/4",
+     "price": "124 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-11",
+   "dateLabel": "11",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "55 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "56 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "112 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-12",
+   "dateLabel": "12",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "55 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "no BS entry this day; 55 1/2 + 56 3/4 = 112 1/4",
+     "price": "112 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-19",
+   "dateLabel": "19",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "62 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "63 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "125 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-25",
+   "dateLabel": "25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "63 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "no BS entry this day; 63 1/4 + prior BS 63 1/8 = 126 3/8",
+     "price": "126 3/8"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On June 20th, the price of U. S. Steel was recorded in the Secondary Rally column. Refer to Explanatory Rule 6-G.",
+   "ruleRefs": [
+    "6-G"
+   ],
+   "dateRefs": [
+    "1938-06-20"
+   ]
+  },
+  {
+   "text": "On June 24th, prices of U. S. Steel and Bethlehem Steel were recorded in black ink in the Upward Trend column. Refer to Explanatory Rule 5-A.",
+   "ruleRefs": [
+    "5-A"
+   ],
+   "dateRefs": [
+    "1938-06-24"
+   ]
+  },
+  {
+   "text": "On July 11th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Reaction column. Refer to Explanatory Rules 6-A and 4-A.",
+   "ruleRefs": [
+    "6-A",
+    "4-A"
+   ],
+   "dateRefs": [
+    "1938-07-11"
+   ]
+  },
+  {
+   "text": "On July 19th, prices of U. S. Steel and Bethlehem Steel were recorded in the Upward Trend column in black ink because those prices were higher than the last prices that were recorded in those columns. Refer to Explanatory Rule 4-B.",
+   "ruleRefs": [
+    "4-B"
+   ],
+   "dateRefs": [
+    "1938-07-19"
+   ]
+  }
+ ],
+ "notes": "Spread: annotations on left page (p. 106, headed HOW TO TRADE IN STOCKS), ledger grid on right page (p. 107, headed CHART THREE with Livermore Market-Key crest). Year header \"1938\" appears once above DATE; no new year appears mid-chart. Date rows run JUNE17 through 29 (July 29); rows JUNE17, SAT.18, 27, 28, 5, 6, 8, SAT.9, 13, 14, 15, SAT16, 18, 20, 21, 22, SAT23, 26, 27, 28, 29 have no handwritten entries and are omitted. July 4 (Monday, holiday) has no row - the sequence jumps from SAT.2 to 5. KP = US + BS checksum verified and consistent on every row where all three instruments have entries (June 20, 21, 22, 23, 24, 25, 29, 30, July 2, 11, 19); on single/double-entry days (July 1, 7, 12, 25) KP equals the new US price plus the prior BS price, also consistent. Header carried-forward entries occupy four lines above the DATE row: line 1 = DT pivots 38/40/78 (red, double black underline); line 2 = NR pivots 49/52/101 (blue, double black underline); line 3 = 39 1/4 (US NRC), 39 3/4 (BS DT, red, double underlined), 79 (KP NRC), where 39 1/4 + 39 3/4 = 79; line 4 = 46 1/2 in BS SR (blue). All drawn underlines within the dated rows are single red lines hugging the number width, marking the extreme price before a column change (BS topped July 2 at 62 1/2 and again July 19 at 63 1/8; US/KP topped July 7 at 61 3/4 / 124 1/4 and July 25 at 63 1/4 / 126 3/8; reaction lows underlined July 11 for BS 56 3/4 and July 12 for US 55 1/2 / KP 112 1/4). Ink colors matched expected column coding throughout (UT black, DT red, others blue pencil); no contradictions found, no illegible cells.",
+ "knownDivergences": []
+}

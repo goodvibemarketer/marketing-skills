@@ -1,0 +1,312 @@
+{
+ "chart": 2,
+ "bookPages": [
+  104,
+  105
+ ],
+ "chartTitle": "CHART TWO",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "price": "38"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "price": "40"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "price": "78"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "price": "49"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "price": "52"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "price": "101"
+  },
+  {
+   "instrument": "US",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "41 1/2"
+  },
+  {
+   "instrument": "BS",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "44 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "85 3/4"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1938-05-23",
+   "dateLabel": "23",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "44 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "Consistent with carried US NRC 41 1/2 + BS 44 1/8 = 85 5/8",
+     "price": "85 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-24",
+   "dateLabel": "24",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "43 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "41 1/2 + 43 1/2 = 85, checksum consistent",
+     "price": "85"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-25",
+   "dateLabel": "25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "41 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "42 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "uncertain": true,
+     "note": "Fraction partly obscured by printed red row line; numerator reads as 7. Checksum 41 3/8 + 42 1/2 = 83 7/8 supports this over alternative reading 83 3/4",
+     "price": "83 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-26",
+   "dateLabel": "26",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "40 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "40 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "Denominator partly obscured by grid lines; 40 1/8 + 40 1/2 = 80 5/8 checksum consistent",
+     "price": "80 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-27",
+   "dateLabel": "27",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "uncertain": true,
+     "note": "Fraction crossed by red vertical grid line; numerator has flag-top stroke resembling 7. Checksum 39 7/8 + 39 3/4 = 79 5/8 matches KP entry. Alternative reading 39 5/8",
+     "price": "39 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "double",
+     "underlineColor": "black",
+     "note": "Recorded in red per printed annotation (new low in Downward Trend, Rule 6-C); heavy double black underline drawn beneath",
+     "price": "39 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "uncertain": true,
+     "note": "Fraction partly obscured; numerator reads as 5. Checksum 39 7/8 + 39 3/4 = 79 5/8. Alternative reading 79 3/8",
+     "price": "79 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-31",
+   "dateLabel": "31",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "39 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "39 1/4 + carried BS DT 39 3/4 = 79, checksum consistent. No BS entry this row. May 30 (Memorial Day) has no row",
+     "price": "79"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-10",
+   "dateLabel": "10",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "Secondary Rally column of Bethlehem Steel, matching printed annotation referencing Rule 6-E",
+     "price": "46 1/2"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "All of these prices recorded are brought forth from the preceding page in order to keep the Pivotal Points always before you.",
+   "ruleRefs": [],
+   "dateRefs": []
+  },
+  {
+   "text": "During the period from May 5th to May 21st inclusive, no prices were recorded because no prices were made lower than the last price recorded in the Natural Reaction column. Nor was there sufficient rally to be recorded.",
+   "ruleRefs": [],
+   "dateRefs": [
+    "1938-05-05",
+    "1938-05-21"
+   ]
+  },
+  {
+   "text": "On May 27th, the price of Bethlehem Steel was recorded in red because it was a lower price than the previous price recorded in the Downward Trend column. Refer to Explanatory Rule 6-C.",
+   "ruleRefs": [
+    "6-C"
+   ],
+   "dateRefs": [
+    "1938-05-27"
+   ]
+  },
+  {
+   "text": "On June 2nd, Bethlehem Steel became a buy at 43. Refer to Explanatory Rule 10-C and D. On the same day U. S. Steel became a buy at 42 1/4. Refer to Explanatory Rule 10-F.",
+   "ruleRefs": [
+    "10-C",
+    "10-D",
+    "10-F"
+   ],
+   "dateRefs": [
+    "1938-06-02"
+   ]
+  },
+  {
+   "text": "On June 10th, a price was recorded in the Secondary Rally column of Bethlehem Steel. Refer to Explanatory Rule 6-E.",
+   "ruleRefs": [
+    "6-E"
+   ],
+   "dateRefs": [
+    "1938-06-10"
+   ]
+  }
+ ],
+ "notes": "Left page (p.104) carries the printed annotations under running head \"HOW TO TRADE IN STOCKS\"; right page (p.105) has the ledger grid titled CHART TWO with the Livermore crest at top right. Handwritten \"1938\" appears above the DATE label; no new year appears mid-chart. Date rows run MAY5 through 16 (June 16), Monday-Saturday with Saturdays prefixed SAT (SAT.7, SAT.14, SAT21, SAT28, SAT.4, SAT.11); May 30 (Memorial Day) is absent. Rows May 5 through SAT21 and June 1 through June 9 plus June 11-16 have no handwritten entries. Header carried-forward pivotal points occupy three lines above the 1938/DATE labels: red DT figures 38/40/78 (top line), blue NR figures 49/52/101 (second line), each with heavy double black underlines; blue NRC figures 41 1/2 / 44 1/4 / 85 3/4 (third line, level with \"1938\") with no underlines. All same-row checksums (KP = US + BS) verified: 85 3/4 header, 83 7/8 (May 25), 80 5/8 (May 26), 79 5/8 (May 27), 79 (May 31, using carried BS 39 3/4). Annotation 4's \"42 1/4\" is printed as 42 with a \u00bc glyph. In-text case fraction rendered inline.",
+ "knownDivergences": []
+}

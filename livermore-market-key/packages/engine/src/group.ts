@@ -4,7 +4,7 @@
  */
 
 import type { Bar, CouplingHints, EngineConfig, EngineEvent, LedgerState } from './types.js';
-import { initialState, isUp } from './types.js';
+import { capsFromKeyPriceColumn, initialState, isUp } from './types.js';
 import { step } from './engine.js';
 
 export type KeyPriceMethod = 'sum' | 'normalized-index';
@@ -48,7 +48,7 @@ export interface GroupStepResult {
   events: { a: EngineEvent[]; b: EngineEvent[]; kp: EngineEvent[] };
 }
 
-function couplingFrom(kpEvents: EngineEvent[]): CouplingHints {
+function couplingFrom(kpEvents: EngineEvent[], kpActive: import('./types.js').Column | null): CouplingHints {
   let up = false;
   let down = false;
   for (const e of kpEvents) {
@@ -57,7 +57,10 @@ function couplingFrom(kpEvents: EngineEvent[]): CouplingHints {
       else down = true;
     }
   }
-  return { kpRecordedUp: up, kpRecordedDown: down };
+  // §12 confirmation caps derive from the Key Price's *current* column (its
+  // commitment level), which persists across days it does not record.
+  const caps = capsFromKeyPriceColumn(kpActive);
+  return { kpRecordedUp: up, kpRecordedDown: down, kpUpCap: caps.up, kpDownCap: caps.down };
 }
 
 /**
@@ -71,7 +74,7 @@ export function stepGroup(state: GroupState, bars: { a: Bar; b: Bar }, cfg: Grou
   }
   const kpBar = keyPriceBar(bars.a, bars.b, cfg);
   const kpRes = step(state.kp, kpBar, cfg.keyPrice);
-  const hints = cfg.coupling ? couplingFrom(kpRes.events) : undefined;
+  const hints = cfg.coupling ? couplingFrom(kpRes.events, kpRes.state.active) : undefined;
   const aRes = step(state.a, bars.a, cfg.member, hints);
   const bRes = step(state.b, bars.b, cfg.member, hints);
   return {

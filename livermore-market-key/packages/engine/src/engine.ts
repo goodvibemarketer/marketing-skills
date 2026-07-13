@@ -168,7 +168,43 @@ export function step(
         const coupled = (coupling?.kpRecordedDown ?? false) && lt(bar.low, ref);
         if (ownTrigger || coupled) {
           const couplingTag = ownTrigger ? '' : ' (KP coupling, DD-13)';
+          // Routing decision first (§4 Step 3 table) — underline rules 4a/4d
+          // depend on the destination (no underline for Secondary routings).
+          let dest: Column;
+          let rule: string;
+          if (active === 'UT') {
+            if (s.last.DT !== null && lt(bar.low, s.last.DT)) {
+              dest = 'DT';
+              rule = `6e${couplingTag}`;
+            } else if (s.pivot.NRC !== null && lte(bar.low, confDownTarget(s.pivot.NRC.price, cfg))) {
+              dest = 'DT';
+              rule = `5b${couplingTag}`;
+            } else {
+              dest = 'NRC';
+              rule = `6a${couplingTag}`;
+            }
+          } else {
+            const fromRule = active === 'NR' ? '6b' : '6b (DD-8)';
+            if (s.last.DT !== null && lt(bar.low, s.last.DT)) {
+              dest = 'DT';
+              rule = `${fromRule}-tail${couplingTag}`;
+            } else if (s.pivot.NRC !== null && lte(bar.low, confDownTarget(s.pivot.NRC.price, cfg))) {
+              dest = 'DT';
+              rule = `5b${couplingTag}`;
+            } else if (s.last.NRC === null || lt(bar.low, s.last.NRC)) {
+              dest = 'NRC';
+              rule = `${fromRule}${couplingTag}`;
+            } else {
+              dest = 'SRC';
+              rule = `6h${couplingTag}`;
+            }
+          }
           // Underlines / pivotal points for the column being left (rules 4a, 4d).
+          // The trigger is "the first reaction of ~6 points from the last price
+          // recorded in the [UT/NR] column" — it fires on the threshold swing
+          // regardless of whether recording resumes in the natural or secondary
+          // column. The underline sits under the UT/NR figure, never the
+          // secondary figure, so DD-9 holds.
           if (active === 'UT') {
             underline('UT', 'red', '4a');
             s.upPhase = 'firstCounter';
@@ -190,27 +226,7 @@ export function step(
             }
             s.upPhase = 'failed';
           }
-          // Routing (§4 Step 3 table).
-          if (active === 'UT') {
-            if (s.last.DT !== null && lt(bar.low, s.last.DT)) {
-              record('DT', bar.low, `6e${couplingTag}`);
-            } else if (s.pivot.NRC !== null && lte(bar.low, confDownTarget(s.pivot.NRC.price, cfg))) {
-              record('DT', bar.low, `5b${couplingTag}`);
-            } else {
-              record('NRC', bar.low, `6a${couplingTag}`);
-            }
-          } else {
-            const fromRule = active === 'NR' ? '6b' : '6b (DD-8)';
-            if (s.last.DT !== null && lt(bar.low, s.last.DT)) {
-              record('DT', bar.low, `${fromRule}-tail${couplingTag}`);
-            } else if (s.pivot.NRC !== null && lte(bar.low, confDownTarget(s.pivot.NRC.price, cfg))) {
-              record('DT', bar.low, `5b${couplingTag}`);
-            } else if (s.last.NRC === null || lt(bar.low, s.last.NRC)) {
-              record('NRC', bar.low, `${fromRule}${couplingTag}`);
-            } else {
-              record('SRC', bar.low, `6h${couplingTag}`);
-            }
-          }
+          record(dest, bar.low, rule);
           // Down side: a new reaction leg begins — an attempt toward PP[DT]?
           if (s.pivot.DT && (s.downPhase === 'firstCounter' || s.downPhase === 'failed')) {
             s.downPhase = 'attempt';
@@ -223,6 +239,37 @@ export function step(
         const coupled = (coupling?.kpRecordedUp ?? false) && gt(bar.high, ref);
         if (ownTrigger || coupled) {
           const couplingTag = ownTrigger ? '' : ' (KP coupling, DD-13)';
+          let dest: Column;
+          let rule: string;
+          if (active === 'DT') {
+            if (s.last.UT !== null && gt(bar.high, s.last.UT)) {
+              dest = 'UT';
+              rule = `6f${couplingTag}`;
+            } else if (s.pivot.NR !== null && gte(bar.high, confUpTarget(s.pivot.NR.price, cfg))) {
+              dest = 'UT';
+              rule = `5a${couplingTag}`;
+            } else {
+              dest = 'NR';
+              rule = `6c${couplingTag}`;
+            }
+          } else {
+            const fromRule = active === 'NRC' ? '6d' : '6d (DD-8)';
+            if (s.last.UT !== null && gt(bar.high, s.last.UT)) {
+              dest = 'UT';
+              rule = `${fromRule}-tail${couplingTag}`;
+            } else if (s.pivot.NR !== null && gte(bar.high, confUpTarget(s.pivot.NR.price, cfg))) {
+              dest = 'UT';
+              rule = `5a${couplingTag}`;
+            } else if (s.last.NR === null || gt(bar.high, s.last.NR)) {
+              dest = 'NR';
+              rule = `${fromRule}${couplingTag}`;
+            } else {
+              dest = 'SR';
+              rule = `6g${couplingTag}`;
+            }
+          }
+          // Rules 4c, 4b — see the mirror note above; fires on the threshold
+          // rally from the DT/NRC extreme regardless of destination column.
           if (active === 'DT') {
             underline('DT', 'black', '4c');
             s.downPhase = 'firstCounter';
@@ -243,26 +290,7 @@ export function step(
             }
             s.downPhase = 'failed';
           }
-          if (active === 'DT') {
-            if (s.last.UT !== null && gt(bar.high, s.last.UT)) {
-              record('UT', bar.high, `6f${couplingTag}`);
-            } else if (s.pivot.NR !== null && gte(bar.high, confUpTarget(s.pivot.NR.price, cfg))) {
-              record('UT', bar.high, `5a${couplingTag}`);
-            } else {
-              record('NR', bar.high, `6c${couplingTag}`);
-            }
-          } else {
-            const fromRule = active === 'NRC' ? '6d' : '6d (DD-8)';
-            if (s.last.UT !== null && gt(bar.high, s.last.UT)) {
-              record('UT', bar.high, `${fromRule}-tail${couplingTag}`);
-            } else if (s.pivot.NR !== null && gte(bar.high, confUpTarget(s.pivot.NR.price, cfg))) {
-              record('UT', bar.high, `5a${couplingTag}`);
-            } else if (s.last.NR === null || gt(bar.high, s.last.NR)) {
-              record('NR', bar.high, `${fromRule}${couplingTag}`);
-            } else {
-              record('SR', bar.high, `6g${couplingTag}`);
-            }
-          }
+          record(dest, bar.high, rule);
           if (s.pivot.UT && (s.upPhase === 'firstCounter' || s.upPhase === 'failed')) {
             s.upPhase = 'attempt';
           }

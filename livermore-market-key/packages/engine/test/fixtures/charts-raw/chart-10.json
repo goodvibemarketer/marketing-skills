@@ -1,0 +1,329 @@
+{
+ "chart": 10,
+ "bookPages": [
+  120,
+  121
+ ],
+ "chartTitle": "CHART TEN",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "Carried-forward Downward Trend pivotal point for U.S. Steel, above the first dated row.",
+   "price": "44 3/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "Carried-forward Downward Trend pivotal point for Bethlehem Steel.",
+   "price": "51 5/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "KP DT = US 44 3/8 + BS 51 5/8 = 96 (checksum ok).",
+   "price": "96"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "Carried-forward Natural Rally pivotal point for U.S. Steel.",
+   "price": "50"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "Carried-forward Natural Rally pivotal point for Bethlehem Steel.",
+   "price": "58 1/2"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "KP NR = US 50 + BS 58 1/2 = 108 1/2 (checksum ok).",
+   "price": "108 1/2"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1939-05-17",
+   "dateLabel": "17",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "44 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "52"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "KP NRC = US 44 5/8 + BS 52 = 96 5/8 (checksum ok).",
+     "price": "96 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-18",
+   "dateLabel": "18",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "Drawn single heavy black underline beneath the figure.",
+     "price": "43 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "KP DT = US 43 1/4 (new low) + BS 52 (unchanged) = 95 1/4 (checksum ok). No BS figure written this row.",
+     "price": "95 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-19",
+   "dateLabel": "19",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "uncertain": true,
+     "note": "Written as a short red horizontal dash/line (no digits) in the Downward Trend column. Per the printed annotation, a price was made equal to the last DT price (51 5/8). Value inferred, not written.",
+     "price": "51 5/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "KP DT = US 43 1/4 + BS 51 5/8 = 94 7/8 (checksum ok). Single heavy black underline beneath figure.",
+     "price": "94 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-25",
+   "dateLabel": "25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "48 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "57 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "KP SR = US 48 3/4 + BS 57 3/4 = 106 1/2 (checksum ok).",
+     "price": "106 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-26",
+   "dateLabel": "26",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "49"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "58"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "KP SR = US 49 + BS 58 = 107 (checksum ok).",
+     "price": "107"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-27",
+   "dateLabel": "SAT27",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "49 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "uncertain": true,
+     "note": "Written as a short red horizontal dash/line (no digits) in the Natural Rally column, meaning a price equal to the last NR pivotal (58 1/2). Value inferred from KP checksum: 107 7/8 - US 49 3/8 = 58 1/2.",
+     "price": "58 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "KP SR = US 49 3/8 + BS 58 1/2 = 107 7/8 (checksum ok).",
+     "price": "107 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-29",
+   "dateLabel": "29",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "50 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "59 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "KP NR = US 50 1/4 + BS 59 3/8 = 109 5/8 (checksum ok).",
+     "price": "109 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-31",
+   "dateLabel": "31",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "double",
+     "underlineColor": "black",
+     "note": "Double heavy black underline beneath figure (marks the new rally pivotal).",
+     "price": "50 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "double",
+     "underlineColor": "black",
+     "note": "Heavy black underline beneath figure; reads as a solid/double line (same pivotal marking as US and KP this date), though the two strokes are merged.",
+     "price": "60"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "double",
+     "underlineColor": "black",
+     "note": "KP NR = US 50 1/8 + BS 60 = 110 1/8 (checksum ok). Double heavy black underline beneath figure.",
+     "price": "110 1/8"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On May 17th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Reaction column, and the next day, May 18th, the price of U. S. Steel was recorded in the Downward Trend column. Refer to Explanatory Rule 6-D. The next day, May 19th, a red line was drawn under the Downward Trend column in Bethlehem Steel, meaning a price was made that was the same as the last price recorded in the Downward Trend column.",
+   "ruleRefs": [
+    "6-D"
+   ],
+   "dateRefs": [
+    "1939-05-17",
+    "1939-05-18",
+    "1939-05-19"
+   ]
+  },
+  {
+   "text": "On May 25th, prices of U. S. Steel and Bethlehem Steel were recorded in the Secondary Rally column. Refer to Explanatory Rule 6-C.",
+   "ruleRefs": [
+    "6-C"
+   ],
+   "dateRefs": [
+    "1939-05-25"
+   ]
+  }
+ ],
+ "notes": "Chart Ten (pages 120-121), year 1939, covering the ledger period April 20 - June 1, 1939. The Livermore Market Key grid is on the RIGHT page (121); the two printed annotation paragraphs are on the LEFT page (120). Group order left-to-right: U.S. STEEL, BETHLEHEM STEEL, KEY PRICE; within each group the six columns are SR, NR, UT, DT, NRC, SRC.\n\nSix carried-forward pivotal points sit on the \"1939 / DATE\" header line above the first dated row (APR20): three red Downward-Trend points (US 44 3/8, BS 51 5/8, KP 96) drawn slightly higher, and three blue Natural-Rally points (US 50, BS 58 1/2, KP 108 1/2) below; all six carry double black underlines.\n\nOnly eight dated rows contain handwritten entries (May 17, 18, 19, 25, 26, SAT 27, 29, 31); all other rows (APR20-MAY16, SAT20-24, and JUNE1) are blank. May 30 (Tue) was Memorial Day and has no ledger row, consistent with the labels jumping 29 -> 31 -> JUNE1.\n\nAll KP = US + BS checksums verify exactly for every row where all three are present, which was used to confirm ambiguous fractions and column placement. Two entries are drawn as short red dashes rather than digits: BS Downward-Trend on May 19 (= 51 5/8, confirmed by the annotation) and BS Natural-Rally on SAT May 27 (= 58 1/2, recovered from the KP checksum 107 7/8 - 49 3/8); both are marked uncertain because their numeric value is inferred, not written.\n\nInk convention held throughout: UT would be black (none present on this chart), DT entries red, and SR/NR/NRC/SRC entries blue pencil. Drawn underlines: single black under US DT 43 1/4 (May 18) and KP DT 94 7/8 (May 19); double black under all three May 31 Natural-Rally figures (US 50 1/8, BS 60, KP 110 1/8), the BS one appearing as a merged/solid heavy line.",
+ "knownDivergences": []
+}

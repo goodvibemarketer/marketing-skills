@@ -1,0 +1,378 @@
+{
+ "chart": 6,
+ "bookPages": [
+  112,
+  113
+ ],
+ "chartTitle": "CHART SIX",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "UT",
+   "ink": "black",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "carried-forward pivotal point on the 1938 header line, Upward Trend column",
+   "price": "66"
+  },
+  {
+   "instrument": "BS",
+   "column": "UT",
+   "ink": "black",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "carried-forward pivotal point on the 1938 header line",
+   "price": "67 1/2"
+  },
+  {
+   "instrument": "KP",
+   "column": "UT",
+   "ink": "black",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "carried-forward pivotal point; 66 + 67 1/2 = 133 1/2 checksum ok",
+   "price": "133 1/2"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1938-10-25",
+   "dateLabel": "OCT.25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "66 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "67 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "66 1/8 + 67 7/8 = 134 checksum ok",
+     "price": "134"
+    }
+   ]
+  },
+  {
+   "date": "1938-10-27",
+   "dateLabel": "27",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "66 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "68 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "66 1/2 + 68 7/8 = 135 3/8 checksum ok",
+     "price": "135 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-11-01",
+   "dateLabel": "NOV.1",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "69"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "US not re-recorded (still 66 1/2); 66 1/2 + 69 = 135 1/2 checksum ok",
+     "price": "135 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1938-11-03",
+   "dateLabel": "3",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "69 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "US still 66 1/2; 66 1/2 + 69 1/2 = 136 checksum ok",
+     "price": "136"
+    }
+   ]
+  },
+  {
+   "date": "1938-11-07",
+   "dateLabel": "7",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "66 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "71 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "66 3/4 + 71 7/8 = 138 5/8 checksum ok",
+     "price": "138 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-11-09",
+   "dateLabel": "9",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "69 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "75 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "69 1/2 + 75 3/8 = 144 7/8 checksum ok",
+     "price": "144 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-11-10",
+   "dateLabel": "10",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "70"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "75 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "70 + 75 1/2 = 145 1/2 checksum ok",
+     "price": "145 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1938-11-12",
+   "dateLabel": "SAT.12",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "71 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "77 5/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "71 1/4 + 77 5/8 = 148 7/8 checksum ok; all three red-underlined (upward-trend peak)",
+     "price": "148 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-11-18",
+   "dateLabel": "18",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "Natural Reaction column per Rule 6-A annotation",
+     "price": "65 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "71 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "65 1/8 + 71 7/8 = 137 checksum ok (confirms US numerator 1/8 and BS numerator 7/8)",
+     "price": "137"
+    }
+   ]
+  },
+  {
+   "date": "1938-11-26",
+   "dateLabel": "SAT.26",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "63 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "71 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "63 1/4 + 71 1/2 = 134 3/4 checksum ok",
+     "price": "134 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1938-11-28",
+   "dateLabel": "28",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "61"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "68 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "61 + 68 3/4 = 129 3/4 checksum ok; all three underlined with a heavier dark (black/blue) line distinct from the red grid rule below (natural-reaction low pivotal)",
+     "price": "129 3/4"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On November 18th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Reaction column. Refer to Explanatory Rule 6-A.",
+   "ruleRefs": [
+    "6-A"
+   ],
+   "dateRefs": [
+    "1938-11-18"
+   ]
+  }
+ ],
+ "notes": "Right page (p.113) holds the ledger grid; left page (p.112) holds the single printed annotation. Year is 1938 throughout (data spans OCT.25 to DEC.8, though dated rows after 28 are blank). Grid dates present but blank: 26, 28, SAT.29, 31, 2, 4, SAT.5, 14, 15, 16, 17, SAT.19, 21, 22, 23, 25, 29, 30, DEC.1, 2, SAT.3, 5, 6, 7, 8 (no Sunday rows; row 8 is skipped in the Nov date column between 7 and 9). Only rows with handwritten entries are transcribed. All entries fall in Upward Trend (black ink) for OCT.25 through SAT.12, then Natural Reaction (blue pencil) for the 18/SAT.26/28 reaction leg. Every row where all three instruments are present satisfies KP = US + BS. Row 18 US eighths (1/8) vs BS eighths (7/8) were disambiguated by the KP=137 checksum. SAT.12 pivotal top carries red single underlines under all three figures; row 28 pivotal low carries dark (black/blue) single underlines under all three, verified as heavier and number-width, separate from the full-width red printed grid rule beneath them.",
+ "knownDivergences": []
+}

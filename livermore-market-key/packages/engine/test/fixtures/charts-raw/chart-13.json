@@ -1,0 +1,617 @@
+{
+ "chart": 13,
+ "bookPages": [
+  126,
+  127
+ ],
+ "chartTitle": "CHART THIRTEEN (Chart 13) \u2014 Livermore Market Key ledger, Aug 26 \u2013 Oct 7, 1939",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "Top carried-forward downward pivot, red ink, heavy black double/strike underline",
+   "price": "43 1/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "price": "50 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "Checksum: US DT 43 1/4 + BS DT 50 1/4 = 93 1/2, but KP written 93 7/8 (off by 3/8). Carried-forward pivots need not match; transcribed as written.",
+   "price": "93 7/8"
+  },
+  {
+   "instrument": "US",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "55 1/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "65 3/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "note": "Checksum OK: 55 1/8 + 65 3/4 = 120 7/8",
+   "price": "120 7/8"
+  },
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "note": "In the 1939/DATE band; red ink in US DT column, heavy black underline",
+   "price": "41 5/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "uncertain": true,
+   "note": "Physically sits in BS NATURAL REACTION column (col11, x~3027) and is BLUE ink, not the red DT of its row-mates. Numerically US DT 41 5/8 + this 51 7/8 = KP DT 93 1/2, suggesting it may be intended as the BS downward pivot; transcribed by actual position/color.",
+   "price": "51 7/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "Checksum: US 41 5/8 + BS 51 7/8 = 93 1/2",
+   "price": "93 1/2"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1939-08-29",
+   "dateLabel": "29",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "48"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "60 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "108 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-01",
+   "dateLabel": "SEPT. 1",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "52"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "65 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "117 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-02",
+   "dateLabel": "SAT. 2",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "55 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "70 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "note": "Checksum: 55 1/4 + 70 3/8 = 125 5/8",
+     "price": "125 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-05",
+   "dateLabel": "5",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "66 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "85 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "152 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-08",
+   "dateLabel": "8",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "69 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "87"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "156 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-09",
+   "dateLabel": "SAT. 9",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "70"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "88 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "158 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-11",
+   "dateLabel": "11",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "78 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Red underline marking upward-trend peak pivot",
+     "price": "100"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "178 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-12",
+   "dateLabel": "12",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Red underline; upward-trend top pivotal point",
+     "price": "82 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "No BS entry this row; KP 182 3/4 = US 82 3/4 + carried BS 100",
+     "price": "182 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-14",
+   "dateLabel": "14",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "76 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "91 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 76 3/8 + 91 3/4 = 168 1/8",
+     "price": "168 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-16",
+   "dateLabel": "SAT. 16",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "75 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "88 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "163 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-18",
+   "dateLabel": "18",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Red underline; natural-reaction low pivotal point",
+     "price": "70 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "83 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Checksum: 70 1/2 + 83 3/4 = 154 1/4",
+     "price": "154 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-19",
+   "dateLabel": "19",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "78"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "92 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "170 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-20",
+   "dateLabel": "20",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "80 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "95 5/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 80 5/8 + 95 5/8 = 176 1/4",
+     "price": "176 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-28",
+   "dateLabel": "28",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "75 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "89"
+    },
+    {
+     "instrument": "KP",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 75 1/8 + 89 = 164 1/8",
+     "price": "164 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-09-29",
+   "dateLabel": "29",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "73 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "86 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "160 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-10-04",
+   "dateLabel": "4",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "73"
+    },
+    {
+     "instrument": "BS",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "86 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "159 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-10-06",
+   "dateLabel": "6",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "78 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "92 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 78 1/2 + 92 3/4 = 171 1/4",
+     "price": "171 1/4"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On August 29th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Rally column. Refer to Explanatory Rule 6-D.",
+   "ruleRefs": [
+    "6-D"
+   ],
+   "dateRefs": [
+    "1939-08-29"
+   ]
+  },
+  {
+   "text": "On September 2nd, prices of U. S. Steel and Bethlehem Steel were recorded in the Upward Trend column, being higher prices than the last prices previously recorded in the Upward Trend column.",
+   "ruleRefs": [],
+   "dateRefs": [
+    "1939-09-02"
+   ]
+  },
+  {
+   "text": "On September 14th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Reaction column. Refer to Explanatory Rules 6-A and 4-A.",
+   "ruleRefs": [
+    "6-A",
+    "4-A"
+   ],
+   "dateRefs": [
+    "1939-09-14"
+   ]
+  },
+  {
+   "text": "On September 19th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Rally column. Refer to Explanatory Rules 6-D and 4-B.",
+   "ruleRefs": [
+    "6-D",
+    "4-B"
+   ],
+   "dateRefs": [
+    "1939-09-19"
+   ]
+  },
+  {
+   "text": "On September 28th, prices for U. S. Steel and Bethlehem Steel were recorded in the Secondary Reaction column. Refer to Explanatory Rule 6-H.",
+   "ruleRefs": [
+    "6-H"
+   ],
+   "dateRefs": [
+    "1939-09-28"
+   ]
+  },
+  {
+   "text": "On October 6th, prices of U. S. Steel and Bethlehem Steel were recorded in the Secondary Rally column. Refer to Explanatory Rule 6-G.",
+   "ruleRefs": [
+    "6-G"
+   ],
+   "dateRefs": [
+    "1939-10-06"
+   ]
+  }
+ ],
+ "notes": "Ledger grid is on the RIGHT page (p.127, header \"CHART THIRTEEN\"); printed explanatory sentences are on the LEFT page (p.126). Year printed above DATE = 1939; no year change mid-chart. Requested crop files (c-71-LT/LB/RT/RB) did not exist, so all crops were generated from c-71.png (3811x2783).\n\nColumn layout verified by detecting the 19 vertical grid lines (x \u2248 2019,2114,2209,2307,2401,2495,2593,2685,2787,2883,2982,3065,3173,3271,3369,3458,3554,3643,3741). US=cols1-6, BS=cols7-12, KP=cols13-18, each ordered SR,NR,UT,DT,NRC,SRC. DT columns have red left borders.\n\nEvery triple where US, BS and KP all appear satisfies KP = US + BS (all checksums pass), which anchored several fraction reads: BS Sept 2 is 70 3/8 (not 70 7/8) since 55 1/4+70 3/8=125 5/8; US Sept 2 is 55 1/4 (not 55 1/8); BS Sept 18 is 83 3/4 (not 83 1/4) since 70 1/2+83 3/4=154 1/4; BS Sept 14 is 91 3/4 since 76 3/8+91 3/4=168 1/8.\n\nColumn assignments match the printed annotations: Aug 29/Sept 1 = Natural Rally; Sept 2-12 = Upward Trend (peak pivots underlined red at BS 100 on Sept 11 and US 82 3/4 / KP 182 3/4 on Sept 12); Sept 14-18 = Natural Reaction (low pivots underlined red on Sept 18); Sept 19-20 = Natural Rally; Sept 28-Oct 4 = Secondary Reaction; Oct 6 = Secondary Rally. Sept 12 has no BS entry (KP 182 3/4 = US 82 3/4 + carried BS 100).\n\nDate labels: SAT-prefixed rows are Saturdays (confirmed: Sept 1 1939 = Friday, so Aug 26 = Saturday). Monday Sept 4 (Labor Day) is skipped, so SAT.2 is followed by row 5. No Sunday rows.\n\nHeader anomaly: the top DT carried-pivot triple 43 1/4 / 50 1/4 / 93 7/8 does NOT checksum (43 1/4+50 1/4 = 93 1/2 vs written 93 7/8) \u2014 expected for independent carried-forward pivots, transcribed as written. In the lower (1939-band) carried row, US 41 5/8 and KP 93 1/2 are red in the DOWNWARD TREND column, but the matching BS value 51 7/8 physically sits in the BS NATURAL REACTION column and is blue ink (though 41 5/8+51 7/8=93 1/2); flagged uncertain and transcribed by actual position/color.",
+ "knownDivergences": []
+}

@@ -1,0 +1,484 @@
+{
+ "chart": 9,
+ "bookPages": [
+  118,
+  119
+ ],
+ "chartTitle": "CHART NINE",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "53 1/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "60 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "113 1/2"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "64 7/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "75 1/2"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "140 3/8"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1939-03-08",
+   "dateLabel": "MAR8",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "65"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "BS Natural Rally blank this row (carried 75 1/2); KP = US 65 + 75 1/2 = 140 1/2",
+     "price": "140 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-03-09",
+   "dateLabel": "9",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "65 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "75 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "141 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-03-16",
+   "dateLabel": "16",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "59 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "69 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "128 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-03-17",
+   "dateLabel": "17",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "56 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "66 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "123 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-03-18",
+   "dateLabel": "SAT.18",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "54 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "65"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "119 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-03-22",
+   "dateLabel": "22",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "53 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "uncertain": true,
+     "note": "integer partly crossed by red gridline; reads 63 3/8, but checksum with US 53 1/2 and written KP 117 7/8 would require 64 3/8",
+     "price": "63 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "checksum discrepancy: US 53 1/2 + BS 63 3/8 = 116 7/8, but KP is clearly written 117 7/8 (1-point off) in the original",
+     "price": "117 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-03-30",
+   "dateLabel": "30",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "US moved to Downward Trend per annotation",
+     "price": "52 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "62"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "US 52 1/8 + BS 62 = 114 1/8",
+     "price": "114 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-03-31",
+   "dateLabel": "31",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "49 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "BS moved to Downward Trend per annotation",
+     "price": "58 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "108 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-04-04",
+   "dateLabel": "4",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "48 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "57 5/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "105 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-04-06",
+   "dateLabel": "6",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "47 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "55 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "102 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-04-08",
+   "dateLabel": "SAT.8",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "44 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "52 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "97 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-04-11",
+   "dateLabel": "11",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "44 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "51 5/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "96"
+    }
+   ]
+  },
+  {
+   "date": "1939-04-15",
+   "dateLabel": "SAT.15",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "50"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "58 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "US and BS moved to Natural Rally per annotation",
+     "price": "108 1/2"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On March 16th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Reaction column. Refer to Explanatory Rule 6-B.",
+   "ruleRefs": [
+    "6-B"
+   ],
+   "dateRefs": [
+    "1939-03-16"
+   ]
+  },
+  {
+   "text": "On March 30th, the price of U. S. Steel was recorded in the Downward Trend column, being a lower than was previously recorded in the Downward Trend column.",
+   "dateRefs": [
+    "1939-03-30"
+   ]
+  },
+  {
+   "text": "On March 31st, the price of Bethlehem Steel was recorded in the Downward Trend column, being a lower price than was previously recorded in the Downward Trend column.",
+   "dateRefs": [
+    "1939-03-31"
+   ]
+  },
+  {
+   "text": "On April 15th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Rally column. Refer to Explanatory Rule 6-C.",
+   "ruleRefs": [
+    "6-C"
+   ],
+   "dateRefs": [
+    "1939-04-15"
+   ]
+  }
+ ],
+ "notes": "Chart title reads \"CHART NINE\" (chart 9 of 16). Year header \"1939\" printed above the DATE label on the right (ledger) page; the facing left page (p.118) carries the printed annotations, the grid is p.119. Column groups left-to-right: U.S. STEEL, BETHLEHEM STEEL, KEY PRICE, each with SR/NR/UT/DT/NRC/SRC. Header carried-forward pivotal points: red Downward-Trend values (US 53 1/4, BS 60 1/4, KP 113 1/2, each black-underlined) sit one grid row above the blue Natural-Rally values (US 64 7/8, BS 75 1/2, KP 140 3/8) that share the \"1939\" line; both checksum (64 7/8+75 1/2=140 3/8; 53 1/4+60 1/4=113 1/2). Every complete dated row checksums (US+BS=KP) EXCEPT MAR22, where US 53 1/2 + BS 63 3/8 = 116 7/8 but KP is written 117 7/8 (genuine 1-point discrepancy; BS integer is partly obscured by a red gridline and could conceivably be 64 3/8, which would reconcile). No Sunday rows. April 7 (Good Friday, market closed) has no row: rows run ...6, SAT.8. All hand-drawn underlines are single and black (MAR9 NR pivots, APR11 DT reaction lows, SAT15 NR rally, and the three header DT values). Ink convention holds: UT would be black, DT red, and the other four columns blue pencil. The MAR30 annotation contains an original typographical omission ('being a lower than' \u2014 the word 'price' is missing, present in the parallel MAR31 sentence); transcribed verbatim.",
+ "knownDivergences": []
+}

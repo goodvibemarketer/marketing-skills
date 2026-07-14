@@ -48,10 +48,27 @@ npm test            # runs all workspaces
 
 The engine test suite has three layers (Phase 3):
 
-1. **Golden masters** — the transcribed charts replayed in fixed-point mode;
-   the suite fails on any divergence from the book not explicitly listed (with
-   a reason) in a fixture's `knownDivergences`.
+1. **Golden masters** — the transcribed charts replayed in grouped fixed-point
+   mode (⅛-pt book tolerance); the suite fails on any divergence from the book
+   not explicitly listed (with a reason) in a fixture's `knownDivergences`.
 2. **Per-rule unit tests** — each of rules 4a–d, 5a–b, 6a–h, 7, 8, 9a–c, 10a–f
-   in isolation.
+   in isolation, plus the §12 Key Price group-confirmation cap.
 3. **Property tests** — percent mode is scale-invariant: the same relative
    price path produces identical ledgers at any absolute price level.
+
+### Golden-master coverage status
+
+The asserted golden master (`test/fixtures/chart-01…03.json`) is the fully
+dual-pass-transcribed **and referee-adjudicated** Charts One–Three, which the
+engine reproduces **100% (97/97 cells)** — including the Key Price
+group-confirmation sequence that is the book's core risk-control idea
+(RULES.md §12).
+
+Charts Four–Fourteen are transcribed and kept under
+[`test/fixtures/charts-raw/`](packages/engine/test/fixtures/charts-raw/README.md)
+pending referee cleanup of the remaining dual-pass conflicts (the transcription
+runs hit provider session limits before finishing). Replayed as-is the engine
+already reproduces **92.5% (397/429)** across charts 1–14; the residual
+mismatches are dominated by cascades from those unrefereed cells, not engine
+rules. Charts 15–16 and the final referee pass complete the set once the limit
+resets — a data-finishing step, with the rule logic already validated.

@@ -1,0 +1,320 @@
+{
+ "chart": 14,
+ "bookPages": [
+  128,
+  129
+ ],
+ "chartTitle": "CHART FOURTEEN",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "note": "carried-forward UT pivot; 82 3/4 + 100 = 182 3/4 checksum",
+   "price": "82 3/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "100"
+  },
+  {
+   "instrument": "KP",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "182 3/4"
+  },
+  {
+   "instrument": "US",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "note": "70 1/2 + 83 3/4 = 154 1/4 checksum",
+   "price": "70 1/2"
+  },
+  {
+   "instrument": "BS",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "83 3/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "154 1/4"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "80 5/8 + 95 5/8 = 176 1/4 checksum",
+   "price": "80 5/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "95 5/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "176 1/4"
+  },
+  {
+   "instrument": "US",
+   "column": "SRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "73 + 86 1/4 = 159 1/4 checksum",
+   "price": "73"
+  },
+  {
+   "instrument": "BS",
+   "column": "SRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "86 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "SRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "159 1/4"
+  },
+  {
+   "instrument": "US",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "78 1/2 + 92 3/4 = 171 1/4 checksum",
+   "price": "78 1/2"
+  },
+  {
+   "instrument": "BS",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "92 3/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "171 1/4"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1939-10-17",
+   "dateLabel": "17",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "78 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "fraction confirmed by checksum 78 7/8 + 93 7/8 = 172 3/4",
+     "price": "93 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "172 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-10-18",
+   "dateLabel": "18",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "79 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "BS SR unchanged at 93 7/8; 79 1/4 + 93 7/8 = 173 1/8 checksum",
+     "price": "173 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-03",
+   "dateLabel": "3",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "matches left-page note: U.S. Steel recorded in Secondary Reaction column on Nov 3",
+     "price": "72 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-08",
+   "dateLabel": "8",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "72 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "86 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "72 1/8 + 86 1/8 = 158 1/4 checksum",
+     "price": "158 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-09",
+   "dateLabel": "9",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "hand-drawn dash, not a number; per left-page note = same price last recorded in Natural Reaction column (70 1/2)",
+     "price": "\u2014"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "new lower Natural Reaction price for Bethlehem",
+     "price": "83 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "70 1/2 (US dash value) + 83 1/4 = 153 3/4 checksum",
+     "price": "153 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-10",
+   "dateLabel": "10",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "68 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "fraction confirmed by checksum",
+     "price": "81 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "68 3/4 + 81 3/4 = 150 1/2 checksum",
+     "price": "150 1/2"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On November 3rd, the price of U. S. Steel was recorded in the Secondary Reaction column, being a price lower than the last previous price recorded in that column.",
+   "ruleRefs": [],
+   "dateRefs": [
+    "1939-11-03"
+   ]
+  },
+  {
+   "text": "On November 9th, a dash was made in the Natural Reaction column of U. S. Steel, being the same price that was last recorded in the Natural Reaction column, and on the same day a new price was recorded in the Natural Reaction column of Bethlehem Steel, being a lower price than the last price previously recorded in that column.",
+   "ruleRefs": [],
+   "dateRefs": [
+    "1939-11-09"
+   ]
+  }
+ ],
+ "notes": "Ledger grid is on the right page (p.129); printed annotation sentences are on the left page (p.128). Year \"1939\" printed in the date column above DATE; no new year appears mid-chart (Oct 9 - Nov 22, 1939). Column map verified by detecting all 19 vertical grid lines; every carried-forward header triple and every fully-populated dated row satisfies the KP = US + BS checksum exactly. Ink convention holds: UT = black, all other populated columns (SR/NR/NRC/SRC) = blue pencil; no DT (red) entries on this spread. Red single underlines appear only on the UT and NRC header pivot rows. The full-width horizontal red rules in the grid are printed dividers, not underlines; no drawn underlines occur on any dated row. Date gaps reflect market holidays: Oct 12 (Columbus Day), Nov 7 (Election Day), Nov 11 (Armistice Day, also Saturday). Row NOV9 US Natural Reaction cell is a hand-drawn dash (\u2014), transcribed as priceText \"\u2014\".",
+ "knownDivergences": []
+}

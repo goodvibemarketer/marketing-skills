@@ -1,0 +1,288 @@
+{
+ "chart": 7,
+ "bookPages": [
+  114,
+  115
+ ],
+ "chartTitle": "CHART SEVEN",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "71 1/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "77 5/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "note": "Checksum: 71 1/4 + 77 5/8 = 148 7/8",
+   "price": "148 7/8"
+  },
+  {
+   "instrument": "US",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "61"
+  },
+  {
+   "instrument": "BS",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "68 3/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "note": "Checksum: 61 + 68 3/4 = 129 3/4",
+   "price": "129 3/4"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1938-12-14",
+   "dateLabel": "14",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "66 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "75 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 66 5/8 + 75 1/4 = 141 7/8",
+     "price": "141 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-12-15",
+   "dateLabel": "15",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "uncertain": true,
+     "note": "Fraction visually 1/8 or 5/8; checksum (67 1/8 + 76 3/8 = 143 1/2) confirms 1/8",
+     "price": "67 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "76 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 67 1/8 + 76 3/8 = 143 1/2",
+     "price": "143 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1938-12-28",
+   "dateLabel": "28",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "67 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "note": "Recorded in Upward Trend in black ink per annotation (higher than prior UT price 77 5/8)",
+     "price": "78"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 67 3/4 + 78 = 145 3/4; KP still in Natural Rally (blue)",
+     "price": "145 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-01-04",
+   "dateLabel": "4",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "70"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "80"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Checksum: 70 + 80 = 150; new UT pivotal point (exceeds 148 7/8), red underline",
+     "price": "150"
+    }
+   ]
+  },
+  {
+   "date": "1939-01-11",
+   "dateLabel": "11",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Same column (Secondary Reaction, col 12) as the Jan 12 BS entry 71 1/2 below it",
+     "price": "73 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-01-12",
+   "dateLabel": "12",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "62 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "71 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 62 5/8 + 71 1/2 = 134 1/8; all three in Secondary Reaction per annotation",
+     "price": "134 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-01-21",
+   "dateLabel": "SAT.21",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "62"
+    },
+    {
+     "instrument": "BS",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "69 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 62 + 69 1/2 = 131 1/2; reaction deepening in Secondary Reaction",
+     "price": "131 1/2"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On December 14th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Rally column. Refer to Explanatory Rule 6-D.",
+   "ruleRefs": [
+    "6-D"
+   ],
+   "dateRefs": [
+    "1938-12-14"
+   ]
+  },
+  {
+   "text": "On December 28th, the price of Bethlehem Steel was recorded in the Upward Trend column in black ink, being a price higher than the last price previously recorded in that column.",
+   "ruleRefs": [],
+   "dateRefs": [
+    "1938-12-28"
+   ]
+  },
+  {
+   "text": "On January 4th, the next trend of the market was being indicated according to the Livermore method. Refer to Explanatory Rules 10-A and B.",
+   "ruleRefs": [
+    "10-A",
+    "10-B"
+   ],
+   "dateRefs": [
+    "1939-01-04"
+   ]
+  },
+  {
+   "text": "On January 12th, prices of U. S. Steel and Bethlehem Steel were recorded in the Secondary Reaction column. Refer to Explanatory Rule 6-H.",
+   "ruleRefs": [
+    "6-H"
+   ],
+   "dateRefs": [
+    "1939-01-12"
+   ]
+  }
+ ],
+ "notes": "Ledger grid is on the RIGHT page (p.115); printed annotations on the LEFT page (p.114). Year header at top-left of the DATE column reads 1938. The year changes to 1939 mid-chart: a small handwritten \"1939\" appears above the \"JAN.3\" row (Jan 2, 1939 was a Monday holiday \u2014 New Year's observed \u2014 so the sequence goes SAT.31 [Dec 31] then JAN.3). Date rows run Dec 9, 1938 through Jan 21, 1939 (trading Mon-Sat; Sundays and the Dec 26 Christmas-observed holiday skipped).\n\nInk conventions hold throughout: UPWARD TREND entries in black ink; the four rally/reaction blue columns (SR, NR, NRC, SRC) in blue pencil; no DOWNWARD TREND (red) entries appear on this spread. All KEY PRICE = U.S. Steel + Bethlehem Steel checksums verified and hold on every row where all three are present (used to disambiguate the Dec 15 US fraction 67 1/8 and KP 143 1/2).\n\nColumn notes: Dec 14/15/28 US, BS, KP entries are in NATURAL RALLY (annotation confirms Dec 14). On Dec 28 BS alone advanced to UPWARD TREND (78, black) while US stayed NR and KP stayed NR (145 3/4, blue, since 145 3/4 < the 148 7/8 UT pivot). On Jan 4 BS 80 and KP 150 are UPWARD TREND (black) with red single underlines (150 exceeds the 148 7/8 pivot); US 70 remained NATURAL RALLY (blue, no underline). The Jan 11 BS 73 3/4 and Jan 12 US 62 5/8 / BS 71 1/2 / KP 134 1/8, and the Jan 21 US 62 / BS 69 1/2 / KP 131 1/2, are all in the SECONDARY REACTION (rightmost) column of each group \u2014 confirmed by grid-column measurement and the Jan 12 annotation.\n\nAll six carried-forward header pivotal points (US/BS/KP Upward-Trend and Natural-Reaction values) carry single red underlines.",
+ "knownDivergences": []
+}

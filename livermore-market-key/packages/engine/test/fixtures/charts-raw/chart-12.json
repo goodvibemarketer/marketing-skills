@@ -1,0 +1,573 @@
+{
+ "chart": 12,
+ "bookPages": [
+  124,
+  125
+ ],
+ "chartTitle": "CHART TWELVE",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "note": "Carried-forward pivotal point, top sub-row. US 43 1/4 + BS 51 5/8 = KP 94 7/8 checksum OK.",
+   "price": "43 1/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "51 5/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "94 7/8"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "note": "Second sub-row. US 50 7/8 + BS 60 = KP 110 7/8 checksum OK.",
+   "price": "50 7/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "60"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "110 7/8"
+  },
+  {
+   "instrument": "US",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "Third sub-row. US 43 5/8 (NRC) + BS 50 1/4 (DT) = KP 93 7/8 (DT).",
+   "price": "43 5/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "50 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "93 7/8"
+  },
+  {
+   "instrument": "US",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "On the printed '1939' label row. US 48 1/4 + BS 57 1/4 = KP 105 1/2 checksum OK.",
+   "price": "48 1/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "57 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "105 1/2"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1939-07-17",
+   "dateLabel": "17",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "50 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "60 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "50 3/4 + 60 3/8 = 111 1/8 checksum OK.",
+     "price": "111 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-07-18",
+   "dateLabel": "18",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "51 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "62"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "51 7/8 + 62 = 113 7/8 checksum OK; superscript numerator confirmed 7/8 via checksum.",
+     "price": "113 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-07-21",
+   "dateLabel": "21",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "52 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "BS recorded in Upward Trend per annotation.",
+     "price": "63"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "52 1/2 + 63 = 115 1/2 checksum OK.",
+     "price": "115 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-07-22",
+   "dateLabel": "SAT.22",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "US recorded in Upward Trend per annotation.",
+     "price": "54 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "65"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "54 1/8 + 65 = 119 1/8 checksum OK.",
+     "price": "119 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-07-25",
+   "dateLabel": "25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "55 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "price": "65 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "55 1/8 + 65 3/4 = 120 7/8 checksum OK. All three UT tops carry a red drawn underline (upward pivotal point).",
+     "price": "120 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-08-04",
+   "dateLabel": "4",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "US and BS recorded in Natural Reaction per annotation.",
+     "price": "49 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "59 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "49 1/2 + 59 1/2 = 109 checksum OK.",
+     "price": "109"
+    }
+   ]
+  },
+  {
+   "date": "1939-08-07",
+   "dateLabel": "7",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "49 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "49 1/4 + BS 59 1/2 (unchanged) = 108 3/4 checksum OK.",
+     "price": "108 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-08-09",
+   "dateLabel": "9",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "59"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "US 49 1/4 (unchanged) + 59 = 108 1/4 checksum OK.",
+     "price": "108 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-08-10",
+   "dateLabel": "10",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "47 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "58"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "47 3/4 + 58 = 105 3/4 checksum OK.",
+     "price": "105 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-08-11",
+   "dateLabel": "11",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "47"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "47 + BS 58 (unchanged) = 105 checksum OK.",
+     "price": "105"
+    }
+   ]
+  },
+  {
+   "date": "1939-08-17",
+   "dateLabel": "17",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "46 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "46 1/2 + BS 58 (unchanged) = 104 1/2 checksum OK.",
+     "price": "104 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-08-18",
+   "dateLabel": "18",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "45"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "Fraction is 1/8, not 5/8 (verified on zoom).",
+     "price": "55 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "45 + 55 1/8 = 100 1/8 checksum OK.",
+     "price": "100 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-08-21",
+   "dateLabel": "21",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "43 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "53 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "43 3/8 + 53 3/8 = 96 3/4 checksum OK.",
+     "price": "96 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-08-23",
+   "dateLabel": "23",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "US moved to Downward Trend per annotation (new DT low).",
+     "price": "42 5/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "note": "US 42 5/8 + BS 53 3/8 (still NRC) = 96. KP still recorded in Natural Reaction column, blue.",
+     "price": "96"
+    }
+   ]
+  },
+  {
+   "date": "1939-08-24",
+   "dateLabel": "24",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "41 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "BS now in Downward Trend (red). Drawn underline reads fainter/lighter than the US and KP underlines but is neutral in hue (not red), best read as black.",
+     "price": "51 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "41 5/8 + 51 7/8 = 93 1/2 checksum OK. Last recorded values on the chart; all three DT bottoms underlined in black (carry forward to next chart).",
+     "price": "93 1/2"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On July 21st, the price of Bethlehem Steel was recorded in the Upward Trend column, and the next day, July 22nd, the price of U. S. Steel was recorded in the Upward Trend column. Refer to Explanatory Rule 5-A.",
+   "ruleRefs": [
+    "5-A"
+   ],
+   "dateRefs": [
+    "1939-07-21",
+    "1939-07-22"
+   ]
+  },
+  {
+   "text": "On August 4th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Reaction column. Refer to Explanatory Rule 4-A.",
+   "ruleRefs": [
+    "4-A"
+   ],
+   "dateRefs": [
+    "1939-08-04"
+   ]
+  },
+  {
+   "text": "On August 23rd, the price of U. S. Steel was recorded in the Downward Trend column, being lower than the price previously recorded in the Downward Trend column.",
+   "ruleRefs": [],
+   "dateRefs": [
+    "1939-08-23"
+   ]
+  }
+ ],
+ "notes": "Ledger grid is on the RIGHT page (p.125); printed annotations are on the LEFT page (p.124). Running heads \"HOW TO TRADE IN STOCKS\" / \"CHART TWELVE\" and page numbers 124/125 are not transcribed as annotations. Group labels printed on the DATE row: U. S. STEEL, BETHLEHEM STEEL, KEY PRICE.\n\nYear: 1939 (printed above DATE). Chart runs SAT JULY 15 through Aug 25; July 15 1939 confirmed a Saturday. Month rolls from July to August mid-chart (no year change). Trading days Mon-Sat; no Sunday rows.\n\nThe first dated row, \"SAT JULY15\", has no handwritten entries, so it is omitted (only rows with at least one entry are included). Other blank rows (19, 20, 24-Jul, 26-28, SAT29, 31, AUG.1-3, SAT5, 8, SAT12, 14-16, SAT19, 22-Aug, 25-Aug) also omitted.\n\nInk convention holds throughout: UT columns black, DT columns red, all rally/reaction columns (SR/NR/NRC/SRC) blue pencil. Every row where US, BS and KP all appear satisfies KP = US + BS.\n\nUnderline findings (verified by pixel sampling on the source scans):\n- Header carried-forward pivotal points: heavy BLACK single underlines (sampled RGB neutral, R-B ~= -1 to -7).\n- July 25 upward-trend tops (55 1/8 / 65 3/4 / 120 7/8): RED single underlines (R-B ~= 32-38).\n- Aug 24 downward-trend bottoms (41 5/8 / 51 7/8 / 93 1/2): BLACK single underlines. US and KP are clearly black/dark (R-B ~= 2); BS 51 7/8 underline is fainter (brighter, R-B ~= 8, near neutral) \u2014 read as black to match rowmates and the carry-forward convention, but with lower confidence on color.\n\nCorrections made against the low-zoom overview during detailed review: July 21 US = 52 1/2 and KP = 115 1/2 (not 115 1/8); July 18 KP = 113 7/8 (not 113 3/8); Aug 18 BS = 55 1/8 and KP = 100 1/8 (not 5/8). Several auxiliary crop files in the scratchpad (z_bs_bot.png, RB_BS.png, RB_KP.png, crop_kp_bot.png) actually belong to a DIFFERENT/later chart and were disregarded; only c-70-prefixed crops and self-made crops of c-70-RB/RT were trusted.",
+ "knownDivergences": []
+}

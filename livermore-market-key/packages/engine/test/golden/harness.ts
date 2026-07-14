@@ -76,6 +76,19 @@ export const BOOK_KP: EngineConfig = {
   confirmation: { value: 6, unit: 'absolute' },
 };
 
+/**
+ * Livermore occasionally draws a dash (—) instead of a number when a column is
+ * marked but no new extreme was made that day. Such cells carry no numeric
+ * value: they are neither fed to the engine as a bar nor asserted against.
+ */
+export function priceOrNull(text: string): number | null {
+  try {
+    return parsePrice(text);
+  } catch {
+    return null;
+  }
+}
+
 export function loadFixtures(dir: string): ChartFixture[] {
   const files = readdirSync(dir)
     .filter((f) => /^chart-\d+\.json$/.test(f))
@@ -219,8 +232,9 @@ export function replayCharts(fixtures: ChartFixture[], opts: ReplayOptions = {})
     const kpCells = byInstrument.get('KP');
     let up = false;
     let down = false;
-    if (kpCells && kpCells.length > 0) {
-      const price = parsePrice(kpCells[0]!.price);
+    const kpPrice = kpCells && kpCells.length > 0 ? priceOrNull(kpCells[0]!.price) : null;
+    if (kpPrice !== null) {
+      const price = kpPrice;
       const bar: Bar = { date: row.date, open: price, high: price, low: price, close: price };
       const r = step(states.KP, bar, kpCfg);
       states.KP = r.state;
@@ -244,7 +258,8 @@ export function replayCharts(fixtures: ChartFixture[], opts: ReplayOptions = {})
     for (const inst of ['US', 'BS'] as const) {
       const cells = byInstrument.get(inst);
       if (!cells || cells.length === 0) continue;
-      const price = parsePrice(cells[0]!.price);
+      const price = priceOrNull(cells[0]!.price);
+      if (price === null) continue;
       const bar: Bar = { date: row.date, open: price, high: price, low: price, close: price };
       const r = step(states[inst], bar, stockCfg, hints);
       states[inst] = r.state;
@@ -255,6 +270,7 @@ export function replayCharts(fixtures: ChartFixture[], opts: ReplayOptions = {})
     // Diff: every fixture cell should have a matching RECORD event.
     for (const [inst, cells] of byInstrument) {
       for (const cell of cells) {
+        if (priceOrNull(cell.price) === null) continue; // dash / no-numeral cell: no assertion
         totalEntries += 1;
         const recs = (dayEvents[inst] ?? []).filter(
           (e): e is Extract<EngineEvent, { type: 'RECORD' }> => e.type === 'RECORD',

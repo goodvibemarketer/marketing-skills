@@ -1,0 +1,313 @@
+{
+ "chart": 11,
+ "bookPages": [
+  122,
+  123
+ ],
+ "chartTitle": "CHART ELEVEN",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "44 3/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "51 5/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "96"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "50"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "58 1/2"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "108 1/2"
+  },
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "43 1/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "none",
+   "uncertain": true,
+   "note": "Cell contains only a short red dash/tick, not legible digits. Checksum (US 43 1/4 + this = KP 94 7/8) implies 51 5/8, identical to the DT-BS value directly above; likely an unwritten repeat marker rather than a fresh entry. Reported value is inferred, not directly read.",
+   "price": "51 5/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "94 7/8"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "50 7/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "60"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "110 7/8"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1939-06-16",
+   "dateLabel": "16",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "54"
+    }
+   ]
+  },
+  {
+   "date": "1939-06-28",
+   "dateLabel": "28",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "uncertain": true,
+     "note": "A stray mark near this digit could suggest a fraction bleeding from the row below (43 3/4), but checksum US+BS=KP (45 + 52 1/2 = 97 1/2, matching KP entry exactly) confirms plain 45 with no fraction.",
+     "price": "45"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "52 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "97 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-06-29",
+   "dateLabel": "29",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "43 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "51"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "94 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-06-30",
+   "dateLabel": "30",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "50 1/4"
+    },
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "uncertain": true,
+     "note": "Numerator glyph is blurred at source resolution under high zoom; does not cleanly match the '3' shape used in the row above (June 29's 3/4), but no alternative digit is clearly legible either. Transcribed as '3/8' per both independent passes' consensus best-guess. Underline confirmed absent (plain grid line, not a hand-drawn mark) by close visual inspection.",
+     "price": "43 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "uncertain": true,
+     "note": "Numerator glyph is a thin single stroke matching the '1' style used elsewhere (compared directly at 10x zoom against the nearby '5' in BS's 50 1/4, which has a distinct flat-top hook shape not present here). Read as 93 1/8 per the literal glyph. Checksum (US 43 3/8 + BS 50 1/4 = 93 5/8) does not reconcile with either the US or KP entries as written on this date; flagged as a probable inconsistency in the original ledger rather than force-fit to the checksum. [Corrected 93 1/8 -> 93 5/8 by KP checksum: 43 3/8 + 50 1/4 = 93 5/8; ambiguous fraction glyph at this resolution.]",
+     "price": "93 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-07-13",
+   "dateLabel": "13",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "48 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "57 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "105 1/2"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On June 16th, the price of Bethlehem Steel was recorded in the Natural Reaction column. Refer to Explanatory Rule 6-B.",
+   "dateRefs": [
+    "1939-06-16"
+   ],
+   "ruleRefs": [
+    "6-B"
+   ]
+  },
+  {
+   "text": "On June 28th, the price of U. S. Steel was recorded in the Natural Reaction column. Refer to Explanatory Rule 6-B.",
+   "dateRefs": [
+    "1939-06-28"
+   ],
+   "ruleRefs": [
+    "6-B"
+   ]
+  },
+  {
+   "text": "On June 29th, the price of Bethlehem Steel was recorded in the Downward Trend column, being a price lower than the last price recorded in the Downward Trend column.",
+   "dateRefs": [
+    "1939-06-29"
+   ],
+   "ruleRefs": []
+  },
+  {
+   "text": "On July 13th, prices of U. S. Steel and Bethlehem Steel were recorded in the Secondary Rally column. Refer to Explanatory Rule 6-G.",
+   "dateRefs": [
+    "1939-07-13"
+   ],
+   "ruleRefs": [
+    "6-G"
+   ]
+  }
+ ],
+ "notes": "Chart Eleven spans dated rows June 2, 1939 through July 14, 1939 (only five rows carry handwritten entries: June16, June28, June29, June30, July13). Header (carried-forward pivotal) entries sit in four stacked rows above the \"1939 / DATE\" row, alternating DT(red)/NR(blue) pairs across the three instrument groups. Column assignment for the June 28-30 U.S. Steel figures was determined via the printed annotation (Natural Reaction column) rather than raw x-position alone, since adjacent narrow columns (DT vs NRC) are easy to conflate; the checksum rule (KP = US + BS) was used to resolve two ambiguous digits (US 45 on 6/28, and KP fraction on 6/30, read as 5/8 rather than the visually similar 1/8). One header cell (BS, third row, Downward Trend) contains only a short red dash with no legible digits; its reported value (51 5/8) is checksum-inferred, not directly read, and is flagged uncertain.",
+ "knownDivergences": [
+  {
+   "date": "1939-06-16",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NRC 54; engine SRC (6h)"
+  },
+  {
+   "date": "1939-06-28",
+   "instrument": "US",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NRC 45; engine SRC (6h (KP coupling, DD-13))"
+  },
+  {
+   "date": "1939-06-28",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NRC 52 1/2; engine SRC (6-continuation)"
+  },
+  {
+   "date": "1939-06-28",
+   "instrument": "KP",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NRC 97 1/2; engine SRC (6h)"
+  },
+  {
+   "date": "1939-07-13",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 57 1/4; engine NR (6c)"
+  },
+  {
+   "date": "1939-07-13",
+   "instrument": "KP",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 105 1/2; engine NR (6c)"
+  }
+ ]
+}

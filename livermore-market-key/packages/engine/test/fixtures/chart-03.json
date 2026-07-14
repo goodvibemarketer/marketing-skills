@@ -8,73 +8,69 @@
  "headerEntries": [
   {
    "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "49"
+  },
+  {
+   "instrument": "US",
    "column": "DT",
    "ink": "red",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "black",
-   "note": "topmost header line; red figure with heavy double black underline",
    "price": "38"
   },
   {
    "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "Under-zoom shows two separated parallel black strokes = double.",
+   "price": "52"
+  },
+  {
+   "instrument": "BS",
    "column": "DT",
    "ink": "red",
    "underline": "double",
    "underlineColor": "black",
-   "note": "topmost header line",
    "price": "40"
   },
   {
    "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "101"
+  },
+  {
+   "instrument": "KP",
    "column": "DT",
    "ink": "red",
    "underline": "double",
    "underlineColor": "black",
-   "note": "topmost header line",
+   "note": "Under-zoom shows two stacked parallel black lines = double.",
    "price": "78"
-  },
-  {
-   "instrument": "US",
-   "column": "NR",
-   "ink": "blue",
-   "underline": "double",
-   "underlineColor": "black",
-   "note": "second header line",
-   "price": "49"
-  },
-  {
-   "instrument": "BS",
-   "column": "NR",
-   "ink": "blue",
-   "underline": "double",
-   "underlineColor": "black",
-   "note": "second header line",
-   "price": "52"
-  },
-  {
-   "instrument": "KP",
-   "column": "NR",
-   "ink": "blue",
-   "underline": "double",
-   "underlineColor": "black",
-   "note": "second header line",
-   "price": "101"
   },
   {
    "instrument": "US",
    "column": "NRC",
    "ink": "blue",
    "underline": "none",
-   "note": "third header line; 39 1/4 + 39 3/4 = 79 matches KP NRC header",
+   "underlineColor": "none",
    "price": "39 1/4"
   },
   {
    "instrument": "BS",
    "column": "DT",
    "ink": "red",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "black",
-   "note": "third header line; second entry in BS Downward Trend column, below the 40",
+   "note": "Written in red directly under the DT '40' (x-position and ink both indicate Downward Trend). Underline is a single heavy stroke (not double) confirmed against the adjacent '40' double in the same column. Value checksum: US 39 1/4 + BS 39 3/4 = KP 79.",
    "price": "39 3/4"
   },
   {
@@ -82,7 +78,7 @@
    "column": "NRC",
    "ink": "blue",
    "underline": "none",
-   "note": "third header line",
+   "underlineColor": "none",
    "price": "79"
   },
   {
@@ -90,7 +86,8 @@
    "column": "SR",
    "ink": "blue",
    "underline": "none",
-   "note": "fourth header line, level with the handwritten year 1938; aligns with the BS Secondary Rally entries of June 20-22 below it",
+   "underlineColor": "none",
+   "note": "Lone carried-forward figure on the '1938' label row, above the first dated (JUNE 17) row, in the Bethlehem Secondary Rally column.",
    "price": "46 1/2"
   }
  ],
@@ -307,7 +304,6 @@
      "column": "UT",
      "ink": "black",
      "underline": "none",
-     "note": "the full-width red grid line runs just below this figure; it is not a drawn underline",
      "price": "120"
     }
    ]
@@ -328,7 +324,7 @@
      "column": "UT",
      "ink": "black",
      "underline": "none",
-     "note": "no BS entry this day; 59 + prior BS 61 5/8 = 120 5/8",
+     "note": "Bethlehem cell blank this row; KP = US 59 + last BS 61 5/8 = 120 5/8.",
      "price": "120 5/8"
     }
    ]
@@ -350,6 +346,7 @@
      "ink": "black",
      "underline": "single",
      "underlineColor": "red",
+     "note": "Red drawn underline marks Bethlehem's up-leg pivotal top.",
      "price": "62 1/2"
     },
     {
@@ -371,6 +368,7 @@
      "ink": "black",
      "underline": "single",
      "underlineColor": "red",
+     "note": "Red drawn underline marks US up-leg pivotal top.",
      "price": "61 3/4"
     },
     {
@@ -379,7 +377,7 @@
      "ink": "black",
      "underline": "single",
      "underlineColor": "red",
-     "note": "no BS entry this day; 61 3/4 + 62 1/2 = 124 1/4",
+     "note": "Bethlehem blank; KP = US 61 3/4 + last BS 62 1/2 = 124 1/4. Red underline marks KP pivotal top.",
      "price": "124 1/4"
     }
    ]
@@ -401,6 +399,7 @@
      "ink": "blue",
      "underline": "single",
      "underlineColor": "red",
+     "note": "Red underline marks Bethlehem's natural-reaction low pivot.",
      "price": "56 3/4"
     },
     {
@@ -422,6 +421,7 @@
      "ink": "blue",
      "underline": "single",
      "underlineColor": "red",
+     "note": "Red underline marks US natural-reaction low pivot.",
      "price": "55 1/2"
     },
     {
@@ -430,7 +430,7 @@
      "ink": "blue",
      "underline": "single",
      "underlineColor": "red",
-     "note": "no BS entry this day; 55 1/2 + 56 3/4 = 112 1/4",
+     "note": "Bethlehem blank; KP = US 55 1/2 + last BS 56 3/4 = 112 1/4. Red underline marks KP reaction low pivot.",
      "price": "112 1/4"
     }
    ]
@@ -452,6 +452,7 @@
      "ink": "black",
      "underline": "single",
      "underlineColor": "red",
+     "note": "Red underline marks Bethlehem's pivotal top (BS records no higher price afterward on this chart).",
      "price": "63 1/8"
     },
     {
@@ -473,6 +474,7 @@
      "ink": "black",
      "underline": "single",
      "underlineColor": "red",
+     "note": "Red underline marks US pivotal top.",
      "price": "63 1/4"
     },
     {
@@ -481,7 +483,7 @@
      "ink": "black",
      "underline": "single",
      "underlineColor": "red",
-     "note": "no BS entry this day; 63 1/4 + prior BS 63 1/8 = 126 3/8",
+     "note": "Bethlehem blank; KP = US 63 1/4 + last BS 63 1/8 = 126 3/8. Red underline marks KP pivotal top.",
      "price": "126 3/8"
     }
    ]
@@ -526,6 +528,6 @@
    ]
   }
  ],
- "notes": "Spread: annotations on left page (p. 106, headed HOW TO TRADE IN STOCKS), ledger grid on right page (p. 107, headed CHART THREE with Livermore Market-Key crest). Year header \"1938\" appears once above DATE; no new year appears mid-chart. Date rows run JUNE17 through 29 (July 29); rows JUNE17, SAT.18, 27, 28, 5, 6, 8, SAT.9, 13, 14, 15, SAT16, 18, 20, 21, 22, SAT23, 26, 27, 28, 29 have no handwritten entries and are omitted. July 4 (Monday, holiday) has no row - the sequence jumps from SAT.2 to 5. KP = US + BS checksum verified and consistent on every row where all three instruments have entries (June 20, 21, 22, 23, 24, 25, 29, 30, July 2, 11, 19); on single/double-entry days (July 1, 7, 12, 25) KP equals the new US price plus the prior BS price, also consistent. Header carried-forward entries occupy four lines above the DATE row: line 1 = DT pivots 38/40/78 (red, double black underline); line 2 = NR pivots 49/52/101 (blue, double black underline); line 3 = 39 1/4 (US NRC), 39 3/4 (BS DT, red, double underlined), 79 (KP NRC), where 39 1/4 + 39 3/4 = 79; line 4 = 46 1/2 in BS SR (blue). All drawn underlines within the dated rows are single red lines hugging the number width, marking the extreme price before a column change (BS topped July 2 at 62 1/2 and again July 19 at 63 1/8; US/KP topped July 7 at 61 3/4 / 124 1/4 and July 25 at 63 1/4 / 126 3/8; reaction lows underlined July 11 for BS 56 3/4 and July 12 for US 55 1/2 / KP 112 1/4). Ink colors matched expected column coding throughout (UT black, DT red, others blue pencil); no contradictions found, no illegible cells.",
+ "notes": "Chart 3 of 16. Ledger grid on the right page (p.107); the four printed annotations are on the left page (p.106). yearHeader \"1938\" prints just above the DATE label.\n\nChecksums (KP = US + BS) verified on every row where all three are present: 45 3/8+48 1/4=93 5/8; 46 1/2+49 7/8=96 3/8; 48 1/2+50 7/8=99 3/8; 51 1/4+53 1/4=104 1/2; 53 3/4+55 1/8=108 7/8; 54 7/8+58 1/8=113; 56 7/8+60 1/8=117; 58 3/8+61 5/8=120; 60 7/8+62 1/2=123 3/8; 55 5/8+56 3/4=112 3/8. On rows where BS is blank (JULY1, 7, 12, 25) KP still equals US + last recorded BS. These checksums also confirmed several fraction reads, notably BS \"49 7/8\" on the 21st (46 1/2+49 7/8=96 3/8, ruling out 49 1/8).\n\nInk convention holds throughout: Upward Trend = black, Downward Trend = red, and Secondary Rally / Natural Rally / Natural Reaction = blue (pencil).\n\nTwo distinct underline systems: (1) HEADER carried-forward pivots are underlined in BLACK \u2014 38 single, 40 double, 78 double (Downward Trend reds); 49 single, 52 double, 101 single (Natural Rally blues); 39 3/4 single. (2) IN-CHART pivotal points carry short, drawn, number-width RED single underlines marking up-leg tops (BS 62 1/2 on 7/2, US 61 3/4 & KP 124 1/4 on 7/7, BS 63 1/8 on 7/19, US 63 1/4 & KP 126 3/8 on 7/25) and natural-reaction lows (BS 56 3/4 on 7/11, US 55 1/2 & KP 112 1/4 on 7/12). These red marks are clearly distinct from the printed thin blue/red full-width grid rules.\n\nAnomaly flagged in headerEntries: the natural-reaction trio checksums to 79 (US 39 1/4 + BS 39 3/4 = KP 79), and US (39 1/4) and KP (79) sit in the Natural Reaction column in blue, but BS's 39 3/4 is written in RED directly below 40 in the Downward Trend column. Transcribed as DT because both x-position and ink agree; noted because the checksum shows it functions as the Bethlehem natural-reaction value.",
  "knownDivergences": []
 }

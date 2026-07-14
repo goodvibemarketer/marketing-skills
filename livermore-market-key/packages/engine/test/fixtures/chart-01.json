@@ -12,7 +12,6 @@
    "ink": "blue",
    "underline": "single",
    "underlineColor": "black",
-   "note": "Top carried-forward row. Numerator is Livermore's flat-top 3; checksum 65 3/4 + 57 = 122 3/4 confirms 3/4.",
    "price": "65 3/4"
   },
   {
@@ -43,9 +42,9 @@
    "instrument": "BS",
    "column": "NRC",
    "ink": "blue",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "red",
-   "note": "Two clearly separate hand-drawn red lines under the digits.",
+   "note": "Single heavy red underline (~11px), same weight as confirmed single-red underlines; no gap or second stroke on pixel profiling. passA's double is a misread.",
    "price": "43 1/4"
   },
   {
@@ -54,7 +53,7 @@
    "ink": "red",
    "underline": "single",
    "underlineColor": "black",
-   "note": "Very heavy black bar; possibly double-stroked but reads as one thick line, same weight as the 48 1/2 underline. Checksum 48 1/2 + 43 1/4 = 91 3/4.",
+   "note": "Heavy black bar; checksum 48 1/2 + 43 1/4 = 91 3/4.",
    "price": "91 3/4"
   },
   {
@@ -87,15 +86,16 @@
    "column": "DT",
    "ink": "red",
    "underline": "none",
+   "underlineColor": "none",
    "price": "48 1/4"
   },
   {
    "instrument": "BS",
    "column": "NRC",
    "ink": "blue",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "red",
-   "note": "Two clearly separate hand-drawn red lines under the digits.",
+   "note": "Single heavy red underline (~10px); pixel profile shows one continuous stroke, no gap. passA's double is a misread.",
    "price": "50 1/8"
   },
   {
@@ -103,6 +103,7 @@
    "column": "NRC",
    "ink": "blue",
    "underline": "none",
+   "underlineColor": "none",
    "note": "Checksum 48 1/4 + 50 1/8 = 98 3/8.",
    "price": "98 3/8"
   },
@@ -111,7 +112,8 @@
    "column": "NR",
    "ink": "blue",
    "underline": "none",
-   "note": "Written on the row bearing the 1938 year label, still above the first dated row.",
+   "underlineColor": "none",
+   "note": "On the 1938 year-label row, above the first dated row; no US/KP companions.",
    "price": "56 7/8"
   }
  ],

@@ -253,5 +253,24 @@
   }
  ],
  "notes": "Chart Four (book pages 108-109). Ledger grid is on the RIGHT page (p.109); printed explanatory sentences on the LEFT page (p.108). Year header \"1938\"; all dated rows fall in August 1938, no mid-chart year change. Three instrument groups US STEEL / BETHLEHEM STEEL / KEY PRICE, each with 6 columns (SR,NR,UT,DT,NRC,SRC).\n\nHeader (carried-forward pivotal points) sit in three vertical tiers above the DATE row: tier 1 UPWARD-TREND (61 3/4 / 62 1/2 / 124 1/4), tier 2 NATURAL-REACTION offset lower (55 1/2 / 56 3/4 / 112 1/4), tier 3 UPWARD-TREND (63 1/4 / 63 1/8 / 126 3/8). All nine carry single red underlines.\n\nAll rows checksum KP = US + BS: 61 3/4+62 1/2=124 1/4; 55 1/2+56 3/4=112 1/4; 63 1/4+63 1/8=126 3/8; Aug12 56 5/8+54 7/8=111 1/2; Aug13 56 1/2+54 5/8=111 1/8; Aug24 61 5/8+61 3/8=123; Aug26 61 7/8+61 1/2=123 3/8; Aug29 56 1/8+55=111 1/8.\n\nAll dated-row entries are blue (pencil) \u2014 they fall only in the four blue columns (NR, NRC, SRC); no UT (black) or DT (red) entries appear on any dated row of this chart. Red underlines on Aug 13 mark the new natural-reaction lows for BS (54 5/8) and KP (111 1/8); US (56 1/2) is in Secondary Reaction and is not underlined. Natural Rally rows (Aug 24/26) carry no underlines. Rows Jul30-Aug11, Aug15-23, Aug25, Aug27, Aug30-Sept10 are empty. The Aug 29 Key Price cell holds a dash rather than a numeral (see cell note).",
- "knownDivergences": []
+ "knownDivergences": [
+  {
+   "date": "1938-08-12",
+   "instrument": "US",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SRC 56 5/8; engine NRC (6a)"
+  },
+  {
+   "date": "1938-08-13",
+   "instrument": "US",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SRC 56 1/2; engine NRC (6-continuation)"
+  },
+  {
+   "date": "1938-08-29",
+   "instrument": "US",
+   "kind": "book-extra-entry",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SRC 56 1/8; engine records nothing"
+  }
+ ]
 }

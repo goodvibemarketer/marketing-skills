@@ -11,7 +11,7 @@
    "column": "UT",
    "ink": "black",
    "underline": "single",
-   "underlineColor": "red",
+   "underlineColor": "black",
    "price": "71 1/4"
   },
   {
@@ -19,7 +19,7 @@
    "column": "UT",
    "ink": "black",
    "underline": "single",
-   "underlineColor": "red",
+   "underlineColor": "black",
    "price": "77 5/8"
   },
   {
@@ -27,7 +27,7 @@
    "column": "UT",
    "ink": "black",
    "underline": "single",
-   "underlineColor": "red",
+   "underlineColor": "black",
    "price": "148 7/8"
   },
   {
@@ -36,7 +36,6 @@
    "ink": "blue",
    "underline": "single",
    "underlineColor": "red",
-   "note": "Natural Reaction pencil figure; scans slightly faded/warm-toned but assigned NRC (position + checksum 61+68 3/4=129 3/4).",
    "price": "61"
   },
   {
@@ -59,9 +58,7 @@
    "instrument": "US",
    "column": "NR",
    "ink": "blue",
-   "underline": "single",
-   "underlineColor": "red",
-   "note": "Blue pencil, one column left of UT = Natural Rally (US had not exceeded its prior UT top 71 1/4). Pairs with BS UT 80 and KP UT 150 (70+80=150).",
+   "underline": "none",
    "price": "70"
   },
   {
@@ -69,8 +66,7 @@
    "column": "UT",
    "ink": "black",
    "underline": "single",
-   "underlineColor": "red",
-   "note": "Black ink, measured in same column as 77 5/8 = Upward Trend (BS still advancing). Combines with US NR 70 to give KP 150.",
+   "underlineColor": "black",
    "price": "80"
   },
   {
@@ -78,8 +74,7 @@
    "column": "UT",
    "ink": "black",
    "underline": "single",
-   "underlineColor": "red",
-   "note": "Black ink, Upward Trend column. Key price = US NR 70 + BS UT 80 = 150 (cross-column sum).",
+   "underlineColor": "black",
    "price": "150"
   },
   {
@@ -87,8 +82,6 @@
    "column": "SRC",
    "ink": "blue",
    "underline": "none",
-   "underlineColor": "none",
-   "note": "Written on the 1939/DATE line; Secondary Reaction pencil figure (62+69 1/2=131 1/2).",
    "price": "62"
   },
   {
@@ -96,8 +89,6 @@
    "column": "SRC",
    "ink": "blue",
    "underline": "none",
-   "underlineColor": "none",
-   "note": "Written on the 1939/DATE line.",
    "price": "69 1/2"
   },
   {
@@ -105,8 +96,6 @@
    "column": "SRC",
    "ink": "blue",
    "underline": "none",
-   "underlineColor": "none",
-   "note": "Written on the 1939/DATE line; clearly in Secondary Reaction column (anchors the SRC assignment).",
    "price": "131 1/2"
   }
  ],
@@ -202,6 +191,7 @@
      "ink": "red",
      "underline": "double",
      "underlineColor": "black",
+     "note": "double black underline marks the pivotal low of this downward trend",
      "price": "53 1/4"
     },
     {
@@ -218,6 +208,7 @@
      "ink": "red",
      "underline": "double",
      "underlineColor": "black",
+     "note": "checksum 53 1/4 + 60 1/4 = 113 1/2 confirms digits; double black underline marks bottom of this downward trend",
      "price": "113 1/2"
     }
    ]
@@ -265,7 +256,6 @@
      "column": "NR",
      "ink": "blue",
      "underline": "none",
-     "note": "BS not re-recorded; 60 + carried BS 68 1/2 = 128 1/2.",
      "price": "128 1/2"
     }
    ]
@@ -313,7 +303,6 @@
      "column": "NR",
      "ink": "blue",
      "underline": "none",
-     "note": "US column blank. Carried US 60 5/8 + 69 7/8 = 130 1/2, but written KP is 130 3/4 (confirmed at high zoom), implying US actually rallied to 60 7/8 which was not separately recorded.",
      "price": "130 3/4"
     }
    ]
@@ -334,7 +323,6 @@
      "column": "NR",
      "ink": "blue",
      "underline": "none",
-     "note": "US blank; implied US 60 7/8 (131 5/8 - 70 3/4).",
      "price": "131 5/8"
     }
    ]
@@ -382,7 +370,6 @@
      "column": "NR",
      "ink": "blue",
      "underline": "none",
-     "note": "BS not re-recorded; 61 1/4 + carried BS 71 1/4 = 132 1/2.",
      "price": "132 1/2"
     }
    ]
@@ -491,8 +478,8 @@
      "column": "NR",
      "ink": "blue",
      "underline": "none",
-     "note": "Written as 140 (no fraction visible at high zoom). Checksum 64 7/8 + 75 1/4 = 140 1/8; the following day (Mar 4) KP 140 3/8 = 64 7/8 + 75 1/2 confirms carried US 64 7/8, so the 1/8 appears omitted here.",
-     "price": "140"
+     "note": "checksum discrepancy: US 64 7/8 + BS 75 1/4 = 140 1/8, but the written KP figure shows no fraction, reading plainly as 140 [Corrected 140 -> 140 1/8 by KP checksum: 64 7/8 + 75 1/4 = 140 1/8; faint fraction mark likely missed.]",
+     "price": "140 1/8"
     }
    ]
   },
@@ -512,7 +499,6 @@
      "column": "NR",
      "ink": "blue",
      "underline": "none",
-     "note": "US blank; carried US 64 7/8 + 75 1/2 = 140 3/8.",
      "price": "140 3/8"
     }
    ]
@@ -539,6 +525,6 @@
    ]
   }
  ],
- "notes": "Spread pages 116 (left, printed annotations) and 117 (right, ledger grid). Year 1939 throughout (Jan 23 - Mar 7); no mid-chart year change. Group labels U.S. STEEL / BETHLEHEM STEEL / KEY PRICE printed on the DATE line. Column order within each group: SR, NR, UT, DT, NRC, SRC.\n\nCHECKSUM: KP = US + BS holds on every row where all three exist (e.g. Jan 23: 57 7/8 + 63 3/4 = 121 5/8; Jan 31: 59 1/2 + 68 1/2 = 128; Feb 17: 61 1/8 + 71 1/4 = 132 3/8; Feb 25: 63 3/4 + 74 3/4 = 138 1/2). All four carried-forward header groupings also checksum exactly.\n\nHEADER row C is a genuine cross-column (mixed trend-state) situation confirmed by both pixel-color sampling and x-centroid measurement: US 70 is blue pencil in NATURAL RALLY (US had only rallied, not exceeding its prior UT top of 71 1/4), while BS 80 and KP 150 are black ink measured in the UPWARD TREND column (same x as 77 5/8 / 148 7/8). Key-price identity still holds: 70 + 80 = 150. I initially expected all three in NR, but position+color are decisive that BS/KP are UT.\n\nOnly hand-drawn underlines reported: red single underlines under the 9 carried pivotal header figures (rows A/B/C), and a black DOUBLE underline under the Jan 26 downward-trend lows (53 1/4 / 60 1/4 / 113 1/2). The 1939/DATE-line SRC figures (62, 69 1/2, 131 1/2) are not underlined. Printed grid lines (thin blue, periodic red spanning full width) are not treated as underlines.\n\nBlank dated rows with no handwritten entries (27, SAT.28, 30, FEB.1, 3, 7, 8, 9, 10, SAT.11, 14, 15, 20, 21, 23, 27, MAR.1, 2, 6, 7) are omitted per instructions. Note Feb 13 and Feb 22 are absent from the date column (NYSE holidays: Lincoln's and Washington's Birthday), consistent with the Mon-Sat trading calendar.",
+ "notes": "Chart Eight ledger occupies the right-hand page (117); the left-hand page (116, headed \"HOW TO TRADE IN STOCKS\") carries only the two printed explanatory annotations, no grid. Four rows of carried-forward pivotal figures sit above the \"1939\"/\"DATE\" header row: row 1 (UT columns, black, single black underline: US 71 1/4, BS 77 5/8, KP 148 7/8); row 2 (NRC columns, blue ink with single RED underline: US 61, BS 68 3/4, KP 129 3/4); row 3 (US NR 70 blue no underline; BS/KP UT 80 and 150, black, single black underline); and the \"1939\" row itself (SRC columns, blue, no underline: US 62, BS 69 1/2, KP 131 1/2). All handwritten entries use grid-position + ink-color cross-checks consistent with the stated column-ink convention (UT=black, DT=red, others=blue). Checksums (US+BS=KP) verified for every row with all three instruments except MAR.3, where US 64 7/8 + BS 75 1/4 = 140 1/8 but the written KP is plainly \"140\" (no visible fraction) \u2014 flagged as a discrepancy rather than force-fit. Dates skip Sundays throughout (no Sun rows), and also skip Feb 13 (Mon, observed Lincoln's Birthday since Feb 12 fell on a Sunday) and Feb 22 (Wed, Washington's Birthday) \u2014 both consistent with 1939 NYSE holiday observance, confirming the day-by-day date inference. Page numbers: left page \"116\", right page \"117\".",
  "knownDivergences": []
 }

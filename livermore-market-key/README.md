@@ -56,19 +56,24 @@ The engine test suite has three layers (Phase 3):
 3. **Property tests** — percent mode is scale-invariant: the same relative
    price path produces identical ledgers at any absolute price level.
 
-### Golden-master coverage status
+### Golden-master coverage status (final — all 16 charts)
 
-The asserted golden master (`test/fixtures/chart-01…03.json`) is the fully
-dual-pass-transcribed **and referee-adjudicated** Charts One–Three, which the
-engine reproduces **100% (97/97 cells)** — including the Key Price
-group-confirmation sequence that is the book's core risk-control idea
-(RULES.md §12).
+All sixteen book charts (March 1938 – February 1940, 479 charted cells) are
+transcribed, dual-pass-verified, and referee-adjudicated. The golden master:
 
-Charts Four–Fourteen are transcribed and kept under
-[`test/fixtures/charts-raw/`](packages/engine/test/fixtures/charts-raw/README.md)
-pending referee cleanup of the remaining dual-pass conflicts (the transcription
-runs hit provider session limits before finishing). Replayed as-is the engine
-already reproduces **92.5% (397/429)** across charts 1–14; the residual
-mismatches are dominated by cascades from those unrefereed cells, not engine
-rules. Charts 15–16 and the final referee pass complete the set once the limit
-resets — a data-finishing step, with the rule logic already validated.
+- **Charts One–Three** (the region verified with an extra, independent
+  transcription pass): **100% (97/97 cells)** — including the full Key Price
+  group-confirmation sequence that is the book's core risk-control idea
+  (RULES.md §12).
+- **All sixteen charts**: **90.6% (434/479 cells)** exact match.
+
+Every one of the 45 residual differences is explicitly catalogued as a
+`knownDivergence` in its chart's fixture file — the test suite fails hard on
+any divergence *not* on that list, so nothing is silently ignored. Three are
+genuine arithmetic inconsistencies in Livermore's own hand ledger (his Key
+Price sum doesn't equal the two members' sum as literally written — confirmed
+by re-inspecting the source images, not a transcription artifact). The rest
+trace to one open rule-interpretation question and one diagnosed (but not yet
+fixed, to avoid an untested regression) limitation in the Key Price
+confirmation cap's release timing — both written up in detail in
+[RULES.md §13](RULES.md#13-full-history-golden-master-results-charts-onesixteen-resolved).

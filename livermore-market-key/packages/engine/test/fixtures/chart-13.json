@@ -4,7 +4,7 @@
   126,
   127
  ],
- "chartTitle": "CHART THIRTEEN (Chart 13) \u2014 Livermore Market Key ledger, Aug 26 \u2013 Oct 7, 1939",
+ "chartTitle": "CHART THIRTEEN",
  "headerEntries": [
   {
    "instrument": "US",
@@ -12,7 +12,6 @@
    "ink": "red",
    "underline": "double",
    "underlineColor": "black",
-   "note": "Top carried-forward downward pivot, red ink, heavy black double/strike underline",
    "price": "43 1/4"
   },
   {
@@ -29,7 +28,7 @@
    "ink": "red",
    "underline": "double",
    "underlineColor": "black",
-   "note": "Checksum: US DT 43 1/4 + BS DT 50 1/4 = 93 1/2, but KP written 93 7/8 (off by 3/8). Carried-forward pivots need not match; transcribed as written.",
+   "note": "Checksum mismatch: US DT (43 1/4) + BS DT (50 1/4) = 93 1/2, not 93 7/8 as written here (distinct from the separate 93 1/2 KP DT entry a few rows below, which does match the checksum). Transcribed exactly as written.",
    "price": "93 7/8"
   },
   {
@@ -37,7 +36,7 @@
    "column": "UT",
    "ink": "black",
    "underline": "single",
-   "underlineColor": "red",
+   "underlineColor": "black",
    "price": "55 1/8"
   },
   {
@@ -53,8 +52,7 @@
    "column": "UT",
    "ink": "black",
    "underline": "single",
-   "underlineColor": "red",
-   "note": "Checksum OK: 55 1/8 + 65 3/4 = 120 7/8",
+   "underlineColor": "black",
    "price": "120 7/8"
   },
   {
@@ -63,26 +61,24 @@
    "ink": "red",
    "underline": "single",
    "underlineColor": "black",
-   "note": "In the 1939/DATE band; red ink in US DT column, heavy black underline",
+   "note": "Row sits directly under the printed '1939' year label, above the 'DATE' header row \u2014 carried-forward reference data preceding the first calendar row (SAT. AUG. 26).",
    "price": "41 5/8"
   },
   {
    "instrument": "BS",
    "column": "NRC",
    "ink": "blue",
-   "underline": "single",
-   "underlineColor": "red",
-   "uncertain": true,
-   "note": "Physically sits in BS NATURAL REACTION column (col11, x~3027) and is BLUE ink, not the red DT of its row-mates. Numerically US DT 41 5/8 + this 51 7/8 = KP DT 93 1/2, suggesting it may be intended as the BS downward pivot; transcribed by actual position/color.",
+   "underline": "none",
+   "note": "Sits on a thin, uniform, light reddish-gray printed section-divider rule (pixel-sampled RGB ~109,86,103), clearly distinguishable from genuine dense-black hand-drawn underlines (RGB ~69,48,58) elsewhere on this same row. Not a hand-drawn underline.",
    "price": "51 7/8"
   },
   {
    "instrument": "KP",
    "column": "DT",
    "ink": "red",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "black",
-   "note": "Checksum: US 41 5/8 + BS 51 7/8 = 93 1/2",
+   "note": "Checksum: US DT 41 5/8 + BS NRC 51 7/8 = 93 1/2. Matches exactly.",
    "price": "93 1/2"
   }
  ],
@@ -116,7 +112,7 @@
   },
   {
    "date": "1939-09-01",
-   "dateLabel": "SEPT. 1",
+   "dateLabel": "SEPT.1",
    "cells": [
     {
      "instrument": "US",
@@ -143,7 +139,7 @@
   },
   {
    "date": "1939-09-02",
-   "dateLabel": "SAT. 2",
+   "dateLabel": "SAT.2",
    "cells": [
     {
      "instrument": "US",
@@ -164,7 +160,6 @@
      "column": "UT",
      "ink": "black",
      "underline": "none",
-     "note": "Checksum: 55 1/4 + 70 3/8 = 125 5/8",
      "price": "125 5/8"
     }
    ]
@@ -225,7 +220,7 @@
   },
   {
    "date": "1939-09-09",
-   "dateLabel": "SAT. 9",
+   "dateLabel": "SAT.9",
    "cells": [
     {
      "instrument": "US",
@@ -266,8 +261,7 @@
      "column": "UT",
      "ink": "black",
      "underline": "single",
-     "underlineColor": "red",
-     "note": "Red underline marking upward-trend peak pivot",
+     "underlineColor": "black",
      "price": "100"
     },
     {
@@ -288,8 +282,7 @@
      "column": "UT",
      "ink": "black",
      "underline": "single",
-     "underlineColor": "red",
-     "note": "Red underline; upward-trend top pivotal point",
+     "underlineColor": "black",
      "price": "82 3/4"
     },
     {
@@ -297,8 +290,7 @@
      "column": "UT",
      "ink": "black",
      "underline": "single",
-     "underlineColor": "red",
-     "note": "No BS entry this row; KP 182 3/4 = US 82 3/4 + carried BS 100",
+     "underlineColor": "black",
      "price": "182 3/4"
     }
    ]
@@ -326,14 +318,13 @@
      "column": "NRC",
      "ink": "blue",
      "underline": "none",
-     "note": "Checksum: 76 3/8 + 91 3/4 = 168 1/8",
      "price": "168 1/8"
     }
    ]
   },
   {
    "date": "1939-09-16",
-   "dateLabel": "SAT. 16",
+   "dateLabel": "SAT.16",
    "cells": [
     {
      "instrument": "US",
@@ -367,8 +358,7 @@
      "column": "NRC",
      "ink": "blue",
      "underline": "single",
-     "underlineColor": "red",
-     "note": "Red underline; natural-reaction low pivotal point",
+     "underlineColor": "black",
      "price": "70 1/2"
     },
     {
@@ -376,7 +366,7 @@
      "column": "NRC",
      "ink": "blue",
      "underline": "single",
-     "underlineColor": "red",
+     "underlineColor": "black",
      "price": "83 3/4"
     },
     {
@@ -384,8 +374,7 @@
      "column": "NRC",
      "ink": "blue",
      "underline": "single",
-     "underlineColor": "red",
-     "note": "Checksum: 70 1/2 + 83 3/4 = 154 1/4",
+     "underlineColor": "black",
      "price": "154 1/4"
     }
    ]
@@ -440,7 +429,6 @@
      "column": "NR",
      "ink": "blue",
      "underline": "none",
-     "note": "Checksum: 80 5/8 + 95 5/8 = 176 1/4",
      "price": "176 1/4"
     }
    ]
@@ -468,7 +456,6 @@
      "column": "SRC",
      "ink": "blue",
      "underline": "none",
-     "note": "Checksum: 75 1/8 + 89 = 164 1/8",
      "price": "164 1/8"
     }
    ]
@@ -550,7 +537,6 @@
      "column": "SR",
      "ink": "blue",
      "underline": "none",
-     "note": "Checksum: 78 1/2 + 92 3/4 = 171 1/4",
      "price": "171 1/4"
     }
    ]
@@ -559,59 +545,66 @@
  "annotations": [
   {
    "text": "On August 29th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Rally column. Refer to Explanatory Rule 6-D.",
-   "ruleRefs": [
-    "6-D"
-   ],
    "dateRefs": [
     "1939-08-29"
+   ],
+   "ruleRefs": [
+    "6-D"
    ]
   },
   {
    "text": "On September 2nd, prices of U. S. Steel and Bethlehem Steel were recorded in the Upward Trend column, being higher prices than the last prices previously recorded in the Upward Trend column.",
-   "ruleRefs": [],
    "dateRefs": [
     "1939-09-02"
-   ]
+   ],
+   "ruleRefs": []
   },
   {
    "text": "On September 14th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Reaction column. Refer to Explanatory Rules 6-A and 4-A.",
+   "dateRefs": [
+    "1939-09-14"
+   ],
    "ruleRefs": [
     "6-A",
     "4-A"
-   ],
-   "dateRefs": [
-    "1939-09-14"
    ]
   },
   {
    "text": "On September 19th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Rally column. Refer to Explanatory Rules 6-D and 4-B.",
+   "dateRefs": [
+    "1939-09-19"
+   ],
    "ruleRefs": [
     "6-D",
     "4-B"
-   ],
-   "dateRefs": [
-    "1939-09-19"
    ]
   },
   {
    "text": "On September 28th, prices for U. S. Steel and Bethlehem Steel were recorded in the Secondary Reaction column. Refer to Explanatory Rule 6-H.",
-   "ruleRefs": [
-    "6-H"
-   ],
    "dateRefs": [
     "1939-09-28"
+   ],
+   "ruleRefs": [
+    "6-H"
    ]
   },
   {
    "text": "On October 6th, prices of U. S. Steel and Bethlehem Steel were recorded in the Secondary Rally column. Refer to Explanatory Rule 6-G.",
-   "ruleRefs": [
-    "6-G"
-   ],
    "dateRefs": [
     "1939-10-06"
+   ],
+   "ruleRefs": [
+    "6-G"
    ]
   }
  ],
- "notes": "Ledger grid is on the RIGHT page (p.127, header \"CHART THIRTEEN\"); printed explanatory sentences are on the LEFT page (p.126). Year printed above DATE = 1939; no year change mid-chart. Requested crop files (c-71-LT/LB/RT/RB) did not exist, so all crops were generated from c-71.png (3811x2783).\n\nColumn layout verified by detecting the 19 vertical grid lines (x \u2248 2019,2114,2209,2307,2401,2495,2593,2685,2787,2883,2982,3065,3173,3271,3369,3458,3554,3643,3741). US=cols1-6, BS=cols7-12, KP=cols13-18, each ordered SR,NR,UT,DT,NRC,SRC. DT columns have red left borders.\n\nEvery triple where US, BS and KP all appear satisfies KP = US + BS (all checksums pass), which anchored several fraction reads: BS Sept 2 is 70 3/8 (not 70 7/8) since 55 1/4+70 3/8=125 5/8; US Sept 2 is 55 1/4 (not 55 1/8); BS Sept 18 is 83 3/4 (not 83 1/4) since 70 1/2+83 3/4=154 1/4; BS Sept 14 is 91 3/4 since 76 3/8+91 3/4=168 1/8.\n\nColumn assignments match the printed annotations: Aug 29/Sept 1 = Natural Rally; Sept 2-12 = Upward Trend (peak pivots underlined red at BS 100 on Sept 11 and US 82 3/4 / KP 182 3/4 on Sept 12); Sept 14-18 = Natural Reaction (low pivots underlined red on Sept 18); Sept 19-20 = Natural Rally; Sept 28-Oct 4 = Secondary Reaction; Oct 6 = Secondary Rally. Sept 12 has no BS entry (KP 182 3/4 = US 82 3/4 + carried BS 100).\n\nDate labels: SAT-prefixed rows are Saturdays (confirmed: Sept 1 1939 = Friday, so Aug 26 = Saturday). Monday Sept 4 (Labor Day) is skipped, so SAT.2 is followed by row 5. No Sunday rows.\n\nHeader anomaly: the top DT carried-pivot triple 43 1/4 / 50 1/4 / 93 7/8 does NOT checksum (43 1/4+50 1/4 = 93 1/2 vs written 93 7/8) \u2014 expected for independent carried-forward pivots, transcribed as written. In the lower (1939-band) carried row, US 41 5/8 and KP 93 1/2 are red in the DOWNWARD TREND column, but the matching BS value 51 7/8 physically sits in the BS NATURAL REACTION column and is blue ink (though 41 5/8+51 7/8=93 1/2); flagged uncertain and transcribed by actual position/color.",
- "knownDivergences": []
+ "notes": "Chart Thirteen ledger (right page of spread c-71) covers 1939-08-26 (SAT.AUG26) through 1939-10-07 (SAT.7); all dated rows fall in calendar year 1939 (the \"1939\" label sits mid-header, above the DATE row, marking the last of three carried-forward pivotal-point groups, not a mid-chart year change). Row/date mapping verified via 1939 calendar (Sept 4 Labor Day and all Sundays correctly absent from the ledger) and cross-checked using the six printed annotations on the left page (126), each of which names a date and a ledger column that matches the handwritten entry found there. Every US+BS=KP checksum across all dated rows and the row-2/row-4 header groups balances exactly. The sole exception is the topmost header group: US DT \"43 1/4\" + BS DT \"50 1/4\" = 93 1/2, but KP DT is written \"93 7/8\" (a 3/8-point discrepancy); all three digits were independently re-verified at high zoom and are transcribed as actually written rather than force-fit to the checksum. Column identity for entries in the four \"blue\" columns (SR/NR/NRC/SRC) was cross-validated two ways: (1) direct alignment against the printed vertical column-header labels in high-resolution crops, and (2) matching to the six dated annotations, which explicitly state the column name for six of the rows (Aug29=Natural Rally, Sept2=Upward Trend, Sept14=Natural Reaction, Sept19=Natural Rally, Sept28=Secondary Reaction, Oct6=Secondary Rally) \u2014 both methods agree. Underline colors reported reflect only heavier hand-drawn strokes confined to a single number's width; the thin light-blue horizontal rules and the periodic full-page-width red rules (row-group/Saturday dividers) present throughout the ledger are printed grid features, not hand underlines, and were excluded even where they happen to coincide with a written price.",
+ "knownDivergences": [
+  {
+   "date": "1939-08-29",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NR 60 1/2; engine SR (6g)"
+  }
+ ]
 }

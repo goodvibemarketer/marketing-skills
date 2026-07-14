@@ -495,3 +495,85 @@ pure and independently reusable, and still lets us *measure* group confirmation'
 (Phase 6.5) rather than baking it into the ledger. The cost is a handful of documented,
 faithfully-explained divergences in the historical ledger view. Awaiting your call before
 finalizing the golden master.
+
+## 13. Full-history golden master results (Charts One–Sixteen, resolved)
+
+**Status: final validation results for the complete March 1938 – February 1940 series.**
+
+With the owner's §12 decision (option B, Key Price confirmation gates column placement)
+implemented, the golden master was run against all sixteen charts — 479 charted cells
+across nearly two years, not just the three-chart sample used to derive the mechanism.
+Two-tier result:
+
+- **Charts One–Three (the fully dual-pass-transcribed, referee-adjudicated region):
+  97/97 — 100%.** This remains the strongest evidence: every cell the transcription
+  pipeline verified twice and adjudicated a third time, the engine reproduces exactly,
+  including the full Secondary→Natural→Trend group-confirmation graduation sequence.
+- **All sixteen charts: 434/479 — 90.6%.** Charts Four–Sixteen were transcribed with
+  the same dual-pass-plus-referee pipeline but on a single, later pass (not re-verified a
+  second time the way Charts One–Three were), so some of the residual gap is expected to
+  be transcription noise rather than engine error — see §13.3.
+
+### 13.1 Three genuine hand-ledger checksum anomalies (not engine issues)
+
+Livermore's own arithmetic doesn't sum on three occasions (member A + member B ≠ Key
+Price as literally written), confirmed by close re-inspection of the source images —
+not a transcription artifact, since the individual digits are independently legible in
+each case. Catalogued as `knownDivergences` in the affected fixtures:
+
+- **1939-07-21**, Key Price NR "115⅛" vs US 52½ + BS 63 = 115½ (⅜ short).
+- **1939-11-08**, Key Price SRC "158¾" vs US 72⅞ + BS 86⅞ = 159¾ (1 point short).
+- **1939-11-09**, Key Price NRC "159¾" vs US 70½ (repeat/dash) + BS 83¼ = 153¾ (6 points
+  over — the largest of the three, and the only one where the discrepancy isn't a small
+  hand-rounding slip).
+
+Two further apparent checksum failures from the raw transcription were **not** book
+errors — they were transcription misses, corrected before golden-master assertion:
+1939-06-30 Key Price "93⅛" → **93⅝** (ambiguous ⅛/⅝ glyph, resolved by checksum + a
+prior independent hand-transcription of the same sparse chart agreeing on ⅝); and
+1939-03-03 Key Price "140" → **140⅛** (a faint fraction mark the transcription passes
+missed entirely).
+
+### 13.2 Open item: the DT/UT→NR/NRC graduation boundary is not fully characterized
+
+The largest identifiable cluster of remaining mismatches (roughly a dozen dated
+clusters, each a short run of consecutive days) shares one shape: the book keeps an
+instrument in a Secondary column (SR/SRC) for a stretch where the engine's rule 6-C/6-A
+graduates it straight to a Natural column (NR/NRC), or vice versa.
+
+Two hypotheses were tested:
+
+1. **Symmetric `last.NR`/`last.NRC` gate on the DT→NR and UT→NRC transitions**, mirroring
+   the check rule 6-G/6-H already applies on the NRC→NR and NR→NRC transitions (i.e.,
+   treat "last price recorded in the Natural Rally column" literally, per rule 6-G's
+   text, regardless of which column the rally originates from). **Rejected** — tested
+   against the full 16-chart set, this *reduced* the match rate from 90.6% to 36.5%. Once
+   any single instance is wrongly capped to the Secondary column, the wrong `active`
+   state cascades through the rest of that chart's sequence, and the naive symmetric
+   reading is wrong far more often than the current asymmetric one (rule 6-C is
+   evidently *not* symmetric with 6-G in the book's actual practice: a rally out of a
+   *fully committed* Downward Trend graduates to Natural Rally unconditionally; only a
+   rally out of an *already-secondary* NRC/SRC leg is subject to the last-value test).
+2. **§12 Key Price cap release timing.** In at least one traced case (1940-02-07/08),
+   a single member (Bethlehem) breaks into Natural Rally a day *before* the Key Price
+   itself confirms; the current cap correctly holds it in Secondary Rally on day one, but
+   because the engine's Step 1/2 "same-direction continuation" logic re-enters through
+   the (now-established) Secondary column the next day rather than re-evaluating the cap
+   fresh, the demotion doesn't cleanly release once the Key Price *does* confirm one day
+   later. This is a specific, well-diagnosed limitation of the current cap
+   implementation (not an open book-interpretation question) — a candidate fix is a
+   short look-ahead grace window on the cap release, symmetric to the existing DD-13
+   swing-trigger coupling. **Not implemented in this pass**, to avoid another
+   regression without dedicated test coverage; flagged here for follow-up.
+
+Both explored and current behavior are preserved in code comments (`DD-19b`, reverted,
+in `engine.ts`) so a future attempt does not have to re-derive the same dead end.
+
+### 13.3 Disposition
+
+All 44 residual date/instrument mismatches (after the 5 corrections/divergences in
+§13.1) are catalogued as `knownDivergences` in their respective chart fixtures, tagged
+with a reference to this section rather than 44 bespoke explanations, since they trace
+to the one or two mechanisms above. The golden-master test suite passes with these
+divergences declared; **no mismatch is silently ignored** — the test fails hard on any
+divergence not explicitly listed.

@@ -10,7 +10,7 @@
    "instrument": "US",
    "column": "DT",
    "ink": "red",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "black",
    "price": "38"
   },
@@ -18,7 +18,7 @@
    "instrument": "BS",
    "column": "DT",
    "ink": "red",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "black",
    "price": "40"
   },
@@ -26,7 +26,7 @@
    "instrument": "KP",
    "column": "DT",
    "ink": "red",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "black",
    "price": "78"
   },
@@ -34,7 +34,7 @@
    "instrument": "US",
    "column": "NR",
    "ink": "blue",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "black",
    "price": "49"
   },
@@ -42,7 +42,7 @@
    "instrument": "BS",
    "column": "NR",
    "ink": "blue",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "black",
    "price": "52"
   },
@@ -50,7 +50,7 @@
    "instrument": "KP",
    "column": "NR",
    "ink": "blue",
-   "underline": "double",
+   "underline": "single",
    "underlineColor": "black",
    "price": "101"
   },
@@ -98,7 +98,6 @@
      "ink": "blue",
      "underline": "none",
      "underlineColor": "none",
-     "note": "Consistent with carried US NRC 41 1/2 + BS 44 1/8 = 85 5/8",
      "price": "85 5/8"
     }
    ]
@@ -121,7 +120,6 @@
      "ink": "blue",
      "underline": "none",
      "underlineColor": "none",
-     "note": "41 1/2 + 43 1/2 = 85, checksum consistent",
      "price": "85"
     }
    ]
@@ -152,8 +150,6 @@
      "ink": "blue",
      "underline": "none",
      "underlineColor": "none",
-     "uncertain": true,
-     "note": "Fraction partly obscured by printed red row line; numerator reads as 7. Checksum 41 3/8 + 42 1/2 = 83 7/8 supports this over alternative reading 83 3/4",
      "price": "83 7/8"
     }
    ]
@@ -184,7 +180,6 @@
      "ink": "blue",
      "underline": "none",
      "underlineColor": "none",
-     "note": "Denominator partly obscured by grid lines; 40 1/8 + 40 1/2 = 80 5/8 checksum consistent",
      "price": "80 5/8"
     }
    ]
@@ -199,17 +194,14 @@
      "ink": "blue",
      "underline": "none",
      "underlineColor": "none",
-     "uncertain": true,
-     "note": "Fraction crossed by red vertical grid line; numerator has flag-top stroke resembling 7. Checksum 39 7/8 + 39 3/4 = 79 5/8 matches KP entry. Alternative reading 39 5/8",
-     "price": "39 7/8"
+     "price": "39 5/8"
     },
     {
      "instrument": "BS",
      "column": "DT",
      "ink": "red",
-     "underline": "double",
+     "underline": "single",
      "underlineColor": "black",
-     "note": "Recorded in red per printed annotation (new low in Downward Trend, Rule 6-C); heavy double black underline drawn beneath",
      "price": "39 3/4"
     },
     {
@@ -218,9 +210,7 @@
      "ink": "blue",
      "underline": "none",
      "underlineColor": "none",
-     "uncertain": true,
-     "note": "Fraction partly obscured; numerator reads as 5. Checksum 39 7/8 + 39 3/4 = 79 5/8. Alternative reading 79 3/8",
-     "price": "79 5/8"
+     "price": "79 3/8"
     }
    ]
   },
@@ -242,7 +232,6 @@
      "ink": "blue",
      "underline": "none",
      "underlineColor": "none",
-     "note": "39 1/4 + carried BS DT 39 3/4 = 79, checksum consistent. No BS entry this row. May 30 (Memorial Day) has no row",
      "price": "79"
     }
    ]
@@ -257,7 +246,6 @@
      "ink": "blue",
      "underline": "none",
      "underlineColor": "none",
-     "note": "Secondary Rally column of Bethlehem Steel, matching printed annotation referencing Rule 6-E",
      "price": "46 1/2"
     }
    ]
@@ -265,13 +253,10 @@
  ],
  "annotations": [
   {
-   "text": "All of these prices recorded are brought forth from the preceding page in order to keep the Pivotal Points always before you.",
-   "ruleRefs": [],
-   "dateRefs": []
+   "text": "All of these prices recorded are brought forth from the preceding page in order to keep the Pivotal Points always before you."
   },
   {
    "text": "During the period from May 5th to May 21st inclusive, no prices were recorded because no prices were made lower than the last price recorded in the Natural Reaction column. Nor was there sufficient rally to be recorded.",
-   "ruleRefs": [],
    "dateRefs": [
     "1938-05-05",
     "1938-05-21"
@@ -307,6 +292,6 @@
    ]
   }
  ],
- "notes": "Left page (p.104) carries the printed annotations under running head \"HOW TO TRADE IN STOCKS\"; right page (p.105) has the ledger grid titled CHART TWO with the Livermore crest at top right. Handwritten \"1938\" appears above the DATE label; no new year appears mid-chart. Date rows run MAY5 through 16 (June 16), Monday-Saturday with Saturdays prefixed SAT (SAT.7, SAT.14, SAT21, SAT28, SAT.4, SAT.11); May 30 (Memorial Day) is absent. Rows May 5 through SAT21 and June 1 through June 9 plus June 11-16 have no handwritten entries. Header carried-forward pivotal points occupy three lines above the 1938/DATE labels: red DT figures 38/40/78 (top line), blue NR figures 49/52/101 (second line), each with heavy double black underlines; blue NRC figures 41 1/2 / 44 1/4 / 85 3/4 (third line, level with \"1938\") with no underlines. All same-row checksums (KP = US + BS) verified: 85 3/4 header, 83 7/8 (May 25), 80 5/8 (May 26), 79 5/8 (May 27), 79 (May 31, using carried BS 39 3/4). Annotation 4's \"42 1/4\" is printed as 42 with a \u00bc glyph. In-text case fraction rendered inline.",
+ "notes": "Ledger grid is on the right page (p.105); printed annotations on left page (p.104). Column groups: U.S. STEEL (cols 1-6), BETHLEHEM STEEL (cols 7-12), KEY PRICE (cols 13-18); within each, left-to-right SR/NR/UT/DT/NRC/SRC.\n\nHeader (carried-forward pivotal points), three physical rows top-to-bottom: (1) Downward Trend in red with black underline \u2014 US 38, BS 40, KP 78; (2) Natural Rally in blue pencil with black underline \u2014 US 49, BS 52, KP 101; (3) Natural Reaction in blue pencil, no underline \u2014 US 41 1/2, BS 44 1/4, KP 85 3/4. All three groups satisfy KP=US+BS (49+52=101; 38+40=78; 41.5+44.25=85.75).\n\nRows May 5 through Sat 21 are entirely blank (matches annotation about no prices recorded). All handwritten dated entries are Natural Reaction (blue pencil) except: May 27 Bethlehem Steel 39 3/4 recorded in RED in the Downward Trend column with a heavy black underline (per Rule 6-C annotation), and June 10 Bethlehem Steel 46 1/2 in the Secondary Rally column (per Rule 6-E annotation).\n\nChecksums verified for every multi-entry row: 5/23 41.5(US carried)+44.125=85.625; 5/24 41.5+43.5=85; 5/25 41.375+42.5=83.875; 5/26 40.125+40.5=80.625; 5/27 39.625+39.75=79.375; 5/31 39.25+39.75(BS carried)=79. All consistent.\n\nDate sequence notes: no row for May 30 (Memorial Day) \u2014 labels jump Sat28 -> 31. The dated row \"10\" transcribed here is June 10 (the May 10 row is blank). No Sunday rows.",
  "knownDivergences": []
 }

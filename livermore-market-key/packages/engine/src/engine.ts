@@ -220,6 +220,8 @@ export function step(
           let dest: Column;
           let rule: string;
           if (active === 'UT') {
+            // Mirror of the DT branch above — DD-19b reverted here too, same
+            // reason (see the comment on the DT branch).
             if (s.last.DT !== null && lt(bar.low, s.last.DT)) {
               dest = 'DT';
               rule = `6e${couplingTag}`;
@@ -251,11 +253,12 @@ export function step(
             }
           }
           // Underlines / pivotal points for the column being left (rules 4a, 4d).
-          // Rule 4d fires only when the reaction begins recording in the Natural
-          // Reaction OR Downward Trend column — NOT when it routes to a Secondary
-          // Reaction. The book chart confirms this: Bethlehem's NR 56 7/8 carries
-          // NO underline because its reaction went straight to SRC (1938-03-23).
-          // A reaction out of UT always routes to NRC/DT, so 4a always fires.
+          // Rule 4a fires unconditionally on leaving UT (a reaction out of UT
+          // always routes to NRC/DT, never SRC). Rule 4d fires only when the
+          // reaction begins recording in the Natural Reaction OR Downward
+          // Trend column — NOT when it routes to a Secondary Reaction. The
+          // book chart confirms this: Bethlehem's NR 56 7/8 carries NO
+          // underline because its reaction went straight to SRC (1938-03-23).
           if (active === 'UT') {
             underline('UT', 'red', '4a');
             s.upPhase = 'firstCounter';
@@ -297,6 +300,16 @@ export function step(
             // Rally (or straight to UT if it clears the last UT figure). The
             // Key Price confirmation cap below then demotes it to Secondary
             // Rally when the Key Price has not yet confirmed the change (§12).
+            //
+            // DD-19b (explored, reverted): checking last.NR here too (mirroring
+            // the NRC branch) was tested against the full 16-chart golden master
+            // and caused a severe regression (92.6% -> 36.5%) — once any single
+            // instance is wrongly capped to SR, the wrong active-column state
+            // cascades through the rest of that chart's sequence. The book's
+            // rule 6-C is evidently NOT symmetric with 6-G/6-H in this respect:
+            // a rally out of an established Downward Trend graduates to Natural
+            // Rally unconditionally; only a rally out of NRC/SRC (i.e. one that
+            // never fully committed to DT) is subject to the last.NR test.
             if (s.last.UT !== null && gt(bar.high, s.last.UT)) {
               dest = 'UT';
               rule = `6f${couplingTag}`;

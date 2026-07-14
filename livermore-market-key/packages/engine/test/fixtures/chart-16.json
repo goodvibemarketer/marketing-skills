@@ -1,0 +1,416 @@
+{
+ "chart": 16,
+ "bookPages": [
+  132,
+  133
+ ],
+ "chartTitle": "CHART SIXTEEN",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "none",
+   "price": "63 5/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "none",
+   "price": "77"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "none",
+   "price": "140 5/8"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "price": "69 3/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "price": "84 7/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "price": "154 5/8"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1940-01-09",
+   "dateLabel": "9",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "64 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "78 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "142 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1940-01-10",
+   "dateLabel": "10",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "63 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "142 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1940-01-11",
+   "dateLabel": "11",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "62"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "76 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "138 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1940-01-12",
+   "dateLabel": "12",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "60 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "74 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "134 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1940-01-13",
+   "dateLabel": "SAT13",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "59 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "73 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "133 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1940-01-15",
+   "dateLabel": "15",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "57 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "72"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "129 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1940-01-18",
+   "dateLabel": "18",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "56 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "71 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "128 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1940-01-19",
+   "dateLabel": "19",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "71"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "127 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1940-01-22",
+   "dateLabel": "22",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "55 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "70 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "126"
+    }
+   ]
+  },
+  {
+   "date": "1940-02-07",
+   "dateLabel": "7",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "76 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1940-02-08",
+   "dateLabel": "8",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "61"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "78"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "139"
+    }
+   ]
+  },
+  {
+   "date": "1940-02-09",
+   "dateLabel": "9",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "61 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "79 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "141 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1940-02-16",
+   "dateLabel": "16",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "56 1/8"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On January 9th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Reaction column. Refer to Explanatory Rule 6-B.",
+   "ruleRefs": [
+    "6-B"
+   ],
+   "dateRefs": [
+    "1940-01-09"
+   ]
+  },
+  {
+   "text": "On January 11th, prices of U. S. Steel and Bethlehem Steel were recorded in the Downward Trend column, being prices lower than the last recorded prices in the Downward Trend columns.",
+   "ruleRefs": [],
+   "dateRefs": [
+    "1940-01-11"
+   ]
+  },
+  {
+   "text": "On February 7th, prices are recorded in the Natural Rally column of Bethlehem Steel, this being the first day it rallied the required distance of six points. The following day U. S. Steel is recorded in addition to Bethlehem Steel and the Key Price, the latter having rallied the proper distance to be used in recording.",
+   "ruleRefs": [],
+   "dateRefs": [
+    "1940-02-07",
+    "1940-02-08"
+   ]
+  }
+ ],
+ "notes": "Source images: only the overview c-74.png existed on disk (no pre-made LT/LB/RT/RB crops for this chart); I generated my own high-resolution crops from c-74.png (right ledger page) via PIL to read fine details and check for underlines. No hand-drawn underlines were found anywhere on this spread (dated rows or header pivotal entries) - only the printed grid's thin blue lines and periodic heavier red lines (week-boundary rules) are present, none of which qualify as a drawn underline. All US+BS=KP checksums verified exactly for rows where all three instruments have entries (rows 9(Jan, partial-row10 has no BS), 11, 12, SAT13, 15, 18, 22, Feb 8, Feb 9). Row 19 (Jan) and Feb 7 have only partial entries (BS+KP only, or BS only respectively), consistent with only some instruments reaching the threshold that day; Feb 16 has a lone US Natural Reaction entry. Date-label gap between SAT.10 (Feb 10) and \"13\" (Feb 13) skips Feb 12 (Monday) entirely with no blank row printed - most likely Lincoln's Birthday market holiday, consistent with the trading calendar (Feb 11 was Sunday, already excluded). This is the final chart (16 of 16) in the book; the grid continues blank past Feb 19 to the bottom of the page.",
+ "knownDivergences": [
+  {
+   "date": "1940-02-07",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NR 76 3/8; engine SR (6c \u2192SR (KP-gate \u00a712))"
+  },
+  {
+   "date": "1940-02-08",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NR 78; engine SR (6-continuation)"
+  },
+  {
+   "date": "1940-02-09",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NR 79 1/2; engine SR (6-continuation)"
+  },
+  {
+   "date": "1940-02-16",
+   "instrument": "US",
+   "kind": "book-extra-entry",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NRC 56 1/8; engine records nothing"
+  }
+ ]
+}

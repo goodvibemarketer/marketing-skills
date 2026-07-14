@@ -1,0 +1,540 @@
+{
+ "chart": 1,
+ "bookPages": [
+  102,
+  103
+ ],
+ "chartTitle": "CHART ONE",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "65 3/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "57"
+  },
+  {
+   "instrument": "KP",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "122 3/4"
+  },
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "48 1/2"
+  },
+  {
+   "instrument": "BS",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "note": "Single heavy red underline (~11px), same weight as confirmed single-red underlines; no gap or second stroke on pixel profiling. passA's double is a misread.",
+   "price": "43 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "note": "Heavy black bar; checksum 48 1/2 + 43 1/4 = 91 3/4.",
+   "price": "91 3/4"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "62 1/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "65 7/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "note": "Checksum 62 1/8 + 65 7/8 = 128.",
+   "price": "128"
+  },
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "48 1/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "note": "Single heavy red underline (~10px); pixel profile shows one continuous stroke, no gap. passA's double is a misread.",
+   "price": "50 1/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "Checksum 48 1/4 + 50 1/8 = 98 3/8.",
+   "price": "98 3/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "On the 1938 year-label row, above the first dated row; no US/KP companions.",
+   "price": "56 7/8"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1938-03-23",
+   "dateLabel": "MAR23",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "47"
+    },
+    {
+     "instrument": "BS",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Sits one column right of Natural Reaction, aligned under SECONDARY REACTION grid lines; blue ink consistent with SRC.",
+     "price": "50 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum 47 + 50 1/4 = 97 1/4.",
+     "price": "97 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1938-03-25",
+   "dateLabel": "25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "44 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "46 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "note": "Checksum 44 3/4 + 46 3/4 = 91 1/2.",
+     "price": "91 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1938-03-26",
+   "dateLabel": "SAT.26",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "44"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "46"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "note": "Small mark intruding from the 89 5/8 fraction below; 90 exact per checksum 44 + 46 = 90.",
+     "price": "90"
+    }
+   ]
+  },
+  {
+   "date": "1938-03-28",
+   "dateLabel": "28",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "43 5/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "note": "No BS entry this day; 43 5/8 + carried BS 46 = 89 5/8.",
+     "price": "89 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-03-29",
+   "dateLabel": "29",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "39 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "note": "Small comma-like red tick after the 3 with no denominator; checksum (39 5/8 + 43 = 82 5/8, KP denominator clearly 8) forces 43 exact. Same stray-comma style appears after KP 97 on Apr 13.",
+     "price": "43"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "82 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-03-30",
+   "dateLabel": "30",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "39"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "42 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "note": "Checksum 39 + 42 1/8 = 81 1/8.",
+     "price": "81 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-03-31",
+   "dateLabel": "31",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "Heavy drawn black bar hugging the digits (Rule 4-C marking).",
+     "price": "38"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "40"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "Checksum 38 + 40 = 78.",
+     "price": "78"
+    }
+   ]
+  },
+  {
+   "date": "1938-04-02",
+   "dateLabel": "SAT.2",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "43 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "46 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum 43 1/2 + 46 3/8 = 89 7/8.",
+     "price": "89 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-04-09",
+   "dateLabel": "SAT.9",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "46 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "49 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum 46 1/2 + 49 3/4 = 96 1/4.",
+     "price": "96 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1938-04-13",
+   "dateLabel": "13",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "47 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Comma-like tick after 97, no fraction; checksum 47 1/4 + carried BS 49 3/4 = 97 exact.",
+     "price": "97"
+    }
+   ]
+  },
+  {
+   "date": "1938-04-14",
+   "dateLabel": "14",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "47 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum 47 1/2 + 49 3/4 = 97 1/4.",
+     "price": "97 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1938-04-16",
+   "dateLabel": "SAT.16",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "Heavy drawn black bar under the digits.",
+     "price": "49"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "52"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "Checksum 49 + 52 = 101.",
+     "price": "101"
+    }
+   ]
+  },
+  {
+   "date": "1938-04-28",
+   "dateLabel": "28",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Comma-like tick after 43, no denominator; matches the stray-comma style proven elsewhere by checksum to mean a whole number, so read as 43 exact. Alternative reading 43 3/4 cannot be checksum-tested (no KP entry this row).",
+     "price": "43"
+    }
+   ]
+  },
+  {
+   "date": "1938-04-29",
+   "dateLabel": "29",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "42 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "45"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum 42 3/8 + 45 = 87 3/8.",
+     "price": "87 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-02",
+   "dateLabel": "MAY2",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "41 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "44 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "uncertain": true,
+     "note": "Numerator glyph is blobby and resembles an 8 (which would give the impossible 8/4); checksum 41 1/2 + 44 1/4 = 85 3/4 fixes it as 3/4.",
+     "price": "85 3/4"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On April 2nd prices began to be recorded in Natural Rally column. Refer to Explanatory Rule 6-B. Draw black line under last price in Downward Trend column. Refer to Explanatory Rule 4-C.",
+   "ruleRefs": [
+    "6-B",
+    "4-C"
+   ],
+   "dateRefs": [
+    "1938-04-02"
+   ]
+  },
+  {
+   "text": "On April 28th, prices began to be recorded in Natural Reaction column. Refer to Explanatory Rule 4-D.",
+   "ruleRefs": [
+    "4-D"
+   ],
+   "dateRefs": [
+    "1938-04-28"
+   ]
+  }
+ ],
+ "notes": "Spread layout: left page (102) carries the running head \"HOW TO TRADE IN STOCKS\" and the two printed annotation paragraphs, vertically aligned with the ledger rows they describe; right page (103) carries the ledger grid headed \"CHART ONE\" with the Livermore Market Key crest at top right. Grid group labels printed mid-header row: \"U. S. STEEL\", \"BETHLEHEM STEEL\", \"KEY PRICE\"; 18 vertical column headers as specified. Dated rows run MAR23 1938 through MAY 4 1938 (trading days Mon-Sat; APR.1, APR 4-8, 11-12, 18-27, SAT.30, MAY 3-4 have no entries and are omitted per instructions). Every row where US, BS and KP all have entries passes the checksum KP = US + BS; checksums were also used to fix ambiguous fraction glyphs (noted per cell). Recurring quirk: a small comma-like tick sometimes follows whole numbers (BS 43 on Mar 29, KP 97 on Apr 13, US 43 on Apr 28); where checksum-testable it always resolves to a whole number, so it is treated as a stray mark, not a fraction numerator. Drawn pivotal underlines observed: heavy single black bars (header 65 3/4, 48 1/2, 62 1/8, 91 3/4; Mar 31 row 38/40/78; Apr 16 row 49/52/101), heavy single red lines (header 57, 65 7/8, 122 3/4, 128), and clearly double red lines (header 43 1/4 and 50 1/8). All row/ink assignments cross-checked against the color convention (UT black, DT red, others blue) with no contradictions.",
+ "knownDivergences": []
+}

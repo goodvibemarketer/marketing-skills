@@ -1,0 +1,288 @@
+{
+ "chart": 15,
+ "bookPages": [
+  130,
+  131
+ ],
+ "chartTitle": "CHART FIFTEEN",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "note": "underline appears red, not black",
+   "price": "82 3/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "note": "underline appears red, not black",
+   "price": "100"
+  },
+  {
+   "instrument": "KP",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "note": "underline appears red, not black; checksum US+BS=182 3/4 matches",
+   "price": "182 3/4"
+  },
+  {
+   "instrument": "US",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "note": "underline red",
+   "price": "70 1/2"
+  },
+  {
+   "instrument": "BS",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "note": "underline red",
+   "price": "83 3/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "note": "underline red; checksum US+BS=154 1/4 matches",
+   "price": "154 1/4"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "price": "80 5/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "price": "95 5/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "note": "checksum US+BS=176 1/4 matches",
+   "price": "176 1/4"
+  },
+  {
+   "instrument": "US",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "note": "row also carries the printed 1939 year label",
+   "price": "68 3/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "price": "81 3/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "note": "checksum US+BS=150 1/2 matches",
+   "price": "150 1/2"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1939-11-24",
+   "dateLabel": "NOV.24",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "66 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Bethlehem still in Natural Reaction column here; per annotation it does not enter Downward Trend until Nov.25",
+     "price": "81"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "note": "checksum 66 7/8 + 81 = 147 7/8 matches",
+     "price": "147 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-25",
+   "dateLabel": "SAT.25",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "80 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "note": "checksum using carried-forward US 66 7/8 + BS 80 3/4 = 147 5/8 matches",
+     "price": "147 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-29",
+   "dateLabel": "29",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "65 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "price": "78 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "note": "checksum 65 7/8 + 78 1/8 = 144 matches",
+     "price": "144"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-30",
+   "dateLabel": "30",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "double",
+     "note": "underline black; pivotal low",
+     "price": "63 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "double",
+     "note": "underline black; pivotal low",
+     "price": "77"
+    },
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "double",
+     "note": "underline black; checksum 63 5/8 + 77 = 140 5/8 matches",
+     "price": "140 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-12-07",
+   "dateLabel": "7",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "single",
+     "note": "underline black",
+     "price": "69 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "84"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "checksum 69 3/4 + 84 = 153 3/4 matches",
+     "price": "153 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-12-14",
+   "dateLabel": "14",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "double",
+     "underlineColor": "black",
+     "price": "84 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "double",
+     "underlineColor": "black",
+     "note": "checksum: US 69 3/4 (carried) + BS 84 7/8 = 154 5/8",
+     "price": "154 5/8"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On November 24th, the price of U. S. Steel was recorded in the Downward Trend column. Refer to Explanatory Rule 6-E, and the next day, November 25th, the price of Bethlehem Steel was recorded in the Downward Trend column. Refer to Explanatory Rule 6-E.",
+   "ruleRefs": [
+    "6-E"
+   ],
+   "dateRefs": [
+    "1939-11-24",
+    "1939-11-25"
+   ]
+  },
+  {
+   "text": "On December 7th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Rally column. Refer to Explanatory Rule 6-C.",
+   "ruleRefs": [
+    "6-C"
+   ],
+   "dateRefs": [
+    "1939-12-07"
+   ]
+  }
+ ],
+ "notes": "Chart 15 (pages 130-131). Left page (p.130) carries only the two printed annotations plus page number; ledger grid is entirely on the right page (p.131). Four carried-forward pivotal-point rows sit above the DATE header row (UT, then NRC, then NR, then NRC again on the same line as the printed \"1939\" year label) before the dated grid begins at NOV.24. All rows from DEC.15 through JAN.6 (SAT.16, 18-22, SAT.23, 26-29, SAT.30, JAN.2-5, SAT.6) are blank/unused except the DEC.14 entries noted above. A new year \"1940\" (written smaller, above \"JAN.2\") appears printed in the date column directly below \"SAT.30\", marking the year rollover mid-chart; no further handwritten entries follow it on this spread. All checksums (KP = US + BS) verified consistent for every row where multiple instruments have entries, using carry-forward of the last recorded value when one instrument is blank on a given date (SAT.25 and DEC.14 rows).",
+ "knownDivergences": []
+}

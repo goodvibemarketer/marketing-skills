@@ -1,0 +1,389 @@
+{
+ "chart": 10,
+ "bookPages": [
+  120,
+  121
+ ],
+ "chartTitle": "CHART TEN",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "50"
+  },
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "44 3/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "58 1/2"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "51 5/8"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "108 1/2"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "96"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1939-05-17",
+   "dateLabel": "17",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "44 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "52"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "checksum: 44 5/8 + 52 = 96 5/8, consistent",
+     "price": "96 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-18",
+   "dateLabel": "18",
+   "cells": [
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "none",
+     "note": "upper of two stacked KP Downward Trend entries (rows 18-19); implies same-day Bethlehem Steel price of 52 (43 1/4+52=95 1/4) though 52 was not itself re-recorded as a new BS Downward Trend pivot",
+     "price": "95 1/4"
+    },
+    {
+     "instrument": "US",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "43 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-19",
+   "dateLabel": "19",
+   "cells": [
+    {
+     "instrument": "KP",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "lower of two stacked KP entries; checksum 43 1/4 + 51 5/8 = 94 7/8, consistent",
+     "price": "94 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "red",
+     "uncertain": true,
+     "note": "No digits are written in this cell \u2014 only a short red horizontal stroke, confirmed by high-zoom crop to sit inside the Bethlehem Steel DOWNWARD TREND column (x=1094-1193) on the May19 row. The printed page annotation explicitly states 'a red line was drawn under the Downward Trend column in Bethlehem Steel, meaning a price was made that was the same as the last price recorded' (51 5/8, from the header baseline) \u2014 i.e. the mark is textually described as an underline, not a bare dash.",
+     "price": "51 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-25",
+   "dateLabel": "25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "48 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "57 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "checksum: 48 3/4 + 57 3/4 = 106 1/2, consistent",
+     "price": "106 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-26",
+   "dateLabel": "26",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "49"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "58"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "checksum: 49 + 58 = 107, consistent",
+     "price": "107"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-27",
+   "dateLabel": "SAT27",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "uncertain": true,
+     "note": "only a short dash mark visible (no digits re-written), apparently indicating a repeat of the prior Secondary Rally price of 58; checksum (49 3/8 + 58 = 107 3/8) confirms this value",
+     "price": "58"
+    },
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "49 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 49 1/8 (US) + 58 (BS, unchanged/carried) = 107 1/8.",
+     "price": "107 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-29",
+   "dateLabel": "29",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "50 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "59 3/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "checksum: 50 1/4 + 59 3/8 = 109 5/8, consistent",
+     "price": "109 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-05-31",
+   "dateLabel": "31",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "50 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "60"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "black",
+     "note": "checksum: 50 1/8 + 60 = 110 1/8, consistent",
+     "price": "110 1/8"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On May 17th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Reaction column, and the next day, May 18th, the price of U. S. Steel was recorded in the Downward Trend column. Refer to Explanatory Rule 6-D. The next day, May 19th, a red line was drawn under the Downward Trend column in Bethlehem Steel, meaning a price was made that was the same as the last price recorded in the Downward Trend column.",
+   "ruleRefs": [
+    "6-D"
+   ],
+   "dateRefs": [
+    "1939-05-17",
+    "1939-05-18",
+    "1939-05-19"
+   ]
+  },
+  {
+   "text": "On May 25th, prices of U. S. Steel and Bethlehem Steel were recorded in the Secondary Rally column. Refer to Explanatory Rule 6-C.",
+   "ruleRefs": [
+    "6-C"
+   ],
+   "dateRefs": [
+    "1939-05-25"
+   ]
+  }
+ ],
+ "notes": "Rows APR20-MAY16 and JUNE1 are blank (no handwritten entries) and are omitted. May 30, 1939 (Memorial Day) has no printed row label between \"29\" and \"31\", consistent with a market holiday. All KP (Key Price) entries where both US and BS values are present pass the US+BS=KP checksum. Two cells (BS DT on 5/19, BS SR on 5/27) are drawn as short dash/line marks rather than re-written digits, per the book's own explanatory text for the 5/19 instance; their implied values are inferred from the checksum and flagged uncertain.",
+ "knownDivergences": [
+  {
+   "date": "1939-05-19",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book DT 51 5/8; engine NRC (6-continuation)"
+  },
+  {
+   "date": "1939-05-25",
+   "instrument": "US",
+   "kind": "book-extra-entry",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 48 3/4; engine records nothing"
+  },
+  {
+   "date": "1939-05-25",
+   "instrument": "KP",
+   "kind": "book-extra-entry",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 106 1/2; engine records nothing"
+  },
+  {
+   "date": "1939-05-26",
+   "instrument": "US",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 49; engine NR (6c (KP coupling, DD-13))"
+  },
+  {
+   "date": "1939-05-26",
+   "instrument": "KP",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 107; engine NR (6c)"
+  },
+  {
+   "date": "1939-05-27",
+   "instrument": "BS",
+   "kind": "book-extra-entry",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 58; engine records nothing"
+  },
+  {
+   "date": "1939-05-27",
+   "instrument": "US",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 49 1/8; engine NR (6-continuation)"
+  },
+  {
+   "date": "1939-05-27",
+   "instrument": "KP",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 107 1/8; engine NR (6-continuation)"
+  },
+  {
+   "date": "1939-05-29",
+   "instrument": "US",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 50 1/4; engine NR (6-continuation)"
+  },
+  {
+   "date": "1939-05-29",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 59 3/8; engine NR (6g-resume)"
+  },
+  {
+   "date": "1939-05-29",
+   "instrument": "KP",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 109 5/8; engine NR (6-continuation)"
+  },
+  {
+   "date": "1939-05-31",
+   "instrument": "US",
+   "kind": "book-extra-entry",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 50 1/8; engine records nothing"
+  },
+  {
+   "date": "1939-05-31",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 60; engine NR (6-continuation)"
+  },
+  {
+   "date": "1939-05-31",
+   "instrument": "KP",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SR 110 1/8; engine NR (6-continuation)"
+  }
+ ]
+}

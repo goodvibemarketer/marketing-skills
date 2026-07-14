@@ -1,0 +1,297 @@
+{
+ "chart": 2,
+ "bookPages": [
+  104,
+  105
+ ],
+ "chartTitle": "CHART TWO",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "38"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "40"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "78"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "49"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "52"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "101"
+  },
+  {
+   "instrument": "US",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "41 1/2"
+  },
+  {
+   "instrument": "BS",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "44 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "85 3/4"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1938-05-23",
+   "dateLabel": "23",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "44 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "85 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-24",
+   "dateLabel": "24",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "43 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "85"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-25",
+   "dateLabel": "25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "41 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "42 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "83 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-26",
+   "dateLabel": "26",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "40 1/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "40 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "80 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-27",
+   "dateLabel": "27",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "39 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "DT",
+     "ink": "red",
+     "underline": "single",
+     "underlineColor": "black",
+     "price": "39 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "79 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-05-31",
+   "dateLabel": "31",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "39 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "79"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-10",
+   "dateLabel": "10",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "price": "46 1/2"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "All of these prices recorded are brought forth from the preceding page in order to keep the Pivotal Points always before you."
+  },
+  {
+   "text": "During the period from May 5th to May 21st inclusive, no prices were recorded because no prices were made lower than the last price recorded in the Natural Reaction column. Nor was there sufficient rally to be recorded.",
+   "dateRefs": [
+    "1938-05-05",
+    "1938-05-21"
+   ]
+  },
+  {
+   "text": "On May 27th, the price of Bethlehem Steel was recorded in red because it was a lower price than the previous price recorded in the Downward Trend column. Refer to Explanatory Rule 6-C.",
+   "ruleRefs": [
+    "6-C"
+   ],
+   "dateRefs": [
+    "1938-05-27"
+   ]
+  },
+  {
+   "text": "On June 2nd, Bethlehem Steel became a buy at 43. Refer to Explanatory Rule 10-C and D. On the same day U. S. Steel became a buy at 42 1/4. Refer to Explanatory Rule 10-F.",
+   "ruleRefs": [
+    "10-C",
+    "10-D",
+    "10-F"
+   ],
+   "dateRefs": [
+    "1938-06-02"
+   ]
+  },
+  {
+   "text": "On June 10th, a price was recorded in the Secondary Rally column of Bethlehem Steel. Refer to Explanatory Rule 6-E.",
+   "ruleRefs": [
+    "6-E"
+   ],
+   "dateRefs": [
+    "1938-06-10"
+   ]
+  }
+ ],
+ "notes": "Ledger grid is on the right page (p.105); printed annotations on left page (p.104). Column groups: U.S. STEEL (cols 1-6), BETHLEHEM STEEL (cols 7-12), KEY PRICE (cols 13-18); within each, left-to-right SR/NR/UT/DT/NRC/SRC.\n\nHeader (carried-forward pivotal points), three physical rows top-to-bottom: (1) Downward Trend in red with black underline \u2014 US 38, BS 40, KP 78; (2) Natural Rally in blue pencil with black underline \u2014 US 49, BS 52, KP 101; (3) Natural Reaction in blue pencil, no underline \u2014 US 41 1/2, BS 44 1/4, KP 85 3/4. All three groups satisfy KP=US+BS (49+52=101; 38+40=78; 41.5+44.25=85.75).\n\nRows May 5 through Sat 21 are entirely blank (matches annotation about no prices recorded). All handwritten dated entries are Natural Reaction (blue pencil) except: May 27 Bethlehem Steel 39 3/4 recorded in RED in the Downward Trend column with a heavy black underline (per Rule 6-C annotation), and June 10 Bethlehem Steel 46 1/2 in the Secondary Rally column (per Rule 6-E annotation).\n\nChecksums verified for every multi-entry row: 5/23 41.5(US carried)+44.125=85.625; 5/24 41.5+43.5=85; 5/25 41.375+42.5=83.875; 5/26 40.125+40.5=80.625; 5/27 39.625+39.75=79.375; 5/31 39.25+39.75(BS carried)=79. All consistent.\n\nDate sequence notes: no row for May 30 (Memorial Day) \u2014 labels jump Sat28 -> 31. The dated row \"10\" transcribed here is June 10 (the May 10 row is blank). No Sunday rows.",
+ "knownDivergences": []
+}

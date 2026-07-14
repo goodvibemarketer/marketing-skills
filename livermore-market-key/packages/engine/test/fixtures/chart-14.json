@@ -1,0 +1,349 @@
+{
+ "chart": 14,
+ "bookPages": [
+  128,
+  129
+ ],
+ "chartTitle": "CHART FOURTEEN",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "82 3/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "100"
+  },
+  {
+   "instrument": "KP",
+   "column": "UT",
+   "ink": "black",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "182 3/4"
+  },
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "80 5/8"
+  },
+  {
+   "instrument": "US",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "70 1/2"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "95 5/8"
+  },
+  {
+   "instrument": "BS",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "83 3/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "176 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "red",
+   "price": "154 1/4"
+  },
+  {
+   "instrument": "US",
+   "column": "SRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "73"
+  },
+  {
+   "instrument": "BS",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "92 3/4"
+  },
+  {
+   "instrument": "US",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "Written on the row labeled '1939' in the date column \u2014 the last carried-forward pivotal entry before the dated ledger begins at OCT.9.",
+   "price": "78 1/2"
+  },
+  {
+   "instrument": "BS",
+   "column": "SRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "86 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "Checksum: US SR 78 1/2 + BS SR 92 3/4 = 171 1/4, confirms reading.",
+   "price": "171 1/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "SRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "Checksum: US SRC 73 + BS SRC 86 1/4 = 159 1/4, confirms reading.",
+   "price": "159 1/4"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1939-10-17",
+   "dateLabel": "17",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "78 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "93 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: 78 7/8 + 93 7/8 = 172 3/4, confirms reading.",
+     "price": "172 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-10-18",
+   "dateLabel": "18",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "79 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "uncertain": false,
+     "note": "Checksum resolves the fraction: US SR (row Oct 18) = 79 1/4 (clearly legible); Bethlehem Steel had no new entry this row, and the last BS SR entry (Oct 17) reads 93 7/8 once cross-checked against the Oct 17 KP SR value of 172 3/4 (78 7/8 + 93 7/8 = 172 3/4, confirming the Oct 17 BS fraction is 7/8, not 3/8 as it can appear at low resolution). Carrying 93 7/8 forward: 79 1/4 + 93 7/8 = 173 1/8, exactly matching the written KP value. At extreme zoom the Oct 18 KP fraction's denominator is a closed loop shape consistent with '8', not the open-bottomed '2' shape seen elsewhere on the page, corroborating 1/8 over 1/2.",
+     "price": "173 1/8"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-03",
+   "dateLabel": "3",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Matches printed annotation: recorded in Secondary Reaction column, lower than prior SRC value of 73.",
+     "price": "72 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-08",
+   "dateLabel": "8",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "72 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "uncertain": false,
+     "note": "Grid-line pixel analysis places the '86 7/8' ink squarely inside the Secondary Reaction (BS) cell, x\u22483102-3212 (one column to the right of Natural Reaction BS, x\u22483019-3102). This is confirmed by contrast with the Nov.9 entry '83 1/4' and Nov.10 entry '81 3/4', which sit clearly one column to the left (x\u22483019-3102, i.e. Natural Reaction BS) \u2014 matching the printed annotation that a new, lower Natural Reaction (BS) price was recorded on Nov.9. The vertical line beside '86 7/8' is simply the ordinary alternating red/blue column-boundary rule used throughout the chart (every single column boundary alternates red/blue, not just group boundaries), not an instrument-group divider, so passA's concern about it marking a group boundary does not apply.",
+     "price": "86 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "SRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "uncertain": false,
+     "note": "High-zoom inspection shows three unambiguous digits '1','5','8' (the third digit has the stacked double-loop shape of an '8', not '0' or '9') followed by a small raised numerator and denominator '4', reading '158 3/4'. This is 1 point below the US+BS checksum (US SRC 72 7/8 + BS SRC 86 7/8 = 159 3/4); per instructions the as-written value is transcribed rather than force-fit to the checksum. passB's '150 1/4' does not match the visible digits (confirmed '158', not '150') and appears to conflate this cell with the Nov.10 Natural-Reaction-KP entry ('150 1/2', a different column one row down).",
+     "price": "158 3/4"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-09",
+   "dateLabel": "9",
+   "cells": [
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Matches printed annotation: new, lower price recorded in Natural Reaction column of Bethlehem Steel (prior value 83 3/4).",
+     "price": "83 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "uncertain": true,
+     "note": "Clearly reads '159 3/4', but does not match the checksum of US NRC (dash = 70 1/2) + BS NRC 83 1/4 = 153 3/4. Transcribed as actually written; discrepancy flagged rather than force-fit.",
+     "price": "159 3/4"
+    },
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "underlineColor": "none",
+     "uncertain": false,
+     "note": "The mark actually drawn in the cell is a dash (\u2014), not digits. Per the book's own printed annotation on this page ('a dash was made in the Natural Reaction column of U.S. Steel, being the same price that was last recorded in the Natural Reaction column'), the dash denotes a repeat of the previously recorded U.S. Steel Natural Reaction price, which is 70 1/2 (from Oct 3, the only prior NRC-US entry visible on the chart). priceText is given as the numeric value per the field's expected integer+fraction format; the literal glyph is a dash, as both passes note.",
+     "price": "70 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1939-11-10",
+   "dateLabel": "10",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "68 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "81 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "note": "Checksum: US NRC 68 3/4 + BS NRC 81 3/4 = 150 1/2, confirms reading with high confidence.",
+     "price": "150 1/2"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On November 3rd, the price of U. S. Steel was recorded in the Secondary Reaction column, being a price lower than the last previous price recorded in that column.",
+   "dateRefs": [
+    "1939-11-03"
+   ],
+   "ruleRefs": []
+  },
+  {
+   "text": "On November 9th, a dash was made in the Natural Reaction column of U. S. Steel, being the same price that was last recorded in the Natural Reaction column, and on the same day a new price was recorded in the Natural Reaction column of Bethlehem Steel, being a lower price than the last price previously recorded in that column.",
+   "dateRefs": [
+    "1939-11-09"
+   ],
+   "ruleRefs": []
+  }
+ ],
+ "notes": "",
+ "knownDivergences": [
+  {
+   "date": "1939-11-08",
+   "instrument": "KP",
+   "kind": "column-differs",
+   "reason": "KP checksum anomaly: US SRC 72 7/8 + BS SRC 86 7/8 = 159 3/4, but the book clearly writes 158 3/4 (digits 1,5,8 unambiguous per referee high-zoom inspection). Transcribed as written per RULES.md Sec.9."
+  },
+  {
+   "date": "1939-11-09",
+   "instrument": "KP",
+   "kind": "column-differs",
+   "reason": "KP checksum anomaly: US NRC (dash, repeats prior value 70 1/2) + BS NRC 83 1/4 = 153 3/4, but the book clearly writes 159 3/4. Transcribed as written per RULES.md Sec.9; both component figures independently confirmed against the printed annotations on this page."
+  },
+  {
+   "date": "1939-11-08",
+   "instrument": "US",
+   "kind": "book-extra-entry",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book SRC 72 7/8; engine records nothing"
+  },
+  {
+   "date": "1939-11-09",
+   "instrument": "BS",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NRC 83 1/4; engine SRC (6h-resume \u2192SRC (KP-gate \u00a712))"
+  },
+  {
+   "date": "1939-11-09",
+   "instrument": "KP",
+   "kind": "book-extra-entry",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NRC 159 3/4; engine records nothing"
+  },
+  {
+   "date": "1939-11-09",
+   "instrument": "US",
+   "kind": "column-differs",
+   "reason": "RULES.md Sec.13.2 (DT/UT->NR/NRC graduation boundary, open item) or Sec.13.1: book NRC 70 1/2; engine SRC (6-continuation)"
+  }
+ ]
+}

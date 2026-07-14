@@ -1,0 +1,533 @@
+{
+ "chart": 3,
+ "bookPages": [
+  106,
+  107
+ ],
+ "chartTitle": "CHART THREE",
+ "headerEntries": [
+  {
+   "instrument": "US",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "49"
+  },
+  {
+   "instrument": "US",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "38"
+  },
+  {
+   "instrument": "BS",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "Under-zoom shows two separated parallel black strokes = double.",
+   "price": "52"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "price": "40"
+  },
+  {
+   "instrument": "KP",
+   "column": "NR",
+   "ink": "blue",
+   "underline": "single",
+   "underlineColor": "black",
+   "price": "101"
+  },
+  {
+   "instrument": "KP",
+   "column": "DT",
+   "ink": "red",
+   "underline": "double",
+   "underlineColor": "black",
+   "note": "Under-zoom shows two stacked parallel black lines = double.",
+   "price": "78"
+  },
+  {
+   "instrument": "US",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "39 1/4"
+  },
+  {
+   "instrument": "BS",
+   "column": "DT",
+   "ink": "red",
+   "underline": "single",
+   "underlineColor": "black",
+   "note": "Written in red directly under the DT '40' (x-position and ink both indicate Downward Trend). Underline is a single heavy stroke (not double) confirmed against the adjacent '40' double in the same column. Value checksum: US 39 1/4 + BS 39 3/4 = KP 79.",
+   "price": "39 3/4"
+  },
+  {
+   "instrument": "KP",
+   "column": "NRC",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "price": "79"
+  },
+  {
+   "instrument": "BS",
+   "column": "SR",
+   "ink": "blue",
+   "underline": "none",
+   "underlineColor": "none",
+   "note": "Lone carried-forward figure on the '1938' label row, above the first dated (JUNE 17) row, in the Bethlehem Secondary Rally column.",
+   "price": "46 1/2"
+  }
+ ],
+ "rows": [
+  {
+   "date": "1938-06-20",
+   "dateLabel": "20",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "45 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "48 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "93 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-21",
+   "dateLabel": "21",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "46 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "49 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "96 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-22",
+   "dateLabel": "22",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "48 1/2"
+    },
+    {
+     "instrument": "BS",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "50 7/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "SR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "99 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-23",
+   "dateLabel": "23",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "51 1/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "53 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NR",
+     "ink": "blue",
+     "underline": "none",
+     "price": "104 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-24",
+   "dateLabel": "24",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "53 3/4"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "55 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "108 7/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-25",
+   "dateLabel": "SAT25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "54 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "58 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "113"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-29",
+   "dateLabel": "29",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "56 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "60 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "117"
+    }
+   ]
+  },
+  {
+   "date": "1938-06-30",
+   "dateLabel": "30",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "58 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "61 5/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "120"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-01",
+   "dateLabel": "JULY1",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "59"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "note": "Bethlehem cell blank this row; KP = US 59 + last BS 61 5/8 = 120 5/8.",
+     "price": "120 5/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-02",
+   "dateLabel": "SAT.2",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "60 7/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Red drawn underline marks Bethlehem's up-leg pivotal top.",
+     "price": "62 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "123 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-07",
+   "dateLabel": "7",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Red drawn underline marks US up-leg pivotal top.",
+     "price": "61 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Bethlehem blank; KP = US 61 3/4 + last BS 62 1/2 = 124 1/4. Red underline marks KP pivotal top.",
+     "price": "124 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-11",
+   "dateLabel": "11",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "55 5/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Red underline marks Bethlehem's natural-reaction low pivot.",
+     "price": "56 3/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "none",
+     "price": "112 3/8"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-12",
+   "dateLabel": "12",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Red underline marks US natural-reaction low pivot.",
+     "price": "55 1/2"
+    },
+    {
+     "instrument": "KP",
+     "column": "NRC",
+     "ink": "blue",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Bethlehem blank; KP = US 55 1/2 + last BS 56 3/4 = 112 1/4. Red underline marks KP reaction low pivot.",
+     "price": "112 1/4"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-19",
+   "dateLabel": "19",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "62 3/8"
+    },
+    {
+     "instrument": "BS",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Red underline marks Bethlehem's pivotal top (BS records no higher price afterward on this chart).",
+     "price": "63 1/8"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "none",
+     "price": "125 1/2"
+    }
+   ]
+  },
+  {
+   "date": "1938-07-25",
+   "dateLabel": "25",
+   "cells": [
+    {
+     "instrument": "US",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Red underline marks US pivotal top.",
+     "price": "63 1/4"
+    },
+    {
+     "instrument": "KP",
+     "column": "UT",
+     "ink": "black",
+     "underline": "single",
+     "underlineColor": "red",
+     "note": "Bethlehem blank; KP = US 63 1/4 + last BS 63 1/8 = 126 3/8. Red underline marks KP pivotal top.",
+     "price": "126 3/8"
+    }
+   ]
+  }
+ ],
+ "annotations": [
+  {
+   "text": "On June 20th, the price of U. S. Steel was recorded in the Secondary Rally column. Refer to Explanatory Rule 6-G.",
+   "ruleRefs": [
+    "6-G"
+   ],
+   "dateRefs": [
+    "1938-06-20"
+   ]
+  },
+  {
+   "text": "On June 24th, prices of U. S. Steel and Bethlehem Steel were recorded in black ink in the Upward Trend column. Refer to Explanatory Rule 5-A.",
+   "ruleRefs": [
+    "5-A"
+   ],
+   "dateRefs": [
+    "1938-06-24"
+   ]
+  },
+  {
+   "text": "On July 11th, prices of U. S. Steel and Bethlehem Steel were recorded in the Natural Reaction column. Refer to Explanatory Rules 6-A and 4-A.",
+   "ruleRefs": [
+    "6-A",
+    "4-A"
+   ],
+   "dateRefs": [
+    "1938-07-11"
+   ]
+  },
+  {
+   "text": "On July 19th, prices of U. S. Steel and Bethlehem Steel were recorded in the Upward Trend column in black ink because those prices were higher than the last prices that were recorded in those columns. Refer to Explanatory Rule 4-B.",
+   "ruleRefs": [
+    "4-B"
+   ],
+   "dateRefs": [
+    "1938-07-19"
+   ]
+  }
+ ],
+ "notes": "Chart 3 of 16. Ledger grid on the right page (p.107); the four printed annotations are on the left page (p.106). yearHeader \"1938\" prints just above the DATE label.\n\nChecksums (KP = US + BS) verified on every row where all three are present: 45 3/8+48 1/4=93 5/8; 46 1/2+49 7/8=96 3/8; 48 1/2+50 7/8=99 3/8; 51 1/4+53 1/4=104 1/2; 53 3/4+55 1/8=108 7/8; 54 7/8+58 1/8=113; 56 7/8+60 1/8=117; 58 3/8+61 5/8=120; 60 7/8+62 1/2=123 3/8; 55 5/8+56 3/4=112 3/8. On rows where BS is blank (JULY1, 7, 12, 25) KP still equals US + last recorded BS. These checksums also confirmed several fraction reads, notably BS \"49 7/8\" on the 21st (46 1/2+49 7/8=96 3/8, ruling out 49 1/8).\n\nInk convention holds throughout: Upward Trend = black, Downward Trend = red, and Secondary Rally / Natural Rally / Natural Reaction = blue (pencil).\n\nTwo distinct underline systems: (1) HEADER carried-forward pivots are underlined in BLACK \u2014 38 single, 40 double, 78 double (Downward Trend reds); 49 single, 52 double, 101 single (Natural Rally blues); 39 3/4 single. (2) IN-CHART pivotal points carry short, drawn, number-width RED single underlines marking up-leg tops (BS 62 1/2 on 7/2, US 61 3/4 & KP 124 1/4 on 7/7, BS 63 1/8 on 7/19, US 63 1/4 & KP 126 3/8 on 7/25) and natural-reaction lows (BS 56 3/4 on 7/11, US 55 1/2 & KP 112 1/4 on 7/12). These red marks are clearly distinct from the printed thin blue/red full-width grid rules.\n\nAnomaly flagged in headerEntries: the natural-reaction trio checksums to 79 (US 39 1/4 + BS 39 3/4 = KP 79), and US (39 1/4) and KP (79) sit in the Natural Reaction column in blue, but BS's 39 3/4 is written in RED directly below 40 in the Downward Trend column. Transcribed as DT because both x-position and ink agree; noted because the checksum shows it functions as the Bethlehem natural-reaction value.",
+ "knownDivergences": []
+}

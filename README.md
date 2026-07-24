@@ -28,6 +28,18 @@ Drafts a complete weekly newsletter from a rough drop file of notes, links, and 
 
 See [`skills/newsletter-editor/`](./skills/newsletter-editor/) for the full skill, including reference files and worked examples.
 
+### `b2b-landing-page`
+
+Plans and builds a complete B2B landing page — from strategy through to the built page — for any product sold to a business.
+
+**What it produces:** A reviewable brief (objective, message hierarchy, section-by-section copy, a justified form spec, and visual direction), then, on approval, the built page itself.
+
+**What it changes:** You stop shipping pages that give the visitor five things to do and open with a claim nobody was promised. You start shipping pages built structure-first, with a 1:1 attention ratio and no invented proof.
+
+**How it works:** Runs in two phases with a review point between them. Phase 1 gathers context in two short beats, makes the structural decisions, writes the copy, and delivers a brief that opens with every assumption it made — then stops. If you only wanted a document to hand to a designer, that is the finish line. Phase 2, on your approval, enforces the constraints and builds the page, ending with a pre-publish checklist and a list of what you still owe it. It never invents statistics, customer names, quotes, logos, or product screenshots — gaps are marked, not faked.
+
+See [`skills/b2b-landing-page/`](./skills/b2b-landing-page/) for the full skill, including the brief schema and design rules reference files.
+
 ---
 
 ## Install
@@ -37,14 +49,15 @@ See [`skills/newsletter-editor/`](./skills/newsletter-editor/) for the full skil
 ```bash
 /plugin marketplace add goodvibemarketer/marketing-skills
 /plugin install newsletter-editor@goodvibemarketer-marketing-skills
+/plugin install b2b-landing-page@goodvibemarketer-marketing-skills
 ```
 
-That is it. Claude Code will now use the skill automatically when you ask to draft a newsletter.
+That is it. Claude Code will now use each skill automatically when you ask to draft a newsletter or build a landing page.
 
 ### Claude.ai (ZIP upload)
 
 1. Download this repo as a ZIP
-2. Extract it and find the `skills/newsletter-editor/` folder
+2. Extract it and find the skill folder you want (`skills/newsletter-editor/` or `skills/b2b-landing-page/`)
 3. ZIP that folder on its own
 4. In Claude.ai, go to Settings → Customize → Skills → Create skill
 5. Upload the ZIP

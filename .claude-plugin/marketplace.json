@@ -12,6 +12,14 @@
       "version": "0.1.0",
       "category": "marketing",
       "keywords": ["newsletter", "writing", "marketing", "content", "weekly", "beehiiv", "substack", "editor"]
+    },
+    {
+      "name": "b2b-landing-page",
+      "source": "./skills/b2b-landing-page",
+      "description": "Plans and builds complete B2B landing pages — strategy, message hierarchy, section-by-section copy, form specification, visual direction, and the built page. Runs in two phases: a reviewable brief, then the build.",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": ["landing-page", "b2b", "conversion", "copywriting", "lead-gen", "demo", "campaign", "cro"]
     }
   ]
 }

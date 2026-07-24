@@ -1,0 +1,17 @@
+{
+  "name": "goodvibemarketer-marketing-skills",
+  "owner": {
+    "name": "Andy at GoodVibeMarketer",
+    "url": "https://goodvibemarketer.com"
+  },
+  "plugins": [
+    {
+      "name": "newsletter-editor",
+      "source": "./skills/newsletter-editor",
+      "description": "Drafts a complete weekly newsletter (news roundup plus thought leadership article) from a rough drop file of notes and links. Turns you from writer into editor of your own publication.",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": ["newsletter", "writing", "marketing", "content", "weekly", "beehiiv", "substack", "editor"]
+    }
+  ]
+}

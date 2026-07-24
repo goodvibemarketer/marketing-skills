@@ -4,7 +4,4 @@ __pycache__/
 
 # Installed skill payloads (restored from skills-lock.json via `npx skills add`)
 .agents/
-.claude/skills/higgsfield-generate
-.claude/skills/higgsfield-marketplace-cards
-.claude/skills/higgsfield-product-photoshoot
-.claude/skills/higgsfield-soul-id
+.claude/skills/higgsfield-*

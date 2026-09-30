@@ -11,7 +11,16 @@
       "description": "Drafts a complete weekly newsletter (news roundup plus thought leadership article) from a rough drop file of notes and links. Turns you from writer into editor of your own publication.",
       "version": "0.1.0",
       "category": "marketing",
-      "keywords": ["newsletter", "writing", "marketing", "content", "weekly", "beehiiv", "substack", "editor"]
+      "keywords": [
+        "newsletter",
+        "writing",
+        "marketing",
+        "content",
+        "weekly",
+        "beehiiv",
+        "substack",
+        "editor"
+      ]
     },
     {
       "name": "b2b-landing-page",
@@ -19,7 +28,50 @@
       "description": "Plans and builds complete B2B landing pages — strategy, message hierarchy, section-by-section copy, form specification, visual direction, and the built page. Runs in two phases: a reviewable brief, then the build.",
       "version": "0.1.0",
       "category": "marketing",
-      "keywords": ["landing-page", "b2b", "conversion", "copywriting", "lead-gen", "demo", "campaign", "cro"]
+      "keywords": [
+        "landing-page",
+        "b2b",
+        "conversion",
+        "copywriting",
+        "lead-gen",
+        "demo",
+        "campaign",
+        "cro"
+      ]
+    },
+    {
+      "name": "linkedin-infographic-builder",
+      "source": "./skills/linkedin-infographic-builder",
+      "description": "Turns an article, post or report into one polished 1080x1350 infographic PNG, styled by your design system, with your face and name in the footer. Built for B2B: proof over hype, one reusable idea per graphic.",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": [
+        "infographic",
+        "linkedin",
+        "social",
+        "design",
+        "repurposing",
+        "b2b",
+        "visual",
+        "png"
+      ]
+    },
+    {
+      "name": "linkedin-carousel-builder",
+      "source": "./skills/linkedin-carousel-builder",
+      "description": "Repurposes one long-form piece into a LinkedIn carousel: a 6-10 page PDF document post at 1080x1350 per page, styled by your design system, ending on a follow or subscribe CTA. PNGs of each slide come as a secondary output.",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": [
+        "carousel",
+        "linkedin",
+        "social",
+        "design",
+        "repurposing",
+        "b2b",
+        "pdf",
+        "document-post"
+      ]
     }
   ]
 }

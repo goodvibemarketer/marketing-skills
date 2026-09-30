@@ -40,6 +40,30 @@ Plans and builds a complete B2B landing page — from strategy through to the bu
 
 See [`skills/b2b-landing-page/`](./skills/b2b-landing-page/) for the full skill, including the brief schema and design rules reference files.
 
+### `linkedin-infographic-builder`
+
+Turns one piece of content into a single, on-brand infographic for LinkedIn.
+
+**What it produces:** One 1080x1350 px PNG — the portrait size that fills the most screen on LinkedIn mobile — styled by your design system, with your face and name in the footer.
+
+**What it changes:** You stop posting plain-text takes that scroll past. You start posting one reusable idea a buyer can screenshot into their own deck.
+
+**How it works:** Reads your active design system for tokens, then builds the graphic in HTML/CSS and rasterises it with a headless browser at the exact output size. House style is a faint notepad grid, a brush-stroke highlight on one headline keyword, thin line-art metaphors and a single dark band for the big idea. It never invents a statistic: if your content has no data, it draws a framework or before/after diagram instead.
+
+See [`skills/linkedin-infographic-builder/`](./skills/linkedin-infographic-builder/) for the full skill.
+
+### `linkedin-carousel-builder`
+
+Repurposes one long-form piece into a LinkedIn carousel.
+
+**What it produces:** A 6-10 page PDF at 1080x1350 px per page, ready to upload as a LinkedIn document post, plus a PNG of each slide, a document title, a caption draft and two alternative hooks.
+
+**What it changes:** One article stops being one post. It becomes the swipe that carries a single idea to its point.
+
+**How it works:** Plans the carousel before designing anything — picks the one strongest idea out of the source and leaves the rest — then applies your design system and renders the PDF. Every number shows its source on the slide, and the last slide is a follow or subscribe CTA.
+
+See [`skills/linkedin-carousel-builder/`](./skills/linkedin-carousel-builder/) for the full skill.
+
 ---
 
 ## Install
@@ -50,14 +74,16 @@ See [`skills/b2b-landing-page/`](./skills/b2b-landing-page/) for the full skill,
 /plugin marketplace add goodvibemarketer/marketing-skills
 /plugin install newsletter-editor@goodvibemarketer-marketing-skills
 /plugin install b2b-landing-page@goodvibemarketer-marketing-skills
+/plugin install linkedin-infographic-builder@goodvibemarketer-marketing-skills
+/plugin install linkedin-carousel-builder@goodvibemarketer-marketing-skills
 ```
 
-That is it. Claude Code will now use each skill automatically when you ask to draft a newsletter or build a landing page.
+That is it. Claude Code will now use each skill automatically when you ask to draft a newsletter, build a landing page, or turn a post into an infographic or carousel.
 
 ### Claude.ai (ZIP upload)
 
 1. Download this repo as a ZIP
-2. Extract it and find the skill folder you want (`skills/newsletter-editor/` or `skills/b2b-landing-page/`)
+2. Extract it and find the skill folder you want (`skills/newsletter-editor/`, `skills/b2b-landing-page/`, `skills/linkedin-infographic-builder/` or `skills/linkedin-carousel-builder/`)
 3. ZIP that folder on its own
 4. In Claude.ai, go to Settings → Customize → Skills → Create skill
 5. Upload the ZIP

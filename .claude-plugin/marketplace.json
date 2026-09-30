@@ -72,6 +72,23 @@
         "pdf",
         "document-post"
       ]
+    },
+    {
+      "name": "ai-marketing-trend-radar",
+      "source": "./skills/ai-marketing-trend-radar",
+      "description": "Weekly trend radar over the last 7 days of Reddit, X, YouTube, LinkedIn, Hacker News, trade press and the web. Ranks trends by a 0-100 Trend Score and turns each into content angles, as a report, a shareable page and a PDF.",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": [
+        "trend-radar",
+        "research",
+        "social-listening",
+        "content-ideas",
+        "b2b",
+        "weekly",
+        "reporting",
+        "seo"
+      ]
     }
   ]
 }

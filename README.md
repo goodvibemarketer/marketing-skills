@@ -64,6 +64,18 @@ Repurposes one long-form piece into a LinkedIn carousel.
 
 See [`skills/linkedin-carousel-builder/`](./skills/linkedin-carousel-builder/) for the full skill.
 
+### `ai-marketing-trend-radar`
+
+Finds what is actually being discussed on your topic in the last seven days, and turns it into things to post.
+
+**What it produces:** A ranked report in chat, a shareable page and an A4 PDF, all built from one data file. Each trend carries what happened, why your audience should care, the conversation with verbatim quotes, and three angles — hot take, practical, contrarian — each with a suggested format and a date to post it.
+
+**What it changes:** The weekly "what should I write about" problem stops being a blank page. You start from six ranked trends with the receipts attached.
+
+**How it works:** Seven agents search Reddit, X, YouTube, LinkedIn, Hacker News, trade press and the wider web in parallel, then everything is filtered against your audience, clustered, and scored 0-100 on signal, audience relevance, content potential and momentum. A trend needs two sources to rank; a single viral post goes under rising signals. Topic, audience, region and branding are settings, so the same skill runs a radar on anything.
+
+See [`skills/ai-marketing-trend-radar/`](./skills/ai-marketing-trend-radar/) for the full skill.
+
 ---
 
 ## Install
@@ -76,14 +88,15 @@ See [`skills/linkedin-carousel-builder/`](./skills/linkedin-carousel-builder/) f
 /plugin install b2b-landing-page@goodvibemarketer-marketing-skills
 /plugin install linkedin-infographic-builder@goodvibemarketer-marketing-skills
 /plugin install linkedin-carousel-builder@goodvibemarketer-marketing-skills
+/plugin install ai-marketing-trend-radar@goodvibemarketer-marketing-skills
 ```
 
-That is it. Claude Code will now use each skill automatically when you ask to draft a newsletter, build a landing page, or turn a post into an infographic or carousel.
+That is it. Claude Code will now use each skill automatically when you ask to draft a newsletter, build a landing page, turn a post into an infographic or carousel, or find out what is trending this week.
 
 ### Claude.ai (ZIP upload)
 
 1. Download this repo as a ZIP
-2. Extract it and find the skill folder you want (`skills/newsletter-editor/`, `skills/b2b-landing-page/`, `skills/linkedin-infographic-builder/` or `skills/linkedin-carousel-builder/`)
+2. Extract it and find the skill folder you want (`skills/newsletter-editor/`, `skills/b2b-landing-page/`, `skills/linkedin-infographic-builder/`, `skills/linkedin-carousel-builder/` or `skills/ai-marketing-trend-radar/`)
 3. ZIP that folder on its own
 4. In Claude.ai, go to Settings → Customize → Skills → Create skill
 5. Upload the ZIP

@@ -51,7 +51,7 @@ Map what you find to the tokens in `design.md` (`--canvas`, `--ink`, `--highligh
 - Keep the **Rules for drafts** section, adjusting spelling and emoji to what they actually do.
 If they don't have posts yet, write the voice guide from 3–5 posts they admire and say in the guide that it's provisional.
 
-**8. Buffer and media.** Check what's done and give the exact next step for what isn't (Part 5 of the guide has every click):
+**8. Buffer and media.** Check what's done and give the exact next step for what isn't (Part 6 of the guide has every click):
 - Media repo: a public GitHub repo (e.g. `content-media`) with GitHub Pages on (Settings → Pages → Deploy from a branch → `main` / root). Fill `media.repo` and `media.base_url` (`https://<user>.github.io/<repo>`).
 - Buffer: channels connected in Buffer, API key added to the cloud environment as an API credential for `api.buffer.com`. Then run `python3 scripts/buffer.py orgs` and `python3 scripts/buffer.py channels`, and fill `buffer.organization_id` and `buffer.channels`.
 
@@ -60,4 +60,4 @@ If they don't have posts yet, write the voice guide from 3–5 posts they admire
 1. Run the content-engine Skill's checks: no `TODO` left in `design.md`, `author.name` set, radar `setup_done: true`.
 2. `python3 scripts/buffer.py drafts <a tiny test drafts.json> --dry-run` with one text-only LinkedIn entry, to prove the config parses.
 3. Commit everything with `setup: <name>'s content engine` and push to `main`.
-4. Tell them, in three lines: what's set up, what's still missing (if anything), and the next step: "Run it once by hand: say 'run the content engine'." Then point them to Part 5 of the guide for the weekly routine.
+4. Tell them, in three lines: what's set up, what's still missing (if anything), and the next step: "Run it once by hand: say 'run the content engine'." Then point them to Part 6 of the guide for the weekly routine.

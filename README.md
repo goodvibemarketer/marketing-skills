@@ -76,6 +76,16 @@ Finds what is actually being discussed on your topic in the last seven days, and
 
 See [`skills/ai-marketing-trend-radar/`](./skills/ai-marketing-trend-radar/) for the full skill.
 
+### `content-engine-starter`
+
+The full weekly content engine from the [AI Marketing Engineer's Guide](https://goodvibemarketer.substack.com): trend radar, fact-checked trend report, posts in your voice, a branded infographic and carousel, all saved to Buffer as drafts by a Claude Code routine every Monday.
+
+**What it produces:** A private GitHub repo that runs your content prep every week, with nothing posted until you approve it.
+
+**How to use it:** This one is a whole project, not a single Skill. Make a private repo, open it in Claude Code and ask Claude to copy the [`content-engine-starter/`](./content-engine-starter/) folder into it. The step-by-step setup, tuning and automation are in the guide for paid subscribers.
+
+**Licence:** Not MIT. The kit has its own licence in [`content-engine-starter/LICENSE.txt`](./content-engine-starter/LICENSE.txt).
+
 ---
 
 ## Install
@@ -138,8 +148,8 @@ If you want a weekly breakdown of how marketers are actually using AI in the fie
 ## Feedback and issues
 
 - File an issue on this repo if something breaks or the skill produces weird output
-- Reach me on [LinkedIn](https://www.linkedin.com/in/andy-goodvibemarketer) (replace with actual URL) for bigger conversations
-- The skill is open source under MIT. Fork it, modify it, make it yours.
+- Reach me on [LinkedIn](https://www.linkedin.com/in/goodvibemarketer) for bigger conversations
+- The skills in `skills/` are open source under MIT. Fork them, modify them, make them yours. `content-engine-starter/` has its own licence.
 
 ---
 

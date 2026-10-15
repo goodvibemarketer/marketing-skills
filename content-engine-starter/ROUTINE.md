@@ -4,7 +4,7 @@ Create at claude.ai/code/routines → **New routine**.
 
 - **Name:** Weekly content engine
 - **Repositories:** this repo **and** your media repo
-- **Environment:** the one with your Buffer API credential (see Part 5)
+- **Environment:** the one with your Buffer API credential (see Part 6)
 - **Trigger:** Schedule → Weekly → Monday, 06:53 (a few minutes off the hour starts on time)
 - **Connectors:** remove all of them; the engine doesn't need any
 - **Instructions:** paste everything between the lines

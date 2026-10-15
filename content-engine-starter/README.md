@@ -29,9 +29,9 @@ runs/                           one folder per weekly run
 
 ## Quick start
 
-1. Make a **private** GitHub repo called `content-engine`, open it in Claude Code at claude.ai/code and say: *"Copy everything in the content-engine-starter folder from https://github.com/goodvibemarketer/marketing-skills into the root of this repo, including the hidden .claude folder, and commit it."* (Part 1 of the guide.)
+1. Make a **private** GitHub repo called `content-engine`, open it in Claude Code at claude.ai/code and say: *"Copy everything in the content-engine-starter folder from https://github.com/goodvibemarketer/marketing-skills into the root of this repo, including the hidden .claude folder, and commit it."* (Part 2 of the guide.)
 2. In the same session, say **"set up my content engine"**.
 3. Say **"run the content engine"** and check the result.
-4. Make the public media repo, connect Buffer, and create the weekly routine with the prompt in `ROUTINE.md` (Part 5).
+4. Make the public media repo, connect Buffer, and create the weekly routine with the prompt in `ROUTINE.md` (Part 6).
 
-You need: a Claude Pro or Max plan (routines and cloud sessions; on Team or Enterprise see Part 5's note on API keys), a GitHub account (free), and Buffer with your channels connected.
+You need: a Claude Pro or Max plan (routines and cloud sessions; on Team or Enterprise see Part 6's note on API keys), a GitHub account (free), and Buffer with your channels connected.

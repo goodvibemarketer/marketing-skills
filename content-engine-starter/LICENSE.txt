@@ -1,0 +1,14 @@
+Content engine starter kit
+Copyright (c) 2026 Mills Media Group Limited (GoodVibeMarketer)
+
+This folder is not covered by the MIT licence that applies to the rest of
+this repository.
+
+You may use, change and run this kit for your own content and for the
+company you work for, including inside your company's private repositories.
+
+You may not resell it, repackage it as a product or course, or republish it
+as your own.
+
+The kit is provided "as is", without warranty of any kind. You are
+responsible for what you publish.

@@ -1,0 +1,54 @@
+/* Notebook notes: a handwritten page in a real notebook. Text sits on the ruled lines. */
+@font-face{font-family:'Shadows Into Light';src:url(fonts/shadows-into-light-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Indie Flower';src:url(fonts/indie-flower-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Just Another Hand';src:url(fonts/just-another-hand-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Architects Daughter';src:url(fonts/architects-daughter-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Nanum Pen Script';src:url(fonts/nanum-pen-script-latin-400-normal.woff2) format('woff2')}
+
+:root{
+  --paper:#fdfcf7; --rule-col:rgba(70,95,140,.28); --margin-col:rgba(205,70,70,.45); --dot-col:rgba(40,40,40,.28);
+  --ink:#1d1d1f; --ink-soft:#55555c;
+  --pen:#3f9b3a;            /* second pen: green by default */
+  --marker:#e4f53b;         /* highlighter: neon yellow by default */
+  --rule:54px;              /* ruled-line spacing; every line of text sits on one */
+  --hand:'Indie Flower',cursive; --head:'Indie Flower',cursive; --caps:'Just Another Hand',cursive;
+}
+*{box-sizing:border-box;margin:0}
+html,body{margin:0;background:transparent}
+.page{position:relative;overflow:hidden;background-color:var(--paper);color:var(--ink);
+  font-family:var(--hand);font-size:calc(34px * var(--scale, 1));line-height:var(--rule);
+  padding:var(--rule) 70px var(--rule) 70px;display:flex;flex-direction:column}
+.page > *{position:relative;z-index:1}
+.page.spiral{padding-left:118px}
+.page.gutter{padding-left:110px}
+
+/* paper */
+.page.ruled{background-image:linear-gradient(to bottom,transparent calc(var(--rule) - 2px),var(--rule-col) calc(var(--rule) - 2px),var(--rule-col) var(--rule),transparent var(--rule));
+  background-size:100% var(--rule);background-position:0 calc(var(--rule) * 0.16)}
+.page.ruled.margin::after{content:"";position:absolute;top:0;bottom:0;left:96px;width:2px;background:var(--margin-col);z-index:0}
+.page.dots{background-image:radial-gradient(circle,var(--dot-col) 1.6px,transparent 2px);background-size:36px 36px;background-position:18px 18px;line-height:1.35}
+.page.grid{background-image:linear-gradient(to right,var(--rule-col) 1px,transparent 1px),linear-gradient(to bottom,var(--rule-col) 1px,transparent 1px);background-size:36px 36px;line-height:1.35}
+
+/* type: headings take two ruled lines, body one */
+.title{font-family:var(--head);font-size:calc(62px * var(--hscale, 1));line-height:calc(var(--rule) * 2);text-align:center}
+.title.caps{font-family:var(--caps);font-size:80px;letter-spacing:2px;text-transform:uppercase}
+/* sizes in em, so they follow the hand's scale */
+.h{font-size:1.18em} .caps{font-family:var(--caps);text-transform:uppercase;letter-spacing:1.5px;font-size:1.24em}
+.big{font-size:1.3em} .small{font-size:.84em}
+.pen{color:var(--pen)} .soft{color:var(--ink-soft)} .center{text-align:center}
+.body{flex:1;display:flex;flex-direction:column}
+
+/* layout helpers */
+.row{display:flex;align-items:center;gap:22px}
+.col{display:flex;flex-direction:column}
+.grow{flex:1}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.icon{display:inline-block;width:80px;height:80px;flex:none}
+.icon.s{width:54px;height:54px} .icon.l{width:120px;height:120px}
+.num{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;flex:none;font-size:30px;line-height:1}
+.check{display:inline-block;width:34px;height:34px;flex:none}
+.bullet::before{content:"•";margin-right:12px}
+
+/* pyramid: .pyramid holds .layer children, top to bottom; notebook.js draws and places them */
+.pyramid{position:relative;width:100%}
+.pyramid .layer{position:absolute;text-align:center;line-height:1.2}

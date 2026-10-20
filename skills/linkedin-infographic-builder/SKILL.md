@@ -9,6 +9,22 @@ Transforms textual content into one premium infographic image: a 1080×1350 px p
 
 **Keywords**: infographic, visual summary, poster, carousel, shareable graphic, one-pager, brand-aligned graphic
 
+## Make it yours (edit this block once)
+This skill is built to be shared. Your brand comes from your design system; everything about you, your company and your audience comes from this block. Fill it in once after installing. Leave a line blank and Claude asks for it when it is needed. Never invent any of them.
+
+```yaml
+author_name:          # e.g. Jane Smith
+author_headline:      # e.g. Head of Marketing, Acme · writes about B2B growth
+author_photo:         # file name or URL of a square headshot (personal posts)
+company_name:         # e.g. Acme Analytics
+company_logo:         # file name or URL of your logo (company posts)
+default_footer:       # personal | company
+audience:             # who the graphics are for, e.g. CFOs at mid-size UK manufacturers
+voice_notes:          # optional, e.g. British spelling, sentence case, no emoji
+```
+
+Read this block before anything else. A filled line is the default for every run; anything the user says in the request overrides it for that run. Use `audience` to decide which idea in the source is worth the graphic and how to word it.
+
 ## Design System & Branding Inheritance
 This skill operates strictly within the context of a professional design ecosystem. Do not use random colors, default styling, or generic layouts.
 

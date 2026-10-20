@@ -76,6 +76,42 @@ Finds what is actually being discussed on your topic in the last seven days, and
 
 See [`skills/ai-marketing-trend-radar/`](./skills/ai-marketing-trend-radar/) for the full skill.
 
+### `sketch-explainer`
+
+Draws the one big idea in an article as a hand-drawn, pen-on-paper explainer.
+
+**What it produces:** One PNG (portrait, square or landscape) with a handwritten title, wobbly boxes and arrows, highlighter on the key words, doodle icons and one punchline.
+
+**What it changes:** The simple visual people save, without opening a design tool.
+
+**How it works:** Picks a layout from the shape of the idea (a list, this-versus-that, a 2×2, a flow, an equation or one big number), writes 25 to 60 words, then renders real text in handwriting fonts with every line around it drawn by rough.js. Your pen and highlighter colours and an optional signature go in its "Make it yours" block.
+
+See [`skills/sketch-explainer/`](./skills/sketch-explainer/) for the full skill.
+
+### `notebook-notes`
+
+Turns an article's framework, findings or process into a photo-style page of handwritten notebook notes.
+
+**What it produces:** One PNG of a notebook page lying on a desk: ruled, dotted or grid paper, spiral or gutter binding, neon highlighter, coloured pen and circled numbers.
+
+**What it changes:** Gives you the "photo of my notes" post that gets saved, from any article.
+
+**How it works:** Numbered notes, a mind-map flow, a hub or a pyramid, picked by the shape of the content, with 60 to 140 words. Paper, binding, desk, handwriting and pen vary each time.
+
+See [`skills/notebook-notes/`](./skills/notebook-notes/) for the full skill.
+
+### `ai-slop-pattern-linter`
+
+Edits a draft into sharper, more human writing while keeping your voice, or names the AI-slop patterns without rewriting.
+
+**What it produces:** The edited draft plus a short note on what changed, or, in detect mode, each pattern found with the line it is in and the fix.
+
+**What it changes:** Drafts stop reading as machine-made, without losing the bluntness and digressions that make them yours.
+
+**How it works:** Reads your voice first and makes the minimum effective edit. A word list, often-empty phrases and about fifteen named patterns, each with a worked before and after, all in one readable file you can change. House terms you list in its "Make it yours" block are never cut.
+
+See [`skills/ai-slop-pattern-linter/`](./skills/ai-slop-pattern-linter/) for the full skill.
+
 ### `content-engine-starter`
 
 The full weekly content engine from the [AI Marketing Engineer's Guide](https://goodvibemarketer.substack.com): trend radar, fact-checked trend report, posts in your voice, a branded infographic and carousel, all saved to Buffer as drafts by a Claude Code routine every Monday.
@@ -99,17 +135,26 @@ The full weekly content engine from the [AI Marketing Engineer's Guide](https://
 /plugin install linkedin-infographic-builder@goodvibemarketer-marketing-skills
 /plugin install linkedin-carousel-builder@goodvibemarketer-marketing-skills
 /plugin install ai-marketing-trend-radar@goodvibemarketer-marketing-skills
+/plugin install sketch-explainer@goodvibemarketer-marketing-skills
+/plugin install notebook-notes@goodvibemarketer-marketing-skills
+/plugin install ai-slop-pattern-linter@goodvibemarketer-marketing-skills
 ```
 
-That is it. Claude Code will now use each skill automatically when you ask to draft a newsletter, build a landing page, turn a post into an infographic or carousel, or find out what is trending this week.
+That is it. Claude Code will now use each skill automatically when you ask to draft a newsletter, build a landing page, turn a post into an infographic, carousel, sketch or notebook page, tighten a draft, or find out what is trending this week.
 
 ### Claude.ai (ZIP upload)
 
+The easiest route is the ready-made ZIPs, each with an install guide, at [goodvibemarketer.com/skills](https://www.goodvibemarketer.com/skills/). Or build one yourself:
+
 1. Download this repo as a ZIP
-2. Extract it and find the skill folder you want (`skills/newsletter-editor/`, `skills/b2b-landing-page/`, `skills/linkedin-infographic-builder/`, `skills/linkedin-carousel-builder/` or `skills/ai-marketing-trend-radar/`)
+2. Extract it and find the skill folder you want (`skills/newsletter-editor/`, `skills/b2b-landing-page/`, `skills/linkedin-infographic-builder/`, `skills/linkedin-carousel-builder/`, `skills/ai-marketing-trend-radar/`, `skills/sketch-explainer/`, `skills/notebook-notes/` or `skills/ai-slop-pattern-linter/`)
 3. ZIP that folder on its own
 4. In Claude.ai, go to Settings → Customize → Skills → Create skill
 5. Upload the ZIP
+
+### Make it yours
+
+Each skill except `newsletter-editor` opens with a **Make it yours** block in its `SKILL.md`: your company, audience, voice and brand details. Fill it in once after installing and every run starts from your business. Those skill folders also carry a short PDF guide to installing and customising them. `newsletter-editor` asks its own setup questions on first run instead.
 
 ### Claude API
 

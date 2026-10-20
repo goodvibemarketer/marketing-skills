@@ -18,6 +18,25 @@ Reference files, read at the point they're needed:
 
 ---
 
+## Make it yours (edit this block once)
+
+Fill this in once after installing and every brief starts from your company instead of from zero. Leave a line blank and the skill asks for it as usual. These are defaults: anything in the request overrides them for that page.
+
+```yaml
+company:            # e.g. Acme Analytics
+product_summary:    # one or two sentences on what you sell and to whom
+icp:                # your ideal customer, e.g. mid-size UK manufacturers, 200-2,000 staff
+buyer_roles:        # who reads the page, e.g. CFO (decides), finance ops lead (evaluates)
+proof_on_file:      # proof you actually have today: named case studies, quotes with permission, real metrics
+default_cta:        # e.g. book a demo | start a trial | download the report
+brand_voice:        # e.g. plain, confident, British spelling, no hype words
+compliance_notes:   # anything every page must carry, e.g. regulatory wording
+```
+
+Treat `proof_on_file` like any other proof: it is real only if it is listed here or supplied in the conversation. Everything else stays a marked gap.
+
+---
+
 ## Why this skill exists
 
 Most landing pages fail for reasons that have nothing to do with the writing. They give the visitor several things to do instead of one. They open with a claim the visitor was never promised. They ask a senior buyer for fifteen minutes before earning thirty seconds. Good sentences don't fix any of that.

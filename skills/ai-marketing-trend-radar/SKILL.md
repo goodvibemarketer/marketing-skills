@@ -469,11 +469,11 @@ A Claude design system is an Artifact of type "Design System". Its files usually
 | `brand.logo_on_dark` | Reversed logo for the dark footer | Asset store; if there's none, leave it out and the footer shows `brand.name` in text (never recolour a logo) |
 | `brand.mark`, `brand.mark_label`, `brand.mark_url` | Small icon + link on the footer's right | e.g. a newsletter or social mark and its URL |
 
-Example: the GoodVibeMarketer design system mapped to a theme.
+Example: a fictional brand, Northwind Analytics, mapped to a theme. Replace every value with your own.
 
 ```json
 {
- "name": "GoodVibeMarketer",
+ "name": "Northwind Analytics",
  "colors": {
   "canvas": "#faf9f5", "soft": "#f5f0e8", "card": "#efe9de", "strong": "#e8e0d2",
   "hair": "#e6dfd8", "hair_soft": "#ebe6df", "ink": "#141413", "body": "#3d3d3a",
@@ -487,7 +487,7 @@ Example: the GoodVibeMarketer design system mapped to a theme.
   "display": {"family": "Cormorant Garamond", "fontsource": "cormorant-garamond", "weight": 500, "italic": true, "fallback": "'Tiempos Headline', Garamond, 'Times New Roman', serif", "tracking": "-0.01em"},
   "sans": {"family": "Inter", "fontsource": "inter", "weights": [400, 500, 600], "fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"}},
  "radius": {"md": 8, "lg": 12}, "cover_strip": true, "eyebrow_uppercase": true,
- "brand": {"name": "Andy Mills", "link_label": "GoodVibeMarketer.com", "link_url": "https://goodvibemarketer.com", "avatar": "andy-mills.jpg", "mark": "substack-mark.png", "mark_label": "goodvibemarketer.substack.com", "mark_url": "https://goodvibemarketer.substack.com"}
+ "brand": {"name": "Jane Smith", "link_label": "northwind.example", "link_url": "https://northwind.example", "avatar": "jane-smith.jpg", "mark": "newsletter-mark.png", "mark_label": "northwind.example/newsletter", "mark_url": "https://northwind.example/newsletter"}
 }
 ```
 

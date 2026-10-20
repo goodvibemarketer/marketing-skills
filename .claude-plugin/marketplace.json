@@ -26,7 +26,7 @@
       "name": "b2b-landing-page",
       "source": "./skills/b2b-landing-page",
       "description": "Plans and builds complete B2B landing pages — strategy, message hierarchy, section-by-section copy, form specification, visual direction, and the built page. Runs in two phases: a reviewable brief, then the build.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "marketing",
       "keywords": [
         "landing-page",
@@ -43,7 +43,7 @@
       "name": "linkedin-infographic-builder",
       "source": "./skills/linkedin-infographic-builder",
       "description": "Turns an article, post or report into one polished 1080x1350 infographic PNG, styled by your design system, with your face and name in the footer. Built for B2B: proof over hype, one reusable idea per graphic.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "marketing",
       "keywords": [
         "infographic",
@@ -60,7 +60,7 @@
       "name": "linkedin-carousel-builder",
       "source": "./skills/linkedin-carousel-builder",
       "description": "Repurposes one long-form piece into a LinkedIn carousel: a 6-10 page PDF document post at 1080x1350 per page, styled by your design system, ending on a follow or subscribe CTA. PNGs of each slide come as a secondary output.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "marketing",
       "keywords": [
         "carousel",
@@ -77,7 +77,7 @@
       "name": "ai-marketing-trend-radar",
       "source": "./skills/ai-marketing-trend-radar",
       "description": "Weekly trend radar over the last 7 days of Reddit, X, YouTube, LinkedIn, Hacker News, trade press and the web. Ranks trends by a 0-100 Trend Score and turns each into content angles, as a report, a shareable page and a PDF.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "marketing",
       "keywords": [
         "trend-radar",
@@ -88,6 +88,57 @@
         "weekly",
         "reporting",
         "seo"
+      ]
+    },
+    {
+      "name": "sketch-explainer",
+      "source": "./skills/sketch-explainer",
+      "description": "Turns one idea from an article into a hand-drawn, pen-on-paper explainer image: handwritten title, wobbly boxes and arrows, highlighter on the key words, doodle icons and one punchline.",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": [
+        "sketch",
+        "hand-drawn",
+        "linkedin",
+        "social",
+        "visual",
+        "repurposing",
+        "png",
+        "explainer"
+      ]
+    },
+    {
+      "name": "notebook-notes",
+      "source": "./skills/notebook-notes",
+      "description": "Turns an article's framework, findings or process into a photo-style page of handwritten notebook notes: ruled or dotted paper, spiral binding, neon highlighter and coloured pen, lying on a desk.",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": [
+        "notebook",
+        "handwritten",
+        "notes",
+        "linkedin",
+        "social",
+        "visual",
+        "repurposing",
+        "png"
+      ]
+    },
+    {
+      "name": "ai-slop-pattern-linter",
+      "source": "./skills/ai-slop-pattern-linter",
+      "description": "Edits drafts into sharper, more human writing while keeping your voice, or names AI-slop patterns with the line and the fix, without rewriting.",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": [
+        "editing",
+        "writing",
+        "ai-slop",
+        "voice",
+        "copy",
+        "linkedin",
+        "newsletter",
+        "review"
       ]
     }
   ]

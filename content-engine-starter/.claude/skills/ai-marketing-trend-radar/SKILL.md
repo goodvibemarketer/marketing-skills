@@ -165,7 +165,11 @@ Run WebSearch with these angles, restricted to the last 7 days:
 - {TOPIC} + the audience's field + analysis OR opinion
 - 1–2 more angles from the strongest QUERIES
 
-WebFetch the top 8–10 results that aren't from the trade press list. Per page: title, publication, URL, date, key points and any named voices. Drop anything undated or outside the window. If nothing: "Web: No relevant results found."
+WebFetch the top 8–10 results that aren't from the trade press list. Per page: title, publication, URL, date, key points and any named voices. Drop anything undated or outside the window.
+
+**X and YouTube, best effort.** Also run `site:x.com {query}` and `site:youtube.com {query}` for the first 2 QUERIES. Keep a post or video only if you can date it inside the window (from the page, the snippet or the post ID) and it's from a named account. Per item: author or channel, URL, date, and the claim or quote in their words. Report these under Web, marked "(X)" or "(YouTube)". They carry no engagement numbers, so never describe one as viral or popular, and an item from X or YouTube alone doesn't make a trend cross-source. Skip Reddit and LinkedIn: they block or lag search, so they rarely return anything datable.
+
+If nothing: "Web: No relevant results found."
 
 ---
 
@@ -453,7 +457,7 @@ Example: the GoodVibeMarketer design system mapped to a theme.
 
 ## Citation rules
 
-Priority: named people (newsletter authors, quoted executives and practitioners) → HN commenters → trade press by publication name → the company's own announcement → research publisher → web.
+Priority: named people (newsletter authors, quoted executives and practitioners, @handles on X, YouTube channels) → HN commenters → trade press by publication name → the company's own announcement → research publisher → web.
 
 - 1–2 citations per claim. Never chain five.
 - No raw URLs in the report body. Use source names.

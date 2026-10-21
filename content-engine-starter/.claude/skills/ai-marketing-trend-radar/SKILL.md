@@ -177,6 +177,8 @@ If nothing: "Web: No relevant results found."
 
 For each company in `companies` (radar mode: the 8 most relevant to this week's QUERIES), WebSearch for announcements in the last 7 days: `{company} announces OR launches OR introduces {TOPIC}`, plus the company's own newsroom, blog or changelog where you know it. Also search `{TOPIC} launch OR "now available" OR "generally available"` for companies not on the list.
 
+WebFetch every page in `official_sources` too, and list each announcement dated inside the window (title, date, URL, one line on what it is). These are primary sources; launches here count as hard evidence.
+
 WebFetch the official page for each announcement worth keeping. Per item: company, what launched or changed, who it affects, date, URL. Prefer the primary source (the company's own post) over coverage of it. If nothing: "Launches: No announcements found."
 
 ---

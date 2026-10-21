@@ -72,7 +72,7 @@ Finds what is actually being discussed on your topic in the last seven days, and
 
 **What it changes:** The weekly "what should I write about" problem stops being a blank page. You start from six ranked trends with the receipts attached.
 
-**How it works:** Seven agents search Reddit, X, YouTube, LinkedIn, Hacker News, trade press and the wider web in parallel, then everything is filtered against your audience, clustered, and scored 0-100 on signal, audience relevance, content potential and momentum. A trend needs two sources to rank; a single viral post goes under rising signals. Topic, audience, region and branding are settings, so the same skill runs a radar on anything.
+**How it works:** Six agents search Hacker News, trade press, the wider web, company launches, new research and data, and newsletters in parallel, then everything is filtered against your audience, clustered, and scored 0-100 on signal, audience relevance, content potential and momentum. A trend needs two sources to rank; a story from one source goes under rising signals. It needs no paid tools or API keys: everything runs on Claude's web search and the free Hacker News API. Topic, audience, region and branding are settings, so the same skill runs a radar on anything.
 
 See [`skills/ai-marketing-trend-radar/`](./skills/ai-marketing-trend-radar/) for the full skill.
 

@@ -1,10 +1,10 @@
 ---
 name: ai-marketing-trend-radar
-description: Weekly trend radar that scans the last 7 days of Reddit, X, YouTube, LinkedIn, HN, trade press and the web for a topic, ranks trends with content angles, and delivers a report branded with your Claude design system.
+description: Weekly trend radar that scans the last 7 days of Hacker News, trade press, the web, company launches, new research and newsletters for any topic, ranks trends with content angles, and delivers a report branded with your Claude design system.
 ---
 # AI Marketing Trend Radar
 
-Find what's actually trending on **a topic** over the **last 7 days**, across Reddit, X/Twitter, YouTube, LinkedIn, Hacker News, trade press and the wider web, and turn it into content ideas for **a specific audience**. The topic, the audience and the report's branding all come from the Settings below, so anyone can make the radar their own.
+Find what's actually trending on **a topic** over the **last 7 days**, across Hacker News, trade press, the wider web, company launches, new research and data, and newsletters, and turn it into content ideas for **a specific audience**. The topic, the audience and the report's branding all come from the Settings below, so anyone can make the radar their own.
 
 The job is not a news digest. Every finding must answer two questions: *what is the conversation?* and *what would someone writing for this audience post about it?*
 
@@ -34,7 +34,8 @@ queries:
   - AI content LinkedIn
   - marketing automation AI
   - AI sales prospecting
-subreddits: [marketing, digital_marketing, B2BMarketing, content_marketing, SEO, PPC, artificial, ChatGPT, ClaudeAI]
+companies: [OpenAI, Anthropic, Google, Microsoft, Meta, LinkedIn, HubSpot, Salesforce, Adobe, Perplexity]
+newsletters: []   # domains of newsletters the audience reads; generated during setup
 trade_press: [marketingweek.com, thedrum.com, adweek.com, searchengineland.com, martech.org, digiday.com, campaignlive.co.uk]
 design_system: ""   # name or link of your Claude design system; blank = auto-detect
 saved_theme: ""     # filled in by Setup after your design system is mapped
@@ -51,7 +52,8 @@ What each setting does:
 | `region` | Flag stories with this region's angle (regulation, market data, brands); blank for global |
 | `voice` | The register of the chat report and the hooks |
 | `queries` | The default search set every source uses in radar mode |
-| `subreddits`, `trade_press` | Communities and publications to scan; generated for the topic during setup |
+| `trade_press`, `newsletters` | Publications and newsletters to scan; generated for the topic during setup |
+| `companies` | The companies whose launches and announcements matter to the audience; generated during setup |
 | `design_system` | Name or link of the Claude design system that brands the report; blank means auto-detect |
 | `saved_theme` | The design system already mapped to the report (Step 5c); when present it is used as is, so every week looks identical |
 | `setup_done` | `false` until Setup has run; while false, the first run offers Setup |
@@ -69,7 +71,7 @@ While `setup_done` is `false`, start any run by asking once: "Set up the radar f
    - Audience: who will the content be for? (e.g. "B2B marketers", "HR leaders", "founders")
    - Region angle: a country or region to flag, or global
    - Branding: list the user's design systems (Step 5a) and ask which to use, with "No design system (neutral look)" as an option
-2. **Generate the settings** from the answers: `report_name` (short, e.g. "FinServ AI Radar"), `audience_detail` (the roles and company types in one line), and a `voice` to confirm with the user. Then **generate the source lists** for the topic: 10–12 `queries` (short, as people actually write them, mixing the topic with the audience's work: tools, launches, data, debates), 6–10 `subreddits` where the audience and topic meet, and 6–10 `trade_press` domains the audience reads. Prefer sources you can confirm exist; leave out any you're unsure of.
+2. **Generate the settings** from the answers: `report_name` (short, e.g. "FinServ AI Radar"), `audience_detail` (the roles and company types in one line), and a `voice` to confirm with the user. Then **generate the source lists** for the topic: 10–12 `queries` (short, as people actually write them, mixing the topic with the audience's work: tools, launches, data, debates), 8–12 `companies` whose launches the audience watches, 6–10 `trade_press` domains and 4–8 `newsletters` (domains, Substack or Beehiiv addresses) the audience reads. Prefer sources you can confirm exist; leave out any you're unsure of.
 3. **Map the design system** to a theme (Step 5c). Build a preview from the schema example in Step 5b, first overwriting its `meta.report_name`, `topic`, `audience`, `why_label` and `h1` with the user's answers, and show it (publish the page) so the user can check the branding before saving. Say the trend content is sample data. Apply any fixes they ask for to the theme before saving.
 4. **Save.** Put the answers and lists into the Settings block, set `design_system` to the chosen design system's name and link (or `none` for a theme built from colours given in chat), store the theme as `saved_theme` on one line as a JSON object, with every brand image that came from the design system written as `asset:<asset id>`, and set `setup_done: true`. Images the user attached in chat can't be stored in the skill; suggest adding them to a design system instead. Then save the updated skill:
    - If a `propose_skills` tool is available, propose the complete updated SKILL.md as an improvement to this skill.
@@ -103,7 +105,7 @@ date -u +%F                   # TODAY
 
 **radar mode**: QUERIES = `queries` from Settings. If they're empty, generate 10–12 for the topic as in Setup step 2.
 
-**When this run's topic or audience differs from Settings** (a one-off override, or a hand-edited `topic`), generate this run's QUERIES, subreddits and trade press for it as in Setup step 2 instead of using the saved lists, which belong to the saved topic.
+**When this run's topic or audience differs from Settings** (a one-off override, or a hand-edited `topic`), generate this run's QUERIES, companies, trade press and newsletters for it as in Setup step 2 instead of using the saved lists, which belong to the saved topic.
 
 **focused mode**: QUERIES = [TOPIC, "{TOPIC} {audience's field}", "{TOPIC} business"].
 
@@ -111,103 +113,20 @@ date -u +%F                   # TODAY
 
 > Running the {report_name} on "{TOPIC}" for {audience}.
 > Window: last 7 days ({DATE_7_DAYS_AGO} → {TODAY}).
-> Sources: Reddit, X, YouTube, LinkedIn, Hacker News, trade press, web.
+> Sources: Hacker News, trade press, web, launches, research, newsletters.
 > Launching all agents now...
 
 ---
 
-## Step 1 — Run all 7 source agents in parallel
+## Step 1 — Run all 6 source agents in parallel
 
-Launch all 7 at once with the Agent tool. Pass MODE, TOPIC, audience, QUERIES, DATE_7_DAYS_AGO and UNIX_7_DAYS_AGO to each. Each agent returns plain text and **must include the date of every item**. Anything older than DATE_7_DAYS_AGO is dropped at source.
+Launch all 6 at once with the Agent tool. Pass MODE, TOPIC, audience, QUERIES, DATE_7_DAYS_AGO and UNIX_7_DAYS_AGO to each. Each agent returns plain text and **must include the date of every item**. Anything older than DATE_7_DAYS_AGO is dropped at source.
 
-**If the Apify MCP tools aren't available** (Agents A–D), don't stop. Fall back to WebSearch with `site:reddit.com`, `site:x.com`, `site:youtube.com`, `site:linkedin.com/posts` plus the query and "past week" phrasing, keep only items you can date inside the window, and flag the source as "fallback, no engagement data" in the stats block.
-
----
-
-### Agent A — Reddit
-
-Apify actor `trudax/reddit-scraper-lite`:
-
-```json
-{
-  "searches": {QUERIES},
-  "startUrls": [{"url": "https://www.reddit.com/r/{each subreddit from Settings}/top/?t=week"}],
-  "searchPosts": true,
-  "sort": "top",
-  "time": "week",
-  "maxItems": 60,
-  "maxPostCount": 60,
-  "maxComments": 3,
-  "includeNSFW": false,
-  "proxy": {"useApifyProxy": true, "apifyProxyGroups": ["RESIDENTIAL"]}
-}
-```
-
-In **focused** mode drop `startUrls` and use `"sort": "relevance"`.
-
-Per post: title, URL, subreddit, upvotes, upvote ratio, comment count, date, body (first 300 chars), and the top 1–3 comments verbatim (comments are where practitioners reveal what's really working or annoying them). In radar mode, discard subreddit posts off the topic. Lead with highest-upvote posts. If 0 results: "Reddit: No results found."
+Every source here works with WebSearch and WebFetch, or a free public API. No accounts, keys or paid tools. Restrict searches to the last 7 days and keep only items you can date inside the window.
 
 ---
 
-### Agent B — X/Twitter
-
-Apify actor `apidojo/tweet-scraper`:
-
-```json
-{
-  "searchTerms": {QUERIES, each suffixed with " min_faves:15 -filter:replies"},
-  "maxItems": 60,
-  "sort": "Top",
-  "tweetLanguage": "en",
-  "start": "{DATE_7_DAYS_AGO}"
-}
-```
-
-Per tweet: handle, display name, text, URL, likes, reposts, replies, quotes, date. Flag viral threads and any post from an official company account (launch announcements). Skip engagement-bait listicles. If 0 results: "X: No results found."
-
----
-
-### Agent C — YouTube
-
-Apify actor `streamers/youtube-scraper`:
-
-```json
-{
-  "searchQueries": {first 6 QUERIES},
-  "maxResults": 8,
-  "maxResultsShorts": 0,
-  "maxResultStreams": 0,
-  "sortingOrder": "views",
-  "dateFilter": "week",
-  "downloadSubtitles": true
-}
-```
-
-Per video: title, URL, channel, views, likes, date, and **3–5 verbatim transcript quotes** attributed to the channel (fall back to the first 200 chars of the description if no transcript). Note channels covering the same story. If 0 results: "YouTube: No results found."
-
----
-
-### Agent D — LinkedIn
-
-Apify actor `harvestapi/linkedin-post-search`:
-
-```json
-{
-  "searchQueries": {QUERIES},
-  "maxPosts": 50,
-  "postedLimit": "week",
-  "sortBy": "relevance",
-  "profileScraperMode": "short",
-  "scrapeReactions": false,
-  "scrapeComments": false
-}
-```
-
-Per post: author, job title/company, post text or key quote, URL, likes, comments, shares, date. Note **which angles are already saturated** (five people posted the same take) and **which got strong engagement from people in the audience**. If 0 results: "LinkedIn: No results found."
-
----
-
-### Agent E — Hacker News
+### Agent A — Hacker News
 
 WebFetch the Algolia API once per query (radar mode: the first 4 QUERIES):
 
@@ -215,26 +134,53 @@ WebFetch the Algolia API once per query (radar mode: the first 4 QUERIES):
 https://hn.algolia.com/api/v1/search?query={QUERY_URL_ENCODED}&tags=story&numericFilters=created_at_i>{UNIX_7_DAYS_AGO},points>10&hitsPerPage=20
 ```
 
-Per story: title, URL (or `https://news.ycombinator.com/item?id=<objectID>`), points, comments, date. HN is an early-warning signal for tools and platform changes; note anything likely to reach the audience. For topics far from tech, keep it but expect little. If 0 results: "Hacker News: No results found."
+Per story: title, URL (or `https://news.ycombinator.com/item?id=<objectID>`), points, comments, date. For the top 2–3 stories, WebFetch the discussion and take 1–2 comments verbatim. HN is an early-warning signal for tools and platform changes and the one source here with crowd engagement numbers; note anything likely to reach the audience. For topics far from tech, keep it but expect little. If 0 results: "Hacker News: No results found."
 
 ---
 
-### Agent F — Web (launches, research, data)
+### Agent B — Trade press
+
+WebSearch `site:{domain} {TOPIC}` for each domain in `trade_press` (add `site:techcrunch.com` and `site:theverge.com` when the topic is technology), last 7 days only. WebFetch the 8–10 most relevant. Per article: title, publication, URL, author, date, key points and any quotes from named people. Note when trade press is covering something the other sources aren't yet (or vice versa). If nothing: "Trade press: No relevant articles found."
+
+---
+
+### Agent C — Web (news and analysis)
 
 Run WebSearch with these angles, restricted to the last 7 days:
 
 - "{TOPIC}" news this week
-- {TOPIC} survey OR report OR study {current month} {current year}
-- the biggest companies in the topic + announcement + the audience
+- {TOPIC} + the audience's field + analysis OR opinion
 - 1–2 more angles from the strongest QUERIES
 
-WebFetch the top 8–10 results. Per page: title, publication, URL, date, key points, and **any hard numbers** (adoption %, budget shifts, traffic changes). Data points are gold for content. Drop anything undated or outside the window. If nothing: "Web: No relevant results found."
+WebFetch the top 8–10 results that aren't from the trade press list. Per page: title, publication, URL, date, key points and any named voices. Drop anything undated or outside the window. If nothing: "Web: No relevant results found."
 
 ---
 
-### Agent G — Trade press
+### Agent D — Launches and announcements
 
-WebSearch `site:{domain} {TOPIC}` for each domain in `trade_press` (add `site:techcrunch.com` and `site:theverge.com` when the topic is technology), last 7 days only. WebFetch the 8–10 most relevant. Per article: title, publication, URL, author, date, key points or quotes. Note when trade press is covering something the social sources aren't yet (or vice versa). If nothing: "Trade press: No relevant articles found."
+For each company in `companies` (radar mode: the 8 most relevant to this week's QUERIES), WebSearch for announcements in the last 7 days: `{company} announces OR launches OR introduces {TOPIC}`, plus the company's own newsroom, blog or changelog where you know it. Also search `{TOPIC} launch OR "now available" OR "generally available"` for companies not on the list.
+
+WebFetch the official page for each announcement worth keeping. Per item: company, what launched or changed, who it affects, date, URL. Prefer the primary source (the company's own post) over coverage of it. If nothing: "Launches: No announcements found."
+
+---
+
+### Agent E — Research and data
+
+WebSearch for new numbers published in the window:
+
+- {TOPIC} survey OR report OR study {current month} {current year}
+- {TOPIC} + the audience's field + data OR statistics OR benchmark
+- analyst or research firm reports on the topic
+
+WebFetch each source page. Per item: publisher, title, URL, date, the **hard numbers** (adoption %, budget shifts, traffic changes, sample size) and what was measured. Data points are gold for content: record each number exactly as published, with its base. Drop anything undated, outside the window, or with no named publisher. If nothing: "Research: No new data found."
+
+---
+
+### Agent F — Newsletters and Substack
+
+This is where practitioners argue, so it carries most of "the conversation". WebSearch `site:substack.com {query}` and `site:beehiiv.com {query}` for the first 4 QUERIES, plus `site:{domain} {TOPIC}` for each domain in `newsletters`, last 7 days only.
+
+WebFetch the 6–8 most relevant posts. Per post: author, newsletter, title, URL, date, the author's stance in one line, and 1–2 short verbatim quotes. Note **which takes are already everywhere** (several writers making the same point) and **where writers disagree**. If nothing: "Newsletters: No relevant posts found."
 
 ---
 
@@ -255,9 +201,9 @@ In **focused** mode, also require at least one specific topic token (not generic
 
 ## Step 3 — Cluster and dedupe
 
-1. **Same-source dedupe**: items sharing 70%+ meaningful words → keep the higher-engagement one.
-2. **Cluster into stories**: group items across all sources about the same event or debate (40%+ word overlap, or clearly the same launch/report/controversy). Strip "Show HN:"/"Ask HN:" prefixes; compare only the first 100 chars of tweets.
-3. Each cluster is a **candidate trend**. Tag it `[CROSS-SOURCE: Reddit, LinkedIn, X]` etc. Cross-source clusters are the strongest signals.
+1. **Same-source dedupe**: items sharing 70%+ meaningful words → keep the one from the primary or more established source.
+2. **Cluster into stories**: group items across all sources about the same event or debate (40%+ word overlap, or clearly the same launch/report/controversy). Strip "Show HN:"/"Ask HN:" prefixes; compare only the first 100 chars of headlines.
+3. Each cluster is a **candidate trend**. Tag it `[CROSS-SOURCE: Trade press, Newsletters, Hacker News]` etc. Cross-source clusters are the strongest signals.
 
 ---
 
@@ -265,23 +211,19 @@ In **focused** mode, also require at least one specific topic token (not generic
 
 ### Item score (0–100)
 
-| Source | Relevance | Recency | Engagement | Engagement formula |
+| Source | Relevance | Recency | Third factor | How to score the third factor |
 | :---- | :---- | :---- | :---- | :---- |
-| Reddit | 40% | 30% | 30% | 0.50·log(upvotes+1) + 0.35·log(comments+1) + 0.15·upvote_ratio |
-| X | 40% | 30% | 30% | 0.55·log(likes+1) + 0.25·log(reposts+1) + 0.15·log(replies+1) + 0.05·log(quotes+1) |
-| YouTube | 40% | 30% | 30% | 0.70·log(views+1) + 0.30·log(likes+1) |
-| LinkedIn | 40% | 30% | 30% | 0.50·log(likes+1) + 0.30·log(comments+1) + 0.20·log(shares+1) |
-| HN | 40% | 30% | 30% | 0.60·log(points+1) + 0.40·log(comments+1) |
-| Web / Trade press | 55% | 45% | none | subtract 10 (no crowd validation); no penalty for items carrying hard data |
+| Hacker News | 40% | 30% | Engagement 30% | 0.60·log(points+1) + 0.40·log(comments+1), normalised to 0–100 within HN |
+| Trade press, Web, Launches, Research, Newsletters | 50% | 30% | Source weight 20% | 100 primary source (the company's own announcement, the original research); 80 established trade or national press; 60 named newsletter or analyst; 40 other web |
 
-Normalise engagement within each source to 0–100 before weighting. Recency: 0–1 days old 100, 2–3 days 85, 4–5 days 70, 6–7 days 55, older than 7 days discard.
+Add 10 (capped at 100) to any item carrying a hard data point. Recency: 0–1 days old 100, 2–3 days 85, 4–5 days 70, 6–7 days 55, older than 7 days discard.
 
 ### Trend score (0–100) — this ranks the report
 
-- **Signal (35%)**: mean of its top 3 item scores, +10 for 2 sources, +20 for 3+ sources, capped at 100
+- **Signal (35%)**: mean of its top 3 item scores, +10 for 2 sources, +20 for 3+ sources, capped at 100. With no social engagement data, breadth across independent sources is the main evidence that something is trending
 - **Audience relevance (30%)**: 100 = directly changes the audience's job this quarter; 60 = useful context; 30 = tangential
-- **Content potential (25%)**: live disagreement or debate (+30), a hard data point (+25), a fresh angle not yet saturated on LinkedIn (+25), a practical "how to use this" hook (+20)
-- **Momentum (10%)**: 100 if most items are from the last 3 days, 50 if spread evenly, 20 if it peaked early in the week
+- **Content potential (25%)**: live disagreement or debate (+30), a hard data point (+25), a fresh angle not yet widely covered (+25), a practical "how to use this" hook (+20)
+- **Momentum (10%)**: 100 if most items are from the last 3 days, 50 if spread evenly, 20 if coverage peaked early in the week
 
 ---
 
@@ -312,7 +254,7 @@ Week of {DATE_7_DAYS_AGO} → {TODAY}
 - *Hot take:* [a hook line + the stance] → best as {LinkedIn post / newsletter lead / short video}
 - *Practical:* [a hook line + what the how-to covers] → best as {carousel / post / guide}
 - *Contrarian:* [a hook line that pushes against the consensus] → best as {post / opinion piece}
-**Saturation:** [Fresh / Getting crowded / Saturated on LinkedIn, with evidence]
+**Saturation:** [Fresh / Getting crowded / Saturated, judged by how many publications and newsletters already made the same point, with evidence]
 **Shelf life:** [Post within 48h / Good for 1–2 weeks / Evergreen]
 
 [Repeat for 5–8 trends]
@@ -321,7 +263,7 @@ Week of {DATE_7_DAYS_AGO} → {TODAY}
 [2–4 early items with one strong source, not yet mainstream. One line each.]
 
 ## Loud but skip
-[1–3 things getting lots of engagement that aren't worth a content slot, with a one-line reason each. Be blunt.]
+[1–3 things getting lots of coverage that aren't worth a content slot, with a one-line reason each. Be blunt.]
 
 ## Content plan snapshot
 | # | Trend | Best angle | Format | Post by |
@@ -381,7 +323,7 @@ The page and PDF come from the builder script in the appendix. The layout is fix
 
 **Data rules for `radar-data.json`:**
 
-- `meta.title`: "{short report name} {d}–{d Mon}" (e.g. "AI Trend Radar 22–29 Sep"). `meta.report_name`, `meta.topic`, `meta.audience` from Settings (or this run's overrides). `meta.why_label`: "Why {audience} should care". `meta.h1` is optional (default "What {audience} should be talking about this week"). `meta.coverage_note`: plain statement of any sources that failed or used fallback, and that scores are estimates if engagement data was thin; empty string if full coverage.
+- `meta.title`: "{short report name} {d}–{d Mon}" (e.g. "AI Trend Radar 22–29 Sep"). `meta.report_name`, `meta.topic`, `meta.audience` from Settings (or this run's overrides). `meta.why_label`: "Why {audience} should care". `meta.h1` is optional (default "What {audience} should be talking about this week"). `meta.coverage_note`: plain statement of any source that returned nothing or couldn't be reached; empty string if every source returned results.
 - `stats`: 4 tiles. Each `value` is a real number from the research, `label` says what it measures in one sentence, `source` names the publication. No invented or rounded-up figures.
 - `trends[].components`: signal, relevance, content, momentum, each 0–100. `score` must equal round(0.35·signal + 0.30·relevance + 0.25·content + 0.10·momentum). Check the arithmetic before building.
 - `trends[].sources`: only names from `source_columns` where the trend actually appeared.
@@ -389,7 +331,7 @@ The page and PDF come from the builder script in the appendix. The layout is fix
 - `trends[].quotes`: verbatim only, 0–2 per trend, each with `who`.
 - `chart_of_week`: the single most quotable before/after comparison in the research, with 2–4 series and two time points (rendered as a slope chart with a hidden data table). None in the research → `null`, and the section is skipped. Never fabricate a series.
 - `plan`: one row per trend, `n` = the trend's rank, `post_by` = a real weekday date from TODAY, ordered by urgency (shelf life), not rank.
-- `source_stats`: one row per source scanned, including failures (items 0) and `fallback: true` where WebSearch replaced a scraper.
+- `source_stats`: one row per source scanned, including failures (items 0). Set `fallback` to `false`; every source is read directly.
 - `sources`: the 10–15 most-cited items with working URLs.
 
 Schema example (trimmed from a real run; a full run has 4 stats, 5–8 trends, and a row per source). It doubles as the preview data for Setup:
@@ -398,13 +340,13 @@ Schema example (trimmed from a real run; a full run has 4 stats, 5–8 trends, a
 {
  "meta": {"title": "AI Trend Radar 22–29 Sep", "report_name": "AI Marketing Trend Radar", "topic": "AI for business & marketing",
   "audience": "B2B marketers", "why_label": "Why B2B marketers should care", "window_start": "2026-09-22", "window_end": "2026-09-29",
-  "coverage_note": "Run without Apify. X, YouTube and LinkedIn came through web search only, so they have no engagement numbers."},
+  "coverage_note": ""},
  "headline": "AI answers are taking the click from Google's blue links, and OpenAI, Meta and Google are all building ad and shopping businesses inside those answers.",
  "stats": [
   {"value": "39.4%", "label": "of US desktop searches now show an AI Overview, up from 25.8% a year earlier", "source": "Comscore via Search Engine Land"},
   {"value": "−18.8 pts", "label": "drop in clicks to websites for people using Google's AI Mode, in a 1,100-person field study", "source": "Search Engine Land"}
  ],
- "source_columns": ["X", "YouTube", "LinkedIn", "Hacker News", "Web", "Trade press"],
+ "source_columns": ["Hacker News", "Trade press", "Web", "Launches", "Research", "Newsletters"],
  "trends": [
   {"name": "AI search is eating the click", "score": 86,
    "components": {"signal": 78, "relevance": 100, "content": 80, "momentum": 90},
@@ -427,7 +369,7 @@ Schema example (trimmed from a real run; a full run has 4 stats, 5–8 trends, a
  "rising": [{"name": "OpenAI DevDay", "text": "A pre-event teaser pointed to an always-on agent. Check the announcements."}],
  "skip": [{"name": "Claude's enzyme discovery", "text": "780 points on Hacker News. Impressive science, no marketing angle."}],
  "plan": [{"n": 1, "trend": "AI search is eating the click", "angle": "Source in 61% vs visible in 21%", "format": "Carousel", "post_by": "Fri 2 Oct"}],
- "source_stats": [{"source": "Reddit", "items": 0, "detail": "Unreachable without Apify", "fallback": true},
+ "source_stats": [{"source": "Trade press", "items": 14, "detail": "Search Engine Land, Digiday, The Drum", "fallback": false},
                   {"source": "Hacker News", "items": 32, "detail": "≈17,000 points", "fallback": false}],
  "sources": [{"title": "Google AI Overviews now appear in 39% of U.S. desktop searches", "pub": "Search Engine Land",
               "url": "https://searchengineland.com/google-ai-overviews-share-us-comscore-490381"}]
@@ -495,7 +437,7 @@ Example: a fictional brand, Northwind Analytics, mapped to a theme. Replace ever
 
 ## Citation rules
 
-Priority: @handles on X → r/subreddits (prefer top comments over titles) → YouTube channels → LinkedIn authors → HN → trade press by publication name → web.
+Priority: named people (newsletter authors, quoted executives and practitioners) → HN commenters → trade press by publication name → the company's own announcement → research publisher → web.
 
 - 1–2 citations per claim. Never chain five.
 - No raw URLs in the report body. Use source names.
@@ -506,20 +448,19 @@ Priority: @handles on X → r/subreddits (prefer top comments over titles) → Y
 
 ## Step 6 — Stats block (in chat)
 
-Calculate from actual results. Omit lines with 0 results. Mark fallback sources. The same numbers go into `source_stats`.
+Calculate from actual results. Omit lines with 0 results. The same numbers go into `source_stats`.
 
 ```
 ---
 ✅ Radar complete: {DATE_7_DAYS_AGO} → {TODAY}
-├─ 🟠 Reddit: {N} posts │ {N} upvotes │ {N} comments
-├─ 🔵 X: {N} posts │ {N} likes │ {N} reposts
-├─ 🔴 YouTube: {N} videos │ {N} views
-├─ 💼 LinkedIn: {N} posts │ {N} likes │ {N} comments
 ├─ 🟡 HN: {N} stories │ {N} points
 ├─ 📰 Trade press: {N} articles (publication names)
 ├─ 🌐 Web: {N} pages (publication names)
+├─ 🚀 Launches: {N} announcements (company names)
+├─ 📊 Research: {N} reports or datasets (publisher names)
+├─ ✉️ Newsletters: {N} posts (newsletter names)
 ├─ 🔗 Cross-source trends: {N}
-└─ 🗣️ Top voices: @{handle}, r/{sub}, {LinkedIn name}
+└─ 🗣️ Top voices: {named authors and people quoted}
 ---
 ```
 
@@ -559,16 +500,16 @@ For follow-ups, answer from this research. Only run new searches if the user ask
 After any draft or prompt, add a footer:
 
 ```
-📚 Based on: {N} Reddit posts + {N} X posts + {N} YouTube videos + {N} LinkedIn posts + {N} HN stories + {N} trade/web articles, {DATE_7_DAYS_AGO} → {TODAY}
+📚 Based on: {N} HN stories + {N} trade press articles + {N} web pages + {N} launches + {N} research items + {N} newsletter posts, {DATE_7_DAYS_AGO} → {TODAY}
 ```
 
 ---
 
 ## Rules and guardrails
 
-- Never fabricate findings, quotes, numbers or engagement figures. Only synthesise what the agents returned.
+- Never fabricate findings, quotes, numbers or engagement figures. Only synthesise what the agents returned. Don't claim something is trending on a platform this skill didn't read.
 - Every trend must have at least one item dated inside the 7-day window.
-- Cross-source signals lead. A single viral post is a rising signal, not a top trend.
+- Cross-source signals lead. A story from a single source is a rising signal, not a top trend.
 - If all sources come back empty, say so and suggest a broader or different topic.
 - Self-check before publishing: does each claim in "What happened" and "The conversation" trace to a specific item? Cut anything added from memory.
 - Angles must be specific to the finding. If an angle could have been written without running the research, rewrite it.
@@ -578,8 +519,7 @@ After any draft or prompt, add a footer:
 
 ## Requirements
 
-- **Apify MCP** connected, for Reddit (`trudax/reddit-scraper-lite`), X (`apidojo/tweet-scraper`), YouTube (`streamers/youtube-scraper`) and LinkedIn (`harvestapi/linkedin-post-search`). Without it the skill falls back to WebSearch for those sources, with no engagement data. Roughly 30 to 60 US cents per radar run on the Starter plan (an estimate).
-- Hacker News via the free Algolia API; web and trade press via WebSearch and WebFetch.
+- No paid tools, accounts or API keys. Hacker News via the free Algolia API; everything else via WebSearch and WebFetch.
 - Report build: Python 3, Playwright with Chromium, npm for the theme's @fontsource packages, poppler (`pdftoppm`) for the one visual check.
 - Branding: the Artifact tool, to read a Claude design system and publish the page. Without it the report builds in the neutral theme and is sent as files.
 - Read-only on every platform: never posts, likes or modifies anything, and doesn't touch the user's accounts.

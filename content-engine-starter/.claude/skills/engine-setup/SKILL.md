@@ -17,6 +17,7 @@ Ask **one topic at a time**, in plain language, offering a sensible default they
 | `.claude/skills/ai-marketing-trend-radar/SKILL.md` → Settings block | topic, audience, audience_detail, region, voice, focus, exclude, priority, official_sources, queries, subreddits, trade_press, design_system, setup_done: true |
 | `design.md` | every `TODO`: colour tokens, fonts, sign-off strip, Substack/X free offer |
 | `brand/` | headshot (`headshot.jpg`) or logo (`logo.svg`/`logo.png`), font files if needed |
+| `.claude/skills/{sketch-explainer,notebook-notes,infographic-animator}/SKILL.md` → Make it yours | signature, pen and marker colours, audience (from the brand and audience answers) |
 | `.claude/skills/social-posts/references/samples.md`, `voice.md` | their best posts, and the voice guide distilled from them |
 
 ## The interview
@@ -40,6 +41,7 @@ Then generate, show and confirm: 10–14 `queries` as people actually write them
 3. Hex colours and font names typed in chat.
 Map what you find to the tokens in `design.md` (`--canvas`, `--ink`, `--highlight`, `--accent` and the rest). Check contrast: `--ink` and `--accent-text` must read clearly on `--canvas` (4.5:1 or better). Ask for a headshot (personal brand) or logo (company page) and save it in `brand/`. For a font that isn't on Google Fonts, ask for the woff2 files.
 **Preview:** build one sample infographic with the linkedin-infographic-builder Skill using a made-up headline and no numbers ("Sample: your brand on a graphic"), render it, and show it. Fix what they flag before saving.
+**The other graphics.** Fill the **Make it yours** blocks of the X-image Skills from the same answers, without asking again: `sketch-explainer` (`signature`: "{name} · {website or newsletter}", or blank for none; `pen` and `marker`: two of their brand colours as hex, the marker the lighter one; `audience`, `voice_notes`) and `notebook-notes` (`pen`, `marker`, `audience`, `voice_notes`). In `infographic-animator`, set `substack_cut: yes` if they post Substack Notes. Show the values with the rest of the brand summary.
 
 **6. Channels and calls to action.**
 - Which channels: LinkedIn, X, Substack Notes (remove the others from `drafts`).

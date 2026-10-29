@@ -20,7 +20,7 @@ Writes the week's posts from `report.md`, in the author's voice (`config/engine.
 | --- | --- | --- | --- | --- |
 | `linkedin_infographic` | LinkedIn | the infographic | 90–160 words | News hook (≤ 12 words) → a number → the turn → the author's view → CTA |
 | `linkedin_carousel` | LinkedIn | the carousel PDF | 70–130 words | A different hook from the infographic post → why swipe → CTA |
-| `x_post` | X | the infographic | ≤ 270 characters including the link | One sharp claim + one fact + link |
+| `x_post` | X | the X image (sketch or notebook page) | ≤ 270 characters | One sharp claim + one fact. No link: the source goes in the reply (`first_comment`) |
 | `substack_note` | Substack Notes | the infographic | 60–150 words | Conversational, peer to peer: open on the news or the number itself (never "Something I noticed this week") → CTA |
 
 Only write the keys that appear in `config/engine.yaml` → `drafts`.
@@ -28,8 +28,9 @@ Only write the keys that appear in `config/engine.yaml` → `drafts`.
 ## CTAs
 
 - **LinkedIn (`cta.linkedin`, type follow_save).** End both LinkedIn posts with `cta.linkedin.lines`, with `{author.name}` and `{author.linkedin_url}` filled in from the config, each on its own line, after a blank line. No comment keyword, no lead-magnet offer.
-- **Substack Note (`cta.substack`).** End with `cta.substack.line`. No link needed; Notes show a subscribe button.
-- **X (`cta.x`).** End with `cta.x.line`.
+- **Substack Note (`cta.substack`).** End with `cta.substack.line` (type `subscribe`), or no CTA line (type `none`). No link needed; Notes show a subscribe button.
+- **X (`cta.x`).** End with `cta.x.line`, or nothing if type `none`. Set `x_post.first_comment` to "Source: {main source title} {url}" from `report.md` → Sources: it becomes the reply.
+- **Never add a CTA of your own.** No extra subscribe line, free-download offer or "more every week" plug beyond what `config/engine.yaml` says: repeated every week, they read as false.
 
 ## Rules
 
@@ -49,7 +50,7 @@ Only write the keys that appear in `config/engine.yaml` → `drafts`.
 {
   "linkedin_infographic": {"text": "...", "alt_hooks": ["...", "..."], "first_comment": "" },
   "linkedin_carousel":    {"text": "...", "alt_hooks": ["...", "..."], "first_comment": "", "document_title": "≤ 60 characters, shown on the carousel post"},
-  "x_post":               {"text": "..."},
+  "x_post":               {"text": "...", "first_comment": "Source: ..."},
   "substack_note":        {"text": "..."}
 }
 ```

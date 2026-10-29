@@ -20,8 +20,10 @@ cta:
   linkedin:
     type: follow_save
     lines:
-      - "➕ Follow {author.name}: {author.linkedin_url}"
+      - "➕ Follow {author.name}"      # LinkedIn already links your name; add ": {author.linkedin_url}" if you want the link
       - "🔖 Save this for later"
+  # subscribe: end with `line`. none: no CTA line (Notes already show a subscribe button).
+  # The same line every week starts to read as boilerplate; if it does, switch to none.
   substack:
     type: subscribe
     line: ""               # e.g. "Subscribe free for one practical AI workflow a week."
@@ -30,15 +32,21 @@ cta:
     line: ""               # e.g. "More every week at janesmith.substack.com"
 
 # Which drafts go into Buffer for each channel. Remove channels you don't use.
-# Allowed assets: infographic (PNG), carousel (PDF document, LinkedIn only), none.
+# Allowed assets: infographic (PNG), infographic_gif (animated GIF of that channel's infographic,
+# LinkedIn and Substack only; falls back to the PNG), sketch_or_notebook (a hand-drawn sketch or a
+# notebook page, alternating weekly), carousel (PDF document, LinkedIn only), none.
 drafts:
   linkedin:
-    - {post: linkedin_infographic, asset: infographic}
+    - {post: linkedin_infographic, asset: infographic_gif}
     - {post: linkedin_carousel, asset: carousel}
   x:
-    - {post: x_post, asset: infographic}
+    - {post: x_post, asset: sketch_or_notebook}
   substack:
-    - {post: substack_note, asset: infographic}
+    - {post: substack_note, asset: infographic_gif}
+
+# Substack Notes batches (substack-notes Skill): how many Notes a week you aim for.
+notes:
+  per_week: 21              # e.g. 21 = three a day
 
 # Buffer. Fill these with: python3 scripts/buffer.py channels
 buffer:

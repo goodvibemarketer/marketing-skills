@@ -30,6 +30,7 @@ Use these names in every graphic. Map your brand to them; don't invent new ones.
 - Display (headlines, big numbers): TODO font name, weight. Font files in `brand/fonts/` if it isn't a system font; load with `@font-face`.
 - Sans (body, labels, buttons): TODO font name.
 - `font-variant-numeric: lining-nums` everywhere. Sentence case. No exclamation marks. No emoji.
+- **Minimum sizes on infographics** (CSS px on the 1080×1350 layout): nothing under 20px, body and list text 22px+, and the sans in a medium weight (500), not regular, for anything under 24px. Infographics are exported at 2× (2160×2700) so text stays sharp on phones.
 
 ## Signatures
 

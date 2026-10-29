@@ -67,7 +67,7 @@ Set the status line at the top of `voice.md`: `STATUS: provisional` until they a
 
 ## Learn from my edits (any time after setup)
 
-When the owner says what they changed in a draft ("learn from my edits", "I cut the first line, it was a scene-setter", "never say 'game-changer'", "too long", or a before and after):
+Every weekly run does this automatically (the **learn-from-edits** Skill compares the drafts with the posts in Buffer). When the owner says it directly ("learn from my edits", "I cut the first line, it was a scene-setter", "never say 'game-changer'", "too long", or a before and after):
 
 1. Work out the general rule behind the fix ("Changed 'In today's world' to the number" → "Open on the number, never a scene-setter"). Ask one question if it isn't clear.
 2. Add it under **Learned from edits** in `voice.md` with the date and a short before → after. If it contradicts an older rule, replace that rule and say so.

@@ -11,7 +11,7 @@ Writes the week's posts from `report.md`, in the author's voice (`config/engine.
 ## Before writing
 
 1. Read `report.md`. It is the only source of facts. Nothing goes in a post that isn't in it.
-2. Read `references/voice.md` in full, then `references/samples.md` (the author's best posts, ranked). Write like the top three there, not like a LinkedIn template.
+2. Read `references/voice.md` in full, then `references/samples.md` (the author's best posts, ranked). Write like the top three there, not like a LinkedIn template. **Learned from edits** (at the end of `voice.md`) wins over everything else in this Skill: those are the author's own corrections.
 3. Read `config/engine.yaml` → `cta` for each channel's call to action.
 
 ## The posts

@@ -6,7 +6,7 @@ First time? Say "set up my content engine". The `engine-setup` Skill interviews 
 
 ## Layout
 
-- `.claude/skills/` – every Skill the engine uses. `content-engine` is the orchestrator; `engine-setup` configures it.
+- `.claude/skills/` – every Skill the engine uses. `content-engine` is the orchestrator; `engine-setup` configures it; `learn-from-edits` turns your edits in Buffer into voice rules each week.
 - `config/engine.yaml` – author, audience, CTAs, which drafts go where, Buffer channel ids, media host.
 - `design.md`, `brand/` – brand tokens, fonts, headshot or logo. The graphic Skills read `design.md`.
 - `scripts/buffer.py` – lists Buffer channels and creates drafts.

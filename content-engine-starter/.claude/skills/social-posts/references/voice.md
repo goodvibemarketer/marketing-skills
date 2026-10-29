@@ -29,4 +29,8 @@ STATUS: template. The `engine-setup` Skill fills this in from your best posts. U
 
 ## Learned from edits
 
-(Added when you tell Claude what you changed in a draft: "learn from my edits". Newest last: date, the rule, before → after.)
+(Rules worked out from what you changed in drafts before posting: each weekly run compares its drafts with the posts in Buffer, and you can also say "learn from my edits". Follow these over anything above. [proposed] rules haven't been confirmed yet; follow them too.)
+
+## Watching
+
+(One-off changes that aren't rules yet. Promoted when they happen again; dropped after four weeks.)

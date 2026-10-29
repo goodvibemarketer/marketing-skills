@@ -19,6 +19,10 @@ Settings live in `config/engine.yaml`. Brand lives in `design.md` and `brand/`. 
 3. Fonts: load the fonts named in `design.md`. Files in `brand/fonts/` load with `@font-face`; for a Google font missing from the machine, `npm i --prefix /tmp/fonts @fontsource/<font-name>` and load its woff2 files.
 4. Check Buffer access: `python3 scripts/buffer.py orgs`. If it fails, run everything else and skip step 8, recording why.
 
+## Step 0b: Learn from last week's edits
+
+Run the **learn-from-edits** Skill (unattended mode): `python3 scripts/buffer.py edits --all`, then turn what the owner changed in earlier drafts into [proposed] rules in the voice guide, before this week's posts are written. If Buffer isn't connected yet, skip this and say so in the README.
+
 ## Step 1: Trend radar
 
 Run the **ai-marketing-trend-radar** Skill in radar mode with its saved Settings, with these overrides for unattended runs:
@@ -100,8 +104,11 @@ Write it to `runs/<run>/drafts.json`.
 - {each figure on the graphics, with its source}
 - {anything provisional, e.g. voice guide still waiting for samples}
 
+## Voice rules learned from your edits
+- {each rule added in Step 0b, with its before → after; or "None new". Say "confirm the edit rules" or "drop the rule about …"}
+
 ## Teach it your voice
-Edited a draft before approving it? Tell Claude what you changed ("learn from my edits") and it goes into your voice guide for next week.
+Edit drafts in Buffer as you normally would: next week's run compares them with what it wrote and learns the rules. You can also tell Claude directly ("learn from my edits").
 
 ## Decisions made
 - {every choice made without asking}

@@ -52,6 +52,18 @@ Turns one piece of content into a single, on-brand infographic for LinkedIn.
 
 See [`skills/linkedin-infographic-builder/`](./skills/linkedin-infographic-builder/) for the full skill.
 
+### `infographic-animator` (add-on to `linkedin-infographic-builder`)
+
+Turns the infographic you just made into a GIF.
+
+**What it produces:** One looping GIF sized for LinkedIn, plus a lighter cut under Substack Notes' size limit, and the timeline file so you can re-render after a design change.
+
+**What it changes:** The graphic assembles in the order you want it read, so the first two seconds in the feed follow your argument instead of showing everything at once.
+
+**How it works:** Loads the infographic's own HTML in a headless browser, applies a timeline of effects (highlighter wipes, counting numbers, line art drawing itself, sections fading in, or a seamless loop of moving parts) and writes the frames to a GIF. Nothing is redesigned: the last frame is the static infographic. Install it alongside `linkedin-infographic-builder`; on any other 1080x1350 graphic it falls back to simpler fades from the PNG.
+
+See [`skills/infographic-animator/`](./skills/infographic-animator/) for the full skill.
+
 ### `linkedin-carousel-builder`
 
 Repurposes one long-form piece into a LinkedIn carousel.

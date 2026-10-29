@@ -57,6 +57,22 @@
       ]
     },
     {
+      "name": "infographic-animator",
+      "source": "./skills/infographic-animator",
+      "description": "Add-on to linkedin-infographic-builder. Turns a finished 1080x1350 infographic into a looping GIF: the graphic builds itself in reading order, or its parts come alive in a loop. Includes a lighter cut for Substack Notes.",
+      "version": "0.1.0",
+      "category": "marketing",
+      "keywords": [
+        "infographic",
+        "gif",
+        "animation",
+        "linkedin",
+        "substack",
+        "motion",
+        "add-on"
+      ]
+    },
+    {
       "name": "linkedin-carousel-builder",
       "source": "./skills/linkedin-carousel-builder",
       "description": "Repurposes one long-form piece into a LinkedIn carousel: a 6-10 page PDF document post at 1080x1350 per page, styled by your design system, ending on a follow or subscribe CTA. PNGs of each slide come as a secondary output.",

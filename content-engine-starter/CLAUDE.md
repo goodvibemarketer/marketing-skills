@@ -21,3 +21,4 @@ First time? Say "set up my content engine". The `engine-setup` Skill interviews 
 - The only thing this repo pushes to the media repo is `{media.path_in_repo}/<run>-<code>/`.
 - Never commit API keys. The Buffer key lives in the cloud environment (API credential or `BUFFER_API_KEY`).
 - Spelling follows `author.language`. Sentence case. No emoji on graphics.
+- When the owner corrects a draft, use `engine-setup` → "Learn from my edits" to turn the fix into a rule in the voice guide.

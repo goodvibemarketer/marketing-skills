@@ -100,6 +100,9 @@ Write it to `runs/<run>/drafts.json`.
 - {each figure on the graphics, with its source}
 - {anything provisional, e.g. voice guide still waiting for samples}
 
+## Teach it your voice
+Edited a draft before approving it? Tell Claude what you changed ("learn from my edits") and it goes into your voice guide for next week.
+
 ## Decisions made
 - {every choice made without asking}
 

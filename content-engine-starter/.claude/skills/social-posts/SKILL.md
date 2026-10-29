@@ -21,7 +21,7 @@ Writes the week's posts from `report.md`, in the author's voice (`config/engine.
 | `linkedin_infographic` | LinkedIn | the infographic | 90–160 words | News hook (≤ 12 words) → a number → the turn → the author's view → CTA |
 | `linkedin_carousel` | LinkedIn | the carousel PDF | 70–130 words | A different hook from the infographic post → why swipe → CTA |
 | `x_post` | X | the infographic | ≤ 270 characters including the link | One sharp claim + one fact + link |
-| `substack_note` | Substack Notes | the infographic | 60–150 words | Conversational, like telling a peer what you noticed this week → CTA |
+| `substack_note` | Substack Notes | the infographic | 60–150 words | Conversational, peer to peer: open on the news or the number itself (never "Something I noticed this week") → CTA |
 
 Only write the keys that appear in `config/engine.yaml` → `drafts`.
 
@@ -38,7 +38,9 @@ Only write the keys that appear in `config/engine.yaml` → `drafts`.
 - **The first line earns the second.** Specific beats clever: a number, a named change, a claim someone could disagree with. A question opener only if the next line answers it with data ("Is the CMO role dying? The data seems to suggest so."). Never "In today's world", "Let's talk about", or "Here's the thing".
 - **Spelling per `author.language`.** No hashtags. No emoji except the ➕ and 🔖 in the LinkedIn CTA lines, and one 👇 if pointing to the comments.
 - **No links in LinkedIn post bodies** (they cut reach), except the profile link in the CTA. If a source matters, write "link in the first comment" and put the URL in `first_comment`.
-- **Pass every post through the no-ai-slop Skill** (edit mode, preserve voice) before saving. Re-check lengths afterwards.
+- **No invented experiences or beliefs.** Never give the author a memory, a past belief or a story they haven't told ("I'd have bet on…", "Last week I tried…"). Their view comes from `author.expertise` and the report's take, stated as a view.
+- **The voice guide wins.** Follow `voice.md` → Learned from edits and Used to, now don't, even where this table says otherwise.
+- **Pass every post through the no-ai-slop Skill** (edit mode, preserve voice) before saving, and leave alone anything `voice.md` lists under "Keep, even if it looks like AI". Re-check lengths afterwards.
 
 ## Output
 

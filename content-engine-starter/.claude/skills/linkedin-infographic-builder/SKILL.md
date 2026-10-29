@@ -127,7 +127,7 @@ print(Image.open("/path/to/infographic.png").size)  # must print (2160, 2700)
 
 If Playwright is unavailable, fall back to building the canvas directly with Pillow at 2160×2700 (every size doubled). Assert the final size is `(2160, 2700)` before presenting.
 
-**Text must survive the phone.** The graphic is shown at roughly a third of its CSS size on a phone, so small type disappears first. In CSS px at the 1080 layout: no text under **20px** anywhere (source lines, captions, labels, footers included); body text and list items **22px or more**; text under 24px set in Inter **500**, never 400, because thin strokes blur first. If copy doesn't fit at these sizes, cut words, don't shrink type.
+**Text must survive the phone.** The graphic is shown at roughly a third of its CSS size on a phone, so small type disappears first. In CSS px at the 1080 layout: no text under **20px** anywhere (source lines, captions, labels, footers included); body text and list items **22px or more**; text under 24px set in a **medium weight (500)**, never regular (400), because thin strokes blur first. If copy doesn't fit at these sizes, cut words, don't shrink type.
 
 **Always keep the HTML next to the PNG.** Save the source as `<name>.html` beside `<name>.png` (e.g. `infographic.html` and `infographic.png`) and deliver both. Make it self-contained: embed fonts and images as data URIs, or reference them with paths relative to the HTML file, never absolute paths from this machine. Give each block a clear class name (`.headline`, `.hero`, `.chart`, `.cta`, `.footer`, and so on). The HTML is what lets the graphic be fixed and re-rendered later, or turned into an animated GIF with the infographic-animator Skill (Step 4b of the content engine). A PNG-only infographic can still be animated, but only with simple section fades.
 
@@ -142,5 +142,5 @@ If Playwright is unavailable, fall back to building the canvas directly with Pil
 - Is each chart the right type for its data (check the Chart chooser), with values labelled on the chart?
 - Does the footer dynamically adapt to either a company logo layout or a circular LinkedIn profile avatar?
 - Is the saved file exactly 2160×2700 px (the 1080×1350 layout at 2×)?
-- Is every piece of text at least 20px (body 22px+), with anything under 24px in Inter 500?
+- Is every piece of text at least 20px (body 22px+), with anything under 24px in a medium weight (500)?
 - Is the self-contained HTML saved next to the PNG, with clear class names on each block?

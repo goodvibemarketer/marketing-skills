@@ -4,6 +4,8 @@
 # Claude Code on the web container: ffmpeg/ffprobe (render + assemble), bc
 # (duration math in scripts/assemble.sh), jq (JSON body in scripts/voiceover.sh),
 # and the Higgsfield CLI skills (payloads are gitignored; restored from skills-lock.json).
+# Also restores the no-ai-slop editing skill, which is installed globally rather
+# than pinned in skills-lock.json.
 #
 # Web-only and idempotent — safe to run on every session start.
 set -euo pipefail
@@ -32,6 +34,11 @@ fi
   if [ -f "$CLAUDE_PROJECT_DIR/skills-lock.json" ]; then
     (cd "$CLAUDE_PROJECT_DIR" && npx --yes skills add higgsfield-ai/skills)
   fi
+
+  # Restore the no-ai-slop editing skill. Installed with --global, so it lands in
+  # ~/.agents/skills and is symlinked into ~/.claude/skills rather than the repo.
+  # Non-fatal: a failure here must not block the session (set -e is active).
+  npx --yes skills add petergyang/no-ai-slop --skill no-ai-slop --global --yes || true
 } >&2
 
-echo "ai-news-video env ready: ffmpeg $(ffmpeg -version 2>/dev/null | head -n1 | awk '{print $3}'), bc/jq present, Higgsfield skills restored."
+echo "ai-news-video env ready: ffmpeg $(ffmpeg -version 2>/dev/null | head -n1 | awk '{print $3}'), bc/jq present, Higgsfield + no-ai-slop skills restored."

@@ -1,0 +1,111 @@
+---
+name: linkedin-infographic-builder
+description: Turns textual content into a single, polished infographic image (4:5 PNG, laid out at 1080×1350 and exported at 2× for sharp text) utilizing Claude Design workflows. Dynamically handles company branding systems or personal LinkedIn avatars while enforcing clean, editorial anti-slop typography layouts.
+---
+# LinkedIn Infographic Builder
+
+## Overview
+Transforms textual content into one premium infographic image: a 4:5 portrait PNG (the standard phone-feed format for Instagram and LinkedIn), laid out at 1080×1350 CSS px and exported at 2160×2700 so text stays sharp on phones. The output is a single flat, high-fidelity image optimized for professional networks.
+
+**Keywords**: infographic, visual summary, poster, carousel, shareable graphic, one-pager, brand-aligned graphic
+
+## Make it yours (edit this block once)
+This skill is built to be shared. Your brand comes from your design system; everything about you, your company and your audience comes from this block. Fill it in once after installing. Leave a line blank and Claude asks for it when it is needed. Never invent any of them.
+
+```yaml
+author_name:          # e.g. Jane Smith
+author_headline:      # e.g. Head of Marketing, Acme · writes about B2B growth
+author_photo:         # file name or URL of a square headshot (personal posts)
+company_name:         # e.g. Acme Analytics
+company_logo:         # file name or URL of your logo (company posts)
+default_footer:       # personal | company
+audience:             # who the graphics are for, e.g. CFOs at mid-size UK manufacturers
+voice_notes:          # optional, e.g. British spelling, sentence case, no emoji
+```
+
+Read this block before anything else. A filled line is the default for every run; anything the user says in the request overrides it for that run. Use `audience` to decide which idea in the source is worth the graphic and how to word it.
+
+## Design System & Branding Inheritance
+This skill operates strictly within the context of a professional design ecosystem. Do not use random colors, default styling, or generic layouts.
+
+1. **Token Detection:** Prioritize reading the local project's active `design.md` file or the workspace's default Claude Design System settings. Map all visual elements (backgrounds, containers, borders) to standard system tokens (e.g., `--color-primary`, `--radius-card`) rather than hardcoding static hex values.
+2. **Fallback Trigger:** If no existing design tokens, CSS variables, or component definitions are detected in the environment, **halt generation immediately** and prompt the user: *"Please specify a target brand URL or upload your design system tokens to proceed."*
+
+## Adaptive Footer Logic
+Every infographic must feature a dedicated footer section that anchors the content. Dynamically adapt the footer layout to one of the following two contexts based on the user's target distribution channel:
+
+*   **Company Brand Deliverables:**
+    *   **Asset:** Place the company brand logo asset in the bottom-left of the footer.
+    *   **Rules:** Maintain strict compliance with the logo padding, clear space, and scaling rules defined in the active design system.
+*   **Personal LinkedIn Profile Posts:**
+    *   **Asset:** Construct a 1:1 aspect ratio avatar container (`border-radius: 50%; overflow: hidden;`) in the bottom-left of the footer containing the user's profile picture asset.
+    *   **Typography:** Pair the avatar inline with the user's Full Name (bold, primary text token) stacked directly above their professional headline/title (smaller, secondary text token).
+
+## What "great" means here (Anti-AI Slop Guards)
+AI engines naturally default to highly predictable layouts, identical grids, and uniform color distributions. Great design requires human intent:
+
+- **Absolute Top-Margin Cleanliness (No Eyebrow Slop):** Do NOT include any "eyebrow text," categories, tags, tracking lines, or tagline labels (such as *"Field notes..."* or *"Assistants → agents → employees"*) above the main title banner. The absolute top of the canvas must feature a clean, generous, and uncrowded margin leading directly into the primary hero title.
+- **One controlling idea.** State the single question the graphic answers or the single claim it makes. Everything on the canvas must serve that idea.
+- **Three readable levels.** (1) The 2-second takeaway — the title or hero number. (2) The 10-second skim — section headers and labels. (3) The detail — read only if interested.
+- **Asymmetrical & Custom Layouts:** Avoid dividing the canvas into perfectly identical boxes. Vary container sizes, use strategic negative space, and introduce diverse typography scaling to ensure the asset looks custom-crafted by a designer.
+- **A deliberate reading path.** The layout must guide the eye intentionally (e.g., asymmetrical 2-column, hub-and-spoke, sequential timeline). It never just tiles content to fill space.
+
+## Content craft
+- **Compress hard.** Headers are noun phrases, not sentences. Body lines stay under ~12 words. Cut every word that doesn't change meaning.
+- **Extract, then sequence.** Pull the key points, then order them by the reading path you chose — don't preserve the source's order by default.
+- **Group, don't scatter.** Aim for 3–6 sections; more than ~8 distinct blocks is too dense for one image.
+- **Lead with the payoff.** Put the takeaway near the top; supporting detail flows below it.
+
+## Visual approach (Token-Driven)
+- **Notepad Grid Background:** Style the base layout background container using a faint, clean, architect-style notepad grid line pattern. Generate this layout asset purely through CSS repeating linear gradients (`linear-gradient`) using light, subtle opacity system tokens.
+- **Organic Title Highlighting:** Apply a distinct, irregular, semi-transparent marker brush stroke vector graphic element immediately underneath primary accent keywords within the main hero title to anchor visual hierarchy.
+- **Clear Stroke-Based Line Art:** All custom graphical metaphors or layout icons (such as a minimalist tombstone silhouette or trend lines) must be rendered using clean, crisp vector stroke paths (`stroke-width`, `stroke-linecap: round`). Avoid heavy, solid, filled silhouette blocks or flat clipart shapes.
+- **Color carries meaning, not decoration.** Pull your primary, secondary, and neutral colors directly from the design system tokens. Reserve accent states for hyper-specific callouts or semantic data states (positive/negative).
+- **Maintain Data Visualization Flow:** Ensure macro arguments are driven by clear visual charts (like horizontal bar plots or trend graphs) placed prominently in the top third of the viewport. Do not replace intuitive data scales with plain text numbers if a chart serves the reading path better.
+- **Establish a type scale.** Enforce a dramatic contrast in scale between the hero headline and body elements. Use the project’s defined font family stacks.
+- **Canvas Margins:** Reserve a comfortable, protective margin (≈64–80 px) around the entire canvas edge where no layout text or structural containers may cross.
+
+## Output: rendering the PNG (this part must be exact)
+Design the layout at **1080×1350 CSS px** (4:5) and export the PNG at **2× : exactly 2160×2700 px**. Phones show a feed image about 400 points wide on screens with 3× pixel density, and platforms recompress what you upload, so a 1080-px file looks soft by the time it's on screen. A 2× file gives the platform more detail to scale down from, and text edges stay crisp. Same shape, same layout; LinkedIn, Substack and X all accept it (keep it under 5 MB; a flat-colour infographic is usually 1–1.5 MB).
+
+1. Build a self-contained HTML file with the body sized to exactly 1080×1350 px (`width: 1080px; height: 1350px; margin: 0; overflow: hidden;`). All sizes in this Skill (type, margins, strokes) are in these CSS px.
+2. Render with Playwright (Chromium) at **deviceScaleFactor 2** and save the screenshot as is. Don't downscale it.
+
+```bash
+pip install playwright --break-system-packages && playwright install chromium
+```
+
+```python
+from playwright.sync_api import sync_playwright
+from PIL import Image
+
+with sync_playwright() as p:
+    b = p.chromium.launch()
+    pg = b.new_page(viewport={"width": 1080, "height": 1350}, device_scale_factor=2)
+    pg.goto("file:///home/claude/infographic.html")
+    pg.evaluate("document.fonts.ready")
+    pg.screenshot(path="/mnt/user-data/outputs/infographic.png")
+    b.close()
+
+print(Image.open("/mnt/user-data/outputs/infographic.png").size)  # must print (2160, 2700)
+```
+
+If Playwright is unavailable, fall back to building the canvas directly with Pillow at 2160×2700 (every size doubled). Assert the final size is `(2160, 2700)` before presenting, and place the PNG and its HTML in `/mnt/user-data/outputs/` (in Claude Code, next to the source file).
+
+**Text must survive the phone.** The graphic is shown at roughly a third of its CSS size on a phone, so small type disappears first. In CSS px at the 1080 layout: no text under **20px** anywhere (source lines, captions, labels, footers included); body text and list items **22px or more**; text under 24px set in a **medium weight (500)**, never regular (400), because thin strokes blur first. If copy doesn't fit at these sizes, cut words, don't shrink type.
+
+**Always keep the HTML next to the PNG.** Save the source as `<name>.html` beside `<name>.png` (e.g. `infographic.html` and `infographic.png`) and deliver both. Make it self-contained: embed fonts and images as data URIs, or reference them with paths relative to the HTML file, never absolute paths from this machine. Give each block a clear class name (`.headline`, `.hero`, `.chart`, `.cta`, `.footer`, and so on). The HTML is what lets the graphic be fixed and re-rendered later, or turned into an animated GIF with the infographic-animator Skill (a free add-on). A PNG-only infographic can still be animated, but only with simple section fades.
+
+## Before you finish — self-audit
+- Did you verify if a `design.md` or system layout token profile was active?
+- If it wasn't clear, did you pause to request the design system or target brand?
+- Did you check that the top margin area is completely free of running headers, category text tags, or subtitle lines?
+- Does the background accurately construct a subtle notepad-style grid pattern, and do the key header words use an organic highlighter mark?
+- Are your graphical metaphors restricted strictly to crisp, stroke-based line art?
+- Is there a hero illustration that carries the headline's idea, big enough to notice in the feed?
+- Did the story pick the layout archetype, and is it different from the last two graphics?
+- Is each chart the right type for its data (check the Chart chooser), with values labelled on the chart?
+- Does the footer dynamically adapt to either a company logo layout or a circular LinkedIn profile avatar?
+- Is the saved file exactly 2160×2700 px (the 1080×1350 layout at 2×)?
+- Is every piece of text at least 20px (body 22px+), with anything under 24px in a medium weight (500)?
+- Is the self-contained HTML saved next to the PNG, with clear class names on each block?

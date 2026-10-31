@@ -1,0 +1,64 @@
+# Content engine settings. The engine-setup Skill fills this in with you.
+# Run it once: open a Claude Code session on this repo and say "set up my content engine".
+
+author:
+  name: ""                 # the name on your graphics and posts, e.g. Jane Smith
+  role: ""                 # e.g. Head of Marketing at Acme
+  company: ""
+  linkedin_url: ""         # used in the LinkedIn follow line
+  newsletter_url: ""       # optional, e.g. janesmith.substack.com
+  expertise: ""            # what you can speak to from your own work; the trend report picks angles you can argue
+  audience: ""             # your ICP in one line, e.g. "ops leaders at UK logistics firms with 50-500 staff"
+  industry: ""
+  region: ""               # blank for global
+  language: en-GB          # en-GB or en-US spelling
+
+trends_per_run: 1
+
+# What each channel's call to action says. Keep LinkedIn post CTAs simple.
+cta:
+  linkedin:
+    type: follow_save
+    lines:
+      - "➕ Follow {author.name}"      # LinkedIn already links your name; add ": {author.linkedin_url}" if you want the link
+      - "🔖 Save this for later"
+  # subscribe: end with `line`. none: no CTA line (Notes already show a subscribe button).
+  # The same line every week starts to read as boilerplate; if it does, switch to none.
+  substack:
+    type: subscribe
+    line: ""               # e.g. "Subscribe free for one practical AI workflow a week."
+  x:
+    type: subscribe
+    line: ""               # e.g. "More every week at janesmith.substack.com"
+
+# Which drafts go into Buffer for each channel. Remove channels you don't use.
+# Allowed assets: infographic (PNG), infographic_gif (animated GIF of that channel's infographic,
+# LinkedIn and Substack only; falls back to the PNG), sketch_or_notebook (a hand-drawn sketch or a
+# notebook page, alternating weekly), carousel (PDF document, LinkedIn only), none.
+drafts:
+  linkedin:
+    - {post: linkedin_infographic, asset: infographic_gif}
+    - {post: linkedin_carousel, asset: carousel}
+  x:
+    - {post: x_post, asset: sketch_or_notebook}
+  substack:
+    - {post: substack_note, asset: infographic_gif}
+
+# Substack Notes batches (substack-notes Skill): how many Notes a week you aim for.
+notes:
+  per_week: 21              # e.g. 21 = three a day
+
+# Buffer. Fill these with: python3 scripts/buffer.py channels
+buffer:
+  organization_id: ""
+  channels:
+    linkedin: ""
+    x: ""
+    substack: ""
+
+# Where images and PDFs go so Buffer can fetch them: a public GitHub repo with GitHub Pages on.
+media:
+  repo: ""                 # e.g. janesmith/content-media  (public, Pages on, branch main, folder / root)
+  base_url: ""             # e.g. https://janesmith.github.io/content-media
+  path_in_repo: social     # folder inside that repo
+  wait_for_live_seconds: 300

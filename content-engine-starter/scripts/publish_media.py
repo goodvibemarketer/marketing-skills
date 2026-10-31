@@ -35,9 +35,13 @@ def git(repo, *args, check=True):
 
 
 def live(url):
+    """True once the file itself is served. Checks a throwaway URL (unique query string), because a
+    CDN in front of the site may cache whatever the plain URL returned before the deploy landed, and
+    some hosts answer missing files with a 200 HTML page: so the type must not be HTML either."""
+    probe = f"{url}?live-check={int(time.time() * 1000)}"
     try:
-        with urllib.request.urlopen(urllib.request.Request(url, method="HEAD"), timeout=20) as r:
-            return r.status == 200
+        with urllib.request.urlopen(urllib.request.Request(probe, method="HEAD"), timeout=20) as r:
+            return r.status == 200 and not r.headers.get("Content-Type", "").startswith("text/html")
     except (urllib.error.URLError, TimeoutError):
         return False
 

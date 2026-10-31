@@ -2,7 +2,7 @@
 
 From the AI Marketing Engineer's Guide by Andy Mills (goodvibemarketer.substack.com).
 
-Every Monday a Claude Code routine reads the week's news in your field, picks the trend that matters most to your audience, checks the facts, writes your LinkedIn, X and Substack posts in your voice, designs a branded infographic and carousel, and saves everything in Buffer as drafts. You review, tweak and schedule. Nothing posts without you.
+Every Monday a Claude Code routine reads the week's news in your field, picks the trend that matters most to your audience, checks the facts, writes your LinkedIn, X and Substack posts in your voice, designs a branded infographic (with an animated GIF), a carousel and a hand-drawn image for X, and saves everything in Buffer as drafts. Each week it also learns from the edits you made to last week's drafts. You review, tweak and schedule. Nothing posts without you.
 
 ## What's in here
 
@@ -15,8 +15,13 @@ Every Monday a Claude Code routine reads the week's news in your field, picks th
   social-posts/                 writes the posts in your voice
     references/voice.md         your voice guide (setup writes it)
     references/samples.md       your best posts (you paste them)
-  linkedin-infographic-builder/ one 1080x1350 branded infographic
+  learn-from-edits/             turns your edits in Buffer into voice rules
+  linkedin-infographic-builder/ one branded 4:5 infographic (exported at 2x)
+  infographic-animator/         turns the infographic into an animated GIF
   linkedin-carousel-builder/    a 6-8 slide carousel PDF
+  sketch-explainer/             a hand-drawn sketch for the X post
+  notebook-notes/               a notebook page for the X post (alternates with the sketch)
+  substack-notes/               turns one of your articles into a week of Notes
   no-ai-slop/                   edits drafts so they don't read as AI
 config/engine.yaml              your settings
 design.md                       your brand, for the graphics
@@ -24,7 +29,7 @@ brand/                          headshot or logo, fonts
 scripts/buffer.py               lists Buffer channels, creates drafts
 scripts/publish_media.py        puts images online for Buffer
 ROUTINE.md                      the prompt for your weekly routine
-runs/                           one folder per weekly run
+runs/                           one folder per weekly run (Notes batches in runs/notes/)
 ```
 
 ## Quick start

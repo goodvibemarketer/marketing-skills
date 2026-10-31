@@ -11,7 +11,7 @@ Writes the week's posts from `report.md`, in the author's voice (`config/engine.
 ## Before writing
 
 1. Read `report.md`. It is the only source of facts. Nothing goes in a post that isn't in it.
-2. Read `references/voice.md` in full, then `references/samples.md` (the author's best posts, ranked). Write like the top three there, not like a LinkedIn template.
+2. Read `references/voice.md` in full, then `references/samples.md` (the author's best posts, ranked). Write like the top three there, not like a LinkedIn template. **Learned from edits** (at the end of `voice.md`) wins over everything else in this Skill: those are the author's own corrections.
 3. Read `config/engine.yaml` → `cta` for each channel's call to action.
 
 ## The posts
@@ -20,16 +20,17 @@ Writes the week's posts from `report.md`, in the author's voice (`config/engine.
 | --- | --- | --- | --- | --- |
 | `linkedin_infographic` | LinkedIn | the infographic | 90–160 words | News hook (≤ 12 words) → a number → the turn → the author's view → CTA |
 | `linkedin_carousel` | LinkedIn | the carousel PDF | 70–130 words | A different hook from the infographic post → why swipe → CTA |
-| `x_post` | X | the infographic | ≤ 270 characters including the link | One sharp claim + one fact + link |
-| `substack_note` | Substack Notes | the infographic | 60–150 words | Conversational, like telling a peer what you noticed this week → CTA |
+| `x_post` | X | the X image (sketch or notebook page) | ≤ 270 characters | One sharp claim + one fact. No link: the source goes in the reply (`first_comment`) |
+| `substack_note` | Substack Notes | the infographic | 60–150 words | Conversational, peer to peer: open on the news or the number itself (never "Something I noticed this week") → CTA |
 
 Only write the keys that appear in `config/engine.yaml` → `drafts`.
 
 ## CTAs
 
 - **LinkedIn (`cta.linkedin`, type follow_save).** End both LinkedIn posts with `cta.linkedin.lines`, with `{author.name}` and `{author.linkedin_url}` filled in from the config, each on its own line, after a blank line. No comment keyword, no lead-magnet offer.
-- **Substack Note (`cta.substack`).** End with `cta.substack.line`. No link needed; Notes show a subscribe button.
-- **X (`cta.x`).** End with `cta.x.line`.
+- **Substack Note (`cta.substack`).** End with `cta.substack.line` (type `subscribe`), or no CTA line (type `none`). No link needed; Notes show a subscribe button.
+- **X (`cta.x`).** End with `cta.x.line`, or nothing if type `none`. Set `x_post.first_comment` to "Source: {main source title} {url}" from `report.md` → Sources: it becomes the reply.
+- **Never add a CTA of your own.** No extra subscribe line, free-download offer or "more every week" plug beyond what `config/engine.yaml` says: repeated every week, they read as false.
 
 ## Rules
 
@@ -38,7 +39,9 @@ Only write the keys that appear in `config/engine.yaml` → `drafts`.
 - **The first line earns the second.** Specific beats clever: a number, a named change, a claim someone could disagree with. A question opener only if the next line answers it with data ("Is the CMO role dying? The data seems to suggest so."). Never "In today's world", "Let's talk about", or "Here's the thing".
 - **Spelling per `author.language`.** No hashtags. No emoji except the ➕ and 🔖 in the LinkedIn CTA lines, and one 👇 if pointing to the comments.
 - **No links in LinkedIn post bodies** (they cut reach), except the profile link in the CTA. If a source matters, write "link in the first comment" and put the URL in `first_comment`.
-- **Pass every post through the no-ai-slop Skill** (edit mode, preserve voice) before saving. Re-check lengths afterwards.
+- **No invented experiences or beliefs.** Never give the author a memory, a past belief or a story they haven't told ("I'd have bet on…", "Last week I tried…"). Their view comes from `author.expertise` and the report's take, stated as a view.
+- **The voice guide wins.** Follow `voice.md` → Learned from edits and Used to, now don't, even where this table says otherwise.
+- **Pass every post through the no-ai-slop Skill** (edit mode, preserve voice) before saving, and leave alone anything `voice.md` lists under "Keep, even if it looks like AI". Re-check lengths afterwards.
 
 ## Output
 
@@ -47,7 +50,7 @@ Only write the keys that appear in `config/engine.yaml` → `drafts`.
 {
   "linkedin_infographic": {"text": "...", "alt_hooks": ["...", "..."], "first_comment": "" },
   "linkedin_carousel":    {"text": "...", "alt_hooks": ["...", "..."], "first_comment": "", "document_title": "≤ 60 characters, shown on the carousel post"},
-  "x_post":               {"text": "..."},
+  "x_post":               {"text": "...", "first_comment": "Source: ..."},
   "substack_note":        {"text": "..."}
 }
 ```

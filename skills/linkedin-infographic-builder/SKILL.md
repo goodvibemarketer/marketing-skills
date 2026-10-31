@@ -1,11 +1,11 @@
 ---
 name: linkedin-infographic-builder
-description: Turns textual content into a single, polished infographic image (1080×1350 px PNG) utilizing Claude Design workflows. Dynamically handles company branding systems or personal LinkedIn avatars while enforcing clean, editorial anti-slop typography layouts.
+description: Turns textual content into a single, polished infographic image (4:5 PNG, laid out at 1080×1350 and exported at 2× for sharp text) utilizing Claude Design workflows. Dynamically handles company branding systems or personal LinkedIn avatars while enforcing clean, editorial anti-slop typography layouts.
 ---
 # LinkedIn Infographic Builder
 
 ## Overview
-Transforms textual content into one premium infographic image: a 1080×1350 px portrait PNG (4:5 ratio — the standard phone-feed format for Instagram and LinkedIn). The output is a single flat, high-fidelity image optimized for professional networks.
+Transforms textual content into one premium infographic image: a 4:5 portrait PNG (the standard phone-feed format for Instagram and LinkedIn), laid out at 1080×1350 CSS px and exported at 2160×2700 so text stays sharp on phones. The output is a single flat, high-fidelity image optimized for professional networks.
 
 **Keywords**: infographic, visual summary, poster, carousel, shareable graphic, one-pager, brand-aligned graphic
 
@@ -66,10 +66,10 @@ AI engines naturally default to highly predictable layouts, identical grids, and
 - **Canvas Margins:** Reserve a comfortable, protective margin (≈64–80 px) around the entire canvas edge where no layout text or structural containers may cross.
 
 ## Output: rendering the PNG (this part must be exact)
-The deliverable defaults to a single flat PNG at **exactly 1080×1350 px**. Design in HTML/CSS mapped to the target size and rasterize with a headless browser. Recommended pipeline:
+Design the layout at **1080×1350 CSS px** (4:5) and export the PNG at **2× : exactly 2160×2700 px**. Phones show a feed image about 400 points wide on screens with 3× pixel density, and platforms recompress what you upload, so a 1080-px file looks soft by the time it's on screen. A 2× file gives the platform more detail to scale down from, and text edges stay crisp. Same shape, same layout; LinkedIn, Substack and X all accept it (keep it under 5 MB; a flat-colour infographic is usually 1–1.5 MB).
 
-1. Build a self-contained HTML file with the body sized to exactly 1080×1350 px (`width: 1080px; height: 1350px; margin: 0; overflow: hidden;`).
-2. Render to PNG with Playwright (Chromium) using a **deviceScaleFactor of 2** so the image text is perfectly crisp, then downscale or save to the exact target bounds.
+1. Build a self-contained HTML file with the body sized to exactly 1080×1350 px (`width: 1080px; height: 1350px; margin: 0; overflow: hidden;`). All sizes in this Skill (type, margins, strokes) are in these CSS px.
+2. Render with Playwright (Chromium) at **deviceScaleFactor 2** and save the screenshot as is. Don't downscale it.
 
 ```bash
 pip install playwright --break-system-packages && playwright install chromium
@@ -83,15 +83,18 @@ with sync_playwright() as p:
     b = p.chromium.launch()
     pg = b.new_page(viewport={"width": 1080, "height": 1350}, device_scale_factor=2)
     pg.goto("file:///home/claude/infographic.html")
-    pg.screenshot(path="/home/claude/raw.png")
+    pg.evaluate("document.fonts.ready")
+    pg.screenshot(path="/mnt/user-data/outputs/infographic.png")
     b.close()
 
-img = Image.open("/home/claude/raw.png").resize((1080, 1350), Image.LANCZOS)
-img.save("/mnt/user-data/outputs/infographic.png")
-print(img.size)  # must print (1080, 1350)
+print(Image.open("/mnt/user-data/outputs/infographic.png").size)  # must print (2160, 2700)
 ```
 
-If Playwright is unavailable, fall back to building the canvas directly with Pillow at 1080×1350. Assert the final size is `(1080, 1350)` before presenting, and place the file in `/mnt/user-data/outputs/`.
+If Playwright is unavailable, fall back to building the canvas directly with Pillow at 2160×2700 (every size doubled). Assert the final size is `(2160, 2700)` before presenting, and place the PNG and its HTML in `/mnt/user-data/outputs/` (in Claude Code, next to the source file).
+
+**Text must survive the phone.** The graphic is shown at roughly a third of its CSS size on a phone, so small type disappears first. In CSS px at the 1080 layout: no text under **20px** anywhere (source lines, captions, labels, footers included); body text and list items **22px or more**; text under 24px set in a **medium weight (500)**, never regular (400), because thin strokes blur first. If copy doesn't fit at these sizes, cut words, don't shrink type.
+
+**Always keep the HTML next to the PNG.** Save the source as `<name>.html` beside `<name>.png` (e.g. `infographic.html` and `infographic.png`) and deliver both. Make it self-contained: embed fonts and images as data URIs, or reference them with paths relative to the HTML file, never absolute paths from this machine. Give each block a clear class name (`.headline`, `.hero`, `.chart`, `.cta`, `.footer`, and so on). The HTML is what lets the graphic be fixed and re-rendered later, or turned into an animated GIF with the infographic-animator Skill (a free add-on). A PNG-only infographic can still be animated, but only with simple section fades.
 
 ## Before you finish — self-audit
 - Did you verify if a `design.md` or system layout token profile was active?
@@ -99,5 +102,10 @@ If Playwright is unavailable, fall back to building the canvas directly with Pil
 - Did you check that the top margin area is completely free of running headers, category text tags, or subtitle lines?
 - Does the background accurately construct a subtle notepad-style grid pattern, and do the key header words use an organic highlighter mark?
 - Are your graphical metaphors restricted strictly to crisp, stroke-based line art?
+- Is there a hero illustration that carries the headline's idea, big enough to notice in the feed?
+- Did the story pick the layout archetype, and is it different from the last two graphics?
+- Is each chart the right type for its data (check the Chart chooser), with values labelled on the chart?
 - Does the footer dynamically adapt to either a company logo layout or a circular LinkedIn profile avatar?
-- Is the saved file exactly 1080×1350 px?
+- Is the saved file exactly 2160×2700 px (the 1080×1350 layout at 2×)?
+- Is every piece of text at least 20px (body 22px+), with anything under 24px in a medium weight (500)?
+- Is the self-contained HTML saved next to the PNG, with clear class names on each block?

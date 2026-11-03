@@ -2,7 +2,7 @@
 """Render a notebook-notes page to PNG.
 
   python3 render.py BODY.html OUT.png [--size portrait|square] [--paper ruled|dots|grid|plain] [--margin]
-        [--binding spiral|gutter|none] [--surface desk|wood|slate|none] [--hand indie|shadows|architect|nanum]
+        [--binding spiral|gutter|none] [--surface desk|wood|slate|none|PHOTO.jpg] [--hand indie|shadows|architect|nanum]
         [--head SAME_CHOICES|caps] [--pen green|blue|red|ink] [--marker yellow|orange|green|pink] [--seed N]
 
 BODY.html holds the inside of the page only. The page is drawn flat, then (unless --surface none)
@@ -65,6 +65,12 @@ def oak(size, seed=7):
 
 def surface(size, kind, rng):
     """A textured surface: oak planks for wood, otherwise a soft gradient plus grain."""
+    if os.path.isfile(kind):  # a photo of a real desk: scaled to cover the canvas and centre-cropped
+        im = Image.open(kind).convert("RGB")
+        sc = max(size[0] / im.width, size[1] / im.height)
+        im = im.resize((round(im.width * sc), round(im.height * sc)), Image.LANCZOS)
+        l, t = (im.width - size[0]) // 2, (im.height - size[1]) // 2
+        return im.crop((l, t, l + size[0], t + size[1]))
     if kind == "wood":
         return oak(size, rng.randrange(1 << 30))
     w, h = size

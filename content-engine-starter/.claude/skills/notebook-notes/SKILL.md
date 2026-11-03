@@ -54,12 +54,13 @@ Run the script from this Skill's folder (it sits next to this file). It needs Py
 
 ```bash
 python3 scripts/render.py BODY.html OUT.png \
-  --paper ruled|dots|grid|plain [--margin] --binding spiral|gutter|none --surface desk|wood|slate|none \
+  --paper ruled|dots|grid|plain [--margin] --binding spiral|gutter|none --surface desk|wood|slate|none|PHOTO.jpg \
   --hand indie|shadows|architect|nanum|caps [--head ...] --pen green|blue|red|ink --marker yellow|orange|green|pink \
   [--size portrait|square] --seed N
 ```
 
 - Output is 2×: portrait 2160×2700 (default), square 2160×2160.
+- `--surface` also takes the path of a photo (a real desk shot from above): it is scaled to cover the canvas and centre-cropped, so your own desk can sit under every page.
 - **Vary the look every time**: paper, binding, surface, hand and pen should not all repeat from the last notebook page. `caps` (tall marker capitals) suits mind-maps; `shadows` and `indie` suit lists; `nanum` and `architect` suit hubs and pyramids.
 - It uses rough.js and the drawing script `sketch.js`, both in `assets/` (all the `.hl`, `.ul`, `[data-box]`, `.num`, `.check`, arrows and icons work here).
 - Fix every `WARN` (overflow or near the edge) before using the image, then look at it: no text crossing a line or arrow, nothing crowded, highlights on their words.

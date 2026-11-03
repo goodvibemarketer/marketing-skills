@@ -10,6 +10,7 @@ placed slightly rotated on a desk with a soft shadow, like a photo of a real not
 Output is 2x: portrait 2160x2700, square 2160x2160. No signature or footer.
 """
 import html as H, os, random, sys
+import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 from playwright.sync_api import sync_playwright
 
@@ -26,8 +27,46 @@ SURFACES = {"desk": ((198, 186, 168), (176, 162, 142)), "wood": ((150, 108, 72),
 CHROMIUM = "/opt/pw-browsers/chromium"
 
 
+def noise(h, w, sy, sx, rng):
+    """Smooth value noise, stretched sx wide and sy tall."""
+    gh, gw = max(2, int(h / sy) + 2), max(2, int(w / sx) + 2)
+    g = rng.random((gh, gw)).astype(np.float32)
+    return np.asarray(Image.fromarray((g * 255).astype(np.uint8)).resize((w, h), Image.BICUBIC), np.float32) / 255
+
+def oak(size, seed=7):
+    """Photo-like oak planks: cathedral grain, soft streaks, seams and daylight from the top left."""
+    w, h = size
+    rng = np.random.default_rng(seed)
+    ys, xs = np.mgrid[0:h, 0:w].astype(np.float32)
+    n_pl = int(rng.integers(3, 5)); plank_h = h / n_pl
+    pi = np.floor(ys / plank_h).astype(int)
+    off = rng.uniform(0, 6.28, n_pl + 1); tone = rng.uniform(-0.08, 0.08, n_pl + 1); xc = rng.uniform(-0.2, 1.2, n_pl + 1) * w
+    warp = noise(h, w, 260, 900, rng) * 70 + noise(h, w, 60, 400, rng) * 12
+    yc = (pi + 0.5) * plank_h
+    # broad cathedral figure
+    arch = (ys - yc + warp) / plank_h * 70 + ((xs - xc[pi]) / w) ** 2 * 14 * np.where(pi % 2, 1, -1)
+    fig = 0.5 + 0.5 * np.sin(arch + off[pi])
+    fig = fig ** 7 + 0.25 * (0.5 + 0.5 * np.sin(arch * 0.25 + off[pi]))
+    # soft streaks along the grain (stretched in x)
+    streak = noise(h, w, 6, 260, rng) * 0.6 + noise(h, w, 2.5, 120, rng) * 0.4
+    t = np.clip(0.5 * fig + 0.4 * streak + tone[pi] + 0.05, 0, 1)
+    light = np.array([205, 160, 112], np.float32); mid = np.array([166, 118, 74], np.float32); dark = np.array([110, 70, 40], np.float32)
+    img = np.where(t[..., None] < 0.5, light + (mid - light) * (t[..., None] / 0.5), mid + (dark - mid) * ((t[..., None] - 0.5) / 0.5))
+    # plank seams: dark groove plus a faint highlight
+    m = ys % plank_h
+    img[(m < 3) & (ys > 5)] *= 0.5
+    img[(m >= 3) & (m < 5)] *= 1.07
+    img *= 0.96 + 0.06 * rng.random((h, w, 1)).astype(np.float32)
+    # daylight from the top left, darker corners
+    d = np.sqrt(((xs - w * 0.25) / w) ** 2 + ((ys - h * 0.15) / h) ** 2)
+    img *= (1.14 - 0.42 * d)[..., None]
+    return Image.fromarray(np.clip(img, 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.8))
+
+
 def surface(size, kind, rng):
-    """A plain textured surface: soft vertical gradient plus grain."""
+    """A textured surface: oak planks for wood, otherwise a soft gradient plus grain."""
+    if kind == "wood":
+        return oak(size, rng.randrange(1 << 30))
     w, h = size
     c0, c1 = SURFACES[kind]
     img = Image.new("RGB", size, c0)
@@ -35,10 +74,6 @@ def surface(size, kind, rng):
     for y in range(h):
         t = y / h
         d.line([(0, y), (w, y)], fill=tuple(int(c0[i] + (c1[i] - c0[i]) * t) for i in range(3)))
-    if kind == "wood":
-        for _ in range(140):
-            y = rng.uniform(0, h); amp = rng.uniform(2, 9)
-            d.line([(x, y + amp * ((x / w * 7 + rng.random()) % 1 - .5)) for x in range(0, w + 40, 40)], fill=tuple(max(0, c - 18) for c in c1), width=2)
     noise = Image.effect_noise(size, 18).convert("RGB")
     return Image.blend(img, Image.composite(noise, img, Image.new("L", size, 40)), 0.25)
 
@@ -97,6 +132,9 @@ def main():
         shadow = Image.new("RGBA", (W, Hh), (0, 0, 0, 0))
         shadow.paste((0, 0, 0, 110), (x + 14, y + 22), rot.split()[3])
         bg = Image.alpha_composite(bg, shadow.filter(ImageFilter.GaussianBlur(22)))
+        contact = Image.new("RGBA", (W, Hh), (0, 0, 0, 0))
+        contact.paste((0, 0, 0, 90), (x + 3, y + 5), rot.split()[3])
+        bg = Image.alpha_composite(bg, contact.filter(ImageFilter.GaussianBlur(4)))
         bg.alpha_composite(rot, (x, y))
         img = bg
     img.convert("RGB").save(out)

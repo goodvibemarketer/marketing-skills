@@ -23,6 +23,10 @@ Settings live in `config/engine.yaml`. Brand lives in `design.md` and `brand/`. 
 
 Run the **learn-from-edits** Skill (unattended mode): `python3 scripts/buffer.py edits --all`, then turn what the owner changed in earlier drafts into [proposed] rules in the voice guide, before this week's posts are written. If Buffer isn't connected yet, skip this and say so in the README.
 
+## Step 0c: Performance review
+
+Run the **performance-review** Skill (unattended mode): fetch last week's numbers, tag new posts, write the report, and add any newly *proven* pattern to `references/performance-rules.md` as **Proposed**. Then read that file's **Confirmed** section: those are the rules the owner has agreed to, and they apply to this run (which graphics, lengths, topics or Note types to favour). Proposed rules and early signals change nothing. If Buffer isn't connected yet, skip this and say so in the README.
+
 ## Step 1: Trend radar
 
 Run the **ai-marketing-trend-radar** Skill in radar mode with its saved Settings, with these overrides for unattended runs:
@@ -120,6 +124,9 @@ If Buffer refuses a GIF, the script stops there. Switch that entry's asset to th
 - First comments are set on the LinkedIn drafts and the X reply carries the source.
 - {each figure on the graphics, with its source}
 - {anything provisional, e.g. voice guide still waiting for samples}
+
+## Performance
+- {posts counted per channel; any newly proven pattern and its proposed rule ("confirm the performance rule about …" or "reject …"); two or three early signals, labelled as such}
 
 ## Voice rules learned from your edits
 - {each rule added in Step 0b, with its before → after; or "None new". Say "confirm the edit rules" or "drop the rule about …"}

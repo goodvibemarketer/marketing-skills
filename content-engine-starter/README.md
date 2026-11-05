@@ -22,11 +22,13 @@ Every Monday a Claude Code routine reads the week's news in your field, picks th
   sketch-explainer/             a hand-drawn sketch for the X post
   notebook-notes/               a notebook page for the X post (alternates with the sketch)
   substack-notes/               turns one of your articles into a week of Notes
+  performance-review/           what your posts did; rules only from proven patterns
   no-ai-slop/                   edits drafts so they don't read as AI
 config/engine.yaml              your settings
 design.md                       your brand, for the graphics
 brand/                          headshot or logo, fonts
 scripts/buffer.py               lists Buffer channels, creates drafts
+scripts/performance.py          pulls post results from Buffer for the performance review
 scripts/publish_media.py        puts images online for Buffer
 ROUTINE.md                      the prompt for your weekly routine
 runs/                           one folder per weekly run (Notes batches in runs/notes/)

@@ -124,15 +124,11 @@ Edits a draft into sharper, more human writing while keeping your voice, or name
 
 See [`skills/ai-slop-pattern-linter/`](./skills/ai-slop-pattern-linter/) for the full skill.
 
-### `content-engine-starter`
+### The Social Content Engine (a paid subscriber workflow)
 
-The full weekly content engine from the [AI Marketing Engineer's Guide](https://goodvibemarketer.substack.com): trend radar, fact-checked trend report, posts in your voice, a branded infographic and carousel, all saved to Buffer as drafts by a Claude Code routine every Monday.
+The full weekly content engine from the [AI Marketing Engineer's Guide](https://goodvibemarketer.substack.com): trend radar, fact-checked trend report, posts in your voice, a branded infographic, GIF and carousel, all saved to Buffer as drafts by a Claude Code routine every week. It learns from your edits and from how your posts perform.
 
-**What it produces:** A private GitHub repo that runs your content prep every week, with nothing posted until you approve it.
-
-**How to use it:** This one is a whole project, not a single Skill. Make a private repo, open it in Claude Code and ask Claude to copy the [`content-engine-starter/`](./content-engine-starter/) folder into it. The step-by-step setup, tuning and automation are in the guide for paid subscribers.
-
-**Licence:** Not MIT. The kit has its own licence in [`content-engine-starter/LICENSE.txt`](./content-engine-starter/LICENSE.txt).
+It's a whole workflow, not a single Skill, so it lives in its own repo: [goodvibemarketer/social-content-engine](https://github.com/goodvibemarketer/social-content-engine). The setup walkthrough, tuning and new workflows are for paid subscribers of the [newsletter](https://goodvibemarketer.substack.com).
 
 ---
 
@@ -206,7 +202,7 @@ If you want a weekly breakdown of how marketers are actually using AI in the fie
 
 - File an issue on this repo if something breaks or the skill produces weird output
 - Reach me on [LinkedIn](https://www.linkedin.com/in/goodvibemarketer) for bigger conversations
-- The skills in `skills/` are open source under MIT. Fork them, modify them, make them yours. `content-engine-starter/` has its own licence.
+- The skills in `skills/` are open source under MIT. Fork them, modify them, make them yours.
 
 ---
 

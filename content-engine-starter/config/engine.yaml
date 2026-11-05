@@ -62,3 +62,13 @@ media:
   base_url: ""             # e.g. https://janesmith.github.io/content-media
   path_in_repo: social     # folder inside that repo
   wait_for_live_seconds: 300
+
+# Performance review (scripts/performance.py, performance-review Skill).
+# A pattern is only proposed as a rule once it is "proven": enough data first.
+performance:
+  window_days: 365     # how far back to look
+  min_early: 5         # under this many posts a group is "not enough data"
+  min_group: 10        # posts needed in the group, and in the rest, before a pattern can be proven
+  min_channel: 40      # posts needed on the channel in the window before anything can be proven
+  max_p: 0.05          # significance (Mann-Whitney), plus the same result in both halves of the window
+  timezone: Europe/London   # your timezone, for the day and time comparisons

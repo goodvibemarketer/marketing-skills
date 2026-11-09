@@ -42,7 +42,7 @@
     {
       "name": "linkedin-infographic-builder",
       "source": "./skills/linkedin-infographic-builder",
-      "description": "Turns an article, post or report into one polished 1080x1350 infographic PNG, styled by your design system, with your face and name in the footer. Built for B2B: proof over hype, one reusable idea per graphic.",
+      "description": "Turns an article, post or report into one polished 4:5 infographic PNG (1080x1350 layout, exported at 2x), styled by your design system, with your face and name in the footer. Built for B2B: proof over hype, one reusable idea per graphic.",
       "version": "0.2.0",
       "category": "marketing",
       "keywords": [

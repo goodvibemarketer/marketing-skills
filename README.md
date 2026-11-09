@@ -44,7 +44,7 @@ See [`skills/b2b-landing-page/`](./skills/b2b-landing-page/) for the full skill,
 
 Turns one piece of content into a single, on-brand infographic for LinkedIn.
 
-**What it produces:** One 1080x1350 px PNG — the portrait size that fills the most screen on LinkedIn mobile — styled by your design system, with your face and name in the footer.
+**What it produces:** One 4:5 PNG (a 1080x1350 layout exported at 2x, so text stays sharp), the portrait size that fills the most screen on LinkedIn mobile, styled by your design system, with your face and name in the footer.
 
 **What it changes:** You stop posting plain-text takes that scroll past. You start posting one reusable idea a buyer can screenshot into their own deck.
 

@@ -93,6 +93,7 @@ Look at frames from across the timeline before calling it done. Make a contact s
 - Line art draws cleanly (no stray strokes, no fills appearing before their outlines).
 - The counting number ends on the exact printed value.
 - The last frame matches the static PNG: no element left hidden, faded or clipped.
+- The stranger test: from four frames across the GIF, can you say in one sentence what the motion shows? If not, the motion is decoration: change it or cut it.
 - Size ≤ 4.8 MB (or the `--max-mb` you set) and ≤ 240 frames; dimensions 1080×1350 (or 864×1080 if it had to shrink, which you should mention). Frames are captured at 2× and scaled down for smoother text; the GIF itself stays 1080 wide, because a 2× GIF would be about four times the file size.
 
 Fix the timeline and re-render. Delete the frames folder when done.
@@ -139,7 +140,11 @@ Every effect also takes `offset` to shift it in the loop. Effects on the same pa
 
 Rules for loops:
 - **Seamless.** Whole turns per loop for anything that spins, whole cycles for bobs and blinks, and every `build`/`show` back to its frame-0 state by the end. The script never holds the last frame.
-- **One story per loop.** Every moving part should say something about the idea. Busy for its own sake is noise.
+- **One story per loop.** Every moving part should say something about the idea. Busy for its own sake is noise. Before writing the loop, write one sentence saying what the motion shows, as a stranger would describe it (for example: "a question goes to the agent, which drafts a reply, then a person approves it"). If you can't write it, or it comes out as "things fill in", "dots appear" or "a dot bobs", choose a different motion. Motions that tell a story:
+  - a process the graphic describes, played out step by step: a card or token travels through the steps and changes at each one;
+  - a before and after;
+  - something reacting to the idea: a gauge needle, a scale tipping, a lock closing, a marker stepping along a timeline.
+  A decorative part that moves on its own (a pulsing dot, a bobbing shape) says nothing: leave it still or take it out.
 - **Calm.** 6–8 second loops, 12–15 fps. Nothing flashes faster than about 3 times a second.
 - **Words stay still.** Headline, labels and the CTA never move, so the graphic reads on any frame.
 

@@ -57,7 +57,7 @@ AI engines naturally default to highly predictable layouts, identical grids, and
 - **Lead with the payoff.** Put the takeaway near the top; supporting detail flows below it.
 
 ## Visual approach (Token-Driven)
-- **Notepad Grid Background:** Style the base layout background container using a faint, clean, architect-style notepad grid line pattern. Generate this layout asset purely through CSS repeating linear gradients (`linear-gradient`) using light, subtle opacity system tokens.
+- **Background: the brand's, not a default.** Use the canvas the design system or the brand's own website actually uses: a plain colour, a soft gradient or colour mesh, a texture. Draw a notepad grid (faint CSS `linear-gradient` lines in 36–40px squares) only when the design system lists one, such as a `--grid-line` token in `design.md`, or the brand's site uses one. Never add it by default.
 - **Organic Title Highlighting:** Apply a distinct, irregular, semi-transparent marker brush stroke vector graphic element immediately underneath primary accent keywords within the main hero title to anchor visual hierarchy.
 - **Clear Stroke-Based Line Art:** All custom graphical metaphors or layout icons (such as a minimalist tombstone silhouette or trend lines) must be rendered using clean, crisp vector stroke paths (`stroke-width`, `stroke-linecap: round`). Avoid heavy, solid, filled silhouette blocks or flat clipart shapes.
 - **Color carries meaning, not decoration.** Pull your primary, secondary, and neutral colors directly from the design system tokens. Reserve accent states for hyper-specific callouts or semantic data states (positive/negative).
@@ -100,7 +100,7 @@ If Playwright is unavailable, fall back to building the canvas directly with Pil
 - Did you verify if a `design.md` or system layout token profile was active?
 - If it wasn't clear, did you pause to request the design system or target brand?
 - Did you check that the top margin area is completely free of running headers, category text tags, or subtitle lines?
-- Does the background accurately construct a subtle notepad-style grid pattern, and do the key header words use an organic highlighter mark?
+- Does the background match the brand (a notepad grid only if their design system uses one), and do the key header words use an organic highlighter mark?
 - Are your graphical metaphors restricted strictly to crisp, stroke-based line art?
 - Is there a hero illustration that carries the headline's idea, big enough to notice in the feed?
 - Did the story pick the layout archetype, and is it different from the last two graphics?

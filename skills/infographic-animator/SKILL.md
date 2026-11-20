@@ -94,6 +94,7 @@ Look at frames from across the timeline before calling it done. Make a contact s
 - The counting number ends on the exact printed value.
 - The last frame matches the static PNG: no element left hidden, faded or clipped.
 - The stranger test: from four frames across the GIF, can you say in one sentence what the motion shows? If not, the motion is decoration: change it or cut it.
+- The still frame (and the PNG) tells the whole story without the motion, and if the loop switches between states, each one is labelled.
 - Size ≤ 4.8 MB (or the `--max-mb` you set) and ≤ 240 frames; dimensions 1080×1350 (or 864×1080 if it had to shrink, which you should mention). Frames are captured at 2× and scaled down for smoother text; the GIF itself stays 1080 wide, because a 2× GIF would be about four times the file size.
 
 Fix the timeline and re-render. Delete the frames folder when done.
@@ -145,6 +146,8 @@ Rules for loops:
   - a before and after;
   - something reacting to the idea: a gauge needle, a scale tipping, a lock closing, a marker stepping along a timeline.
   A decorative part that moves on its own (a pulsing dot, a bobbing shape) says nothing: leave it still or take it out.
+- **Label the states.** When the loop switches between two states (before and after, search results and an AI answer, a list and a summary), label each one on screen, with tabs or a caption that swaps, or the viewer can't tell what changed.
+- **Leave the story on screen.** Design what stays visible so the still frame tells the whole story: leave a cross where each item dropped out and a tick where one passed, rather than letting everything vanish. Pick the `--still` at that moment.
 - **Calm.** 6–8 second loops, 12–15 fps. Nothing flashes faster than about 3 times a second.
 - **Words stay still.** Headline, labels and the CTA never move, so the graphic reads on any frame.
 

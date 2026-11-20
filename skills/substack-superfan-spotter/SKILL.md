@@ -144,6 +144,8 @@ The drafts are where this Skill earns its keep, so read `references/upgrade-emai
 | 2. Show it | One concrete thing from the paid tier: a paid post they'd have read, a Skill, a result. Quote a short real excerpt or describe it in two lines | Soft: link to `paid_example` or the upgrade page |
 | 3. Decide | Only if there's an `offer` with a real end date: the offer, the date, one line on what they get | Clear: "the offer ends on [date]" |
 
+**Seasonal moments.** If Black Friday and Cyber Monday, New Year or the publication's anniversary is close, suggest timing the sequence to it: Substack names holidays and milestones as good moments for an offer. For Black Friday: thank-you early that week, the offer on the Friday, "last day" on Cyber Monday. Only if the user sets up a real offer that ends then.
+
 With no offer, email 3 becomes a short "last note from me on this" with the same easy no. Never invent an offer or a deadline. Remove anyone who upgraded before each send.
 
 **Top ten: personal notes.** Three or four sentences, written to be sent one by one from the writer's own inbox. Leave a `[one specific thing about them]` slot for the writer to fill by hand (a comment they left, a post they shared, their job). Don't fill it in yourself.

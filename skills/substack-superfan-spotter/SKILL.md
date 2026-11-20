@@ -62,7 +62,7 @@ It prints how each column was read and what's missing. Tell the user in one or t
 ### 2. Run it
 
 ```bash
-python3 scripts/spot.py EXPORT.csv --out superfan-spotter --min-days 30
+python3 scripts/spot.py EXPORT.csv --out superfan-spotter --min-days 30 [--names OLD_LIST.csv]
 ```
 
 Use `min_days` from the config. Add `--today YYYY-MM-DD` only if the export is old.
@@ -71,6 +71,20 @@ It writes:
 - `summary.json` and `report.md`: counts, the star split for free and paid, the four groups and the top 25 prospects by ID. No emails.
 - `segments/ready_to_upgrade.csv`, `rising.csv`, `paid_superfans.csv`, `paid_at_risk.csv`: the lists to act on, with email, name and first name, best first.
 - `_private/id_map.csv`: IDs back to emails.
+
+### 2b. First names (do this for every run)
+
+A superfan shouldn't get "Hi there". Substack's own name field is often empty, especially for imported lists, so the script fills `first_name` in each segment CSV from, in order:
+
+1. **Substack's name field**, unless it looks like a username (`andymills`).
+2. **The user's own files**, if they pass them with `--names`: an export from a previous email tool (Mailchimp, beehiiv, ConvertKit), a CRM export, or a sheet of LinkedIn newsletter subscribers with profile links (`/in/jane-smith-…` gives "Jane"). Any CSV with an email column and a name, first name or profile column works. Repeat `--names` for several files.
+3. **The email address**: `jane.smith@` gives "Jane" (high), `tom@` gives "Tom" (medium), `janesmith@` gives "Jane" (check). It uses a bundled public-domain list of common first names (`references/first-names.txt`), so names from outside English-speaking countries are often missed. Role addresses (`info@`, `hello@`) are skipped.
+
+Each row gets a `name_source` and, for medium and check guesses, `check_name = yes`. Tell the user how many names came from each source (the report's "First names" section) and ask them to review the `check_name` rows before sending.
+
+**When most of a group has no Substack name, ask:** "Do you have an export from your old email tool, a CRM or a LinkedIn subscriber list? Names from it would fill in N of the gaps." Then rerun with `--names`.
+
+Never look subscribers up anywhere else: no enrichment services, no web searches, no LinkedIn lookups by email. Their own data and the address itself only.
 
 ### 3. How the score works (explain it in a sentence if asked)
 
@@ -120,7 +134,7 @@ The drafts are where this Skill earns its keep, so read `references/upgrade-emai
 - **An easy no.** "If it's not for you, no problem. The free posts aren't going anywhere."
 - **End with a question** in a P.S. ("What's the one thing you'd want me to cover next?"). Replies are a warmer signal than clicks, and every reply is a conversation.
 - **Subject lines:** 36–50 characters, specific, honest. Name what they did or what they'd get. No clickbait, no fake "Re:", no names (Substack can't put names in subject lines).
-- **First names:** in Substack, write the greeting as `Hi %%first_name%%` with no comma straight after it (it shows blank when there's no name). In a mail merge, use `{first_name}` with a "Hi there" fallback. Say how many in the group have a name on file.
+- **First names:** Substack's `%%first_name%%` only uses Substack's own name field, so the names filled in from files or email addresses only reach readers by mail merge or personal email. In a mail merge, greet with `Hi {first_name},` and set the fallback to the writer's choice for the few still blank. In a Substack send, write `Hi %%first_name%%` with no comma straight after it.
 
 **Ready to upgrade: a three-email sequence, a week apart**
 
@@ -144,7 +158,9 @@ Save everything as `superfan-spotter/drafts.md`, with a send date for each seque
 
 ### 6. How to send (tell the user)
 
-- **From Substack (the default for groups).** Subscribers → Segments → start from scratch, then filter: free subscribers, activity 4–5 stars, signed up before the cut-off date in `summary.json` (`segment_filter`). Save it, select everyone and click *Send email*. It goes as a direct email and doesn't appear on the publication. Rebuild or refresh the segment before emails 2 and 3, so anyone who upgraded drops out.
+- **Choose by names.** If more than about a fifth of the group has a first name only from a file or the email address (see the report), send the sequence by **mail merge** with the segment CSV, so every superfan is greeted by name. Otherwise send from Substack.
+- **Mail merge:** from the writer's own email (for example Gmail's mail merge, where the Google Workspace plan includes it, or a mail-merge add-on), small batches, plain text. These emails sit outside Substack's unsubscribe link, so end each one with "If you'd rather not get these, just reply and say so", and honour it.
+- **From Substack.** Subscribers → Segments → start from scratch, then filter: free subscribers, activity 4–5 stars, signed up before the cut-off date in `summary.json` (`segment_filter`). Save it, select everyone and click *Send email*. It goes as a direct email and doesn't appear on the publication. Rebuild or refresh the segment before emails 2 and 3, so anyone who upgraded drops out.
 - **From their own inbox** for the top-ten personal notes, one at a time.
 - **Mail merge** with the segment CSV only if they'd rather not use Substack's segments.
 - **What to expect:** Substack's own benchmark is 3–10% of the whole free list converting over time. The superfan group should beat that, but don't promise a number. Rerun the Skill in a month and count who upgraded.
@@ -158,6 +174,7 @@ Stars change monthly. Suggest a rerun in four to six weeks, and compare: who upg
 - [ ] Column check reported, gaps named
 - [ ] `summary.json`, `report.md`, the four segment CSVs and `drafts.md` in `superfan-spotter/`
 - [ ] No email address or name appeared in the conversation
+- [ ] First-name sources reported; `check_name` rows flagged for review; asked for an old list if many are blank
 - [ ] Every draft uses only real benefits, prices, proof and offers, in plain text with one link
 - [ ] Ready to upgrade has the three-email sequence with send dates; top ten have personal notes with a slot to fill by hand
 - [ ] The user knows how to send and when to rerun

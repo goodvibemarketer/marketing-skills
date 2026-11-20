@@ -92,6 +92,9 @@ Short and specific, from `report.md` and `summary.json`:
 - How many in each group, and how the free star split compares with the paid one (if paid readers sit at a median of 4 stars and 70 free readers are at 4–5, that's the case for the email).
 - What the top prospects have in common (for example, most have commented).
 - One honest caveat when it applies: a small list means small groups; opens are inflated by Apple Mail and Gmail image proxies; stars only cover the last month.
+- If the report flags **link scanners** (addresses that click but never open), say their clicks were ignored: company email security tools click every link.
+- If most of the list was **imported**, say that "subscribed N days" counts from the import, so tenure means less.
+- The publication's own account (type "Author") is left out automatically.
 
 Don't list emails or names. Refer to people by ID only if the user asks about a specific row.
 

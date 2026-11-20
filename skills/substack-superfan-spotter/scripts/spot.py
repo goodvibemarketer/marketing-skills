@@ -88,6 +88,7 @@ def day(v):
 def plan(v):
     s = (str(v or "")).strip().lower()
     if not s: return "free"
+    if any(k in s for k in ("author", "owner", "admin", "contributor")): return "author"
     if "found" in s: return "founding"
     if "comp" in s: return "comp"
     if "gift" in s: return "gift"
@@ -207,7 +208,11 @@ def score_all(rows, today, min_days):
         act = 0.0
         if (r["comments"] or 0) > 0: act += 0.45; sig.append("commented")
         if (r["shares"] or 0) > 0: act += 0.35; sig.append("shared")
-        if (r["clicks"] or 0) > 0: act += 0.25 if (r["clicks"] or 0) < 3 else 0.35; sig.append("clicks links")
+        # Corporate email scanners click every link without opening anything:
+        # clicks with no opens and no stars aren't a person.
+        scanner = (r["clicks"] or 0) > 0 and not (r["opens_6m"] or r["opens_30"]) and not (r["stars"] or 0)
+        if scanner: sig.append("clicks but never opens (likely a link scanner)")
+        elif (r["clicks"] or 0) > 0: act += 0.25 if (r["clicks"] or 0) < 3 else 0.35; sig.append("clicks links")
         if (r["views"] or 0) > 0: act += 0.15; sig.append("reads on the web")
         act = min(act, 1.0)
         # 3. Recent opens relative to the rest of the list.
@@ -232,7 +237,8 @@ def segment(rows, has_stars, min_days):
         paid = r["plan"] in ("paid", "founding")
         hot = (r["stars"] or 0) >= 4 if has_stars else r["score"] >= 60
         cold = ((r["stars"] or 0) <= 1 if has_stars else r["score"] < 20) and not (r["opens_30"] or 0)
-        if r["disabled"]: seg = "unsubscribed"
+        if r["plan"] == "author": seg = "author"
+        elif r["disabled"]: seg = "unsubscribed"
         elif r["plan"] == "comp": seg = "comp"
         elif paid and hot: seg = "paid_superfans"
         elif paid and cold: seg = "paid_at_risk"
@@ -295,7 +301,7 @@ def main():
             d[k] = d.get(k, 0) + 1
         return dict(sorted(d.items()))
     paid_med = statistics.median([r["stars"] for r in paid if r["stars"] is not None]) if any(r["stars"] is not None for r in paid) else None
-    counts = {s: sum(1 for r in rows if r["segment"] == s) for s in list(SEGMENTS) + ["paid_other", "free_other", "comp", "unsubscribed"]}
+    counts = {s: sum(1 for r in rows if r["segment"] == s) for s in list(SEGMENTS) + ["paid_other", "free_other", "comp", "unsubscribed", "author"]}
     top = sorted([r for r in rows if r["segment"] == "ready_to_upgrade"], key=lambda r: -r["score"])[: a.top]
     signal_share = {}
     for name in ("commented", "shared", "clicks links", "reads on the web"):
@@ -309,6 +315,8 @@ def main():
         "segments": counts, "segment_meaning": SEGMENTS,
         "top_ready": [{"id": r["id"], "score": r["score"], "plan": r["plan"], "signals": r["signals"]} for r in top],
         "top_ready_signal_counts": signal_share,
+        "suspected_link_scanners": sum(1 for r in rows if any("link scanner" in x for x in r["signals"])),
+        "imported_share": round(sum(1 for r in rows if r["source"].lower() == "import") / max(len(rows), 1), 4),
         "columns_used": cols,
         "files": {"segments": os.path.join(a.out, "segments"), "id_map": os.path.join(a.out, "_private", "id_map.csv")},
     }
@@ -325,6 +333,10 @@ def main():
     for s, meaning in SEGMENTS.items(): L.append(f"| {s.replace('_', ' ')} | {counts[s]} | {meaning} |")
     L += ["", f"## Top {len(top)} upgrade prospects (anonymous IDs)", "", "| ID | Score | Signals |", "| --- | --- | --- |"]
     for r in top: L.append(f"| {r['id']} | {r['score']} | {', '.join(r['signals'])} |")
+    if summary["suspected_link_scanners"]:
+        L += ["", f"{summary['suspected_link_scanners']} addresses click links but have never opened an email: most likely company email scanners, so their clicks aren't counted."]
+    if summary["imported_share"] > 0.5:
+        L += ["", f"{summary['imported_share']:.0%} of the list was imported, so 'subscribed N days' counts from the import date, not when they first signed up."]
     L += ["", "Emails and names for each segment are in `segments/`. IDs map back to emails in `_private/id_map.csv`."]
     with open(os.path.join(a.out, "report.md"), "w") as f: f.write("\n".join(L) + "\n")
     print(json.dumps({k: summary[k] for k in ("subscribers", "free", "paid", "segments", "stars_available")}, indent=2))

@@ -313,6 +313,13 @@ def main():
         "stars_available": has_stars,
         "stars_free": dist(free), "stars_paid": dist(paid), "paid_median_stars": paid_med,
         "segments": counts, "segment_meaning": SEGMENTS,
+        "names_on_file": {sg: sum(1 for r in rows if r["segment"] == sg and r["name"]) for sg in SEGMENTS},
+        "segment_filter": {
+            "ready_to_upgrade": f"Free subscribers, activity {'4-5 stars' if has_stars else 'high'}, signed up before {(today - timedelta(days=a.min_days)).isoformat()}",
+            "rising": f"Free subscribers, activity {'4-5 stars' if has_stars else 'high'}, signed up on or after {(today - timedelta(days=a.min_days)).isoformat()}",
+            "paid_superfans": "Paid subscribers, activity 4-5 stars",
+            "paid_at_risk": "Paid subscribers, activity 0-1 stars",
+        },
         "top_ready": [{"id": r["id"], "score": r["score"], "plan": r["plan"], "signals": r["signals"]} for r in top],
         "top_ready_signal_counts": signal_share,
         "suspected_link_scanners": sum(1 for r in rows if any("link scanner" in x for x in r["signals"])),
@@ -331,6 +338,9 @@ def main():
         L.append("")
     L += ["## Segments", "", "| Segment | People | What it means |", "| --- | --- | --- |"]
     for s, meaning in SEGMENTS.items(): L.append(f"| {s.replace('_', ' ')} | {counts[s]} | {meaning} |")
+    L += ["", "## Rebuild these in Substack (Subscribers, then Segments)", ""]
+    for s, f in summary["segment_filter"].items():
+        if counts[s]: L.append(f"- **{s.replace('_', ' ')}** ({counts[s]}, {summary['names_on_file'][s]} with a name on file): {f}")
     L += ["", f"## Top {len(top)} upgrade prospects (anonymous IDs)", "", "| ID | Score | Signals |", "| --- | --- | --- |"]
     for r in top: L.append(f"| {r['id']} | {r['score']} | {', '.join(r['signals'])} |")
     if summary["suspected_link_scanners"]:

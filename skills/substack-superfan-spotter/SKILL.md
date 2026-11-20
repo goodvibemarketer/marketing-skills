@@ -14,15 +14,22 @@ Fill this in once after installing. Leave a line blank and Claude asks when it m
 ```yaml
 publication:        # your Substack's name
 writer_name:        # how you sign off, e.g. "Andy"
-paid_gets:          # what paying subscribers actually get, in plain words, e.g. "the step-by-step guide and my full Skills library"
-price:              # e.g. "$10 a month or $100 a year"
+paid_promise:       # the outcome of paying, in one line: before and after, e.g. "go from prompting Claude to running your marketing with it"
+paid_gets:          # 2-3 concrete things paying subscribers get, e.g. "the step-by-step guide; my full Skills library, updated monthly"
+free_gets:          # what free readers keep getting, e.g. "the weekly AI news and one free Skill a month"
+paid_example:       # optional: link to one paid post that shows the paid tier at its best
+proof:              # optional: real quotes from paying readers (with permission) or a concrete fact about the work
+price:              # e.g. "$10 a month, or $100 a year (two months free)"
+upgrade_link:       # your subscribe or upgrade page link
+offer:              # optional: "20% off the first year until 5 Dec" or "14-day free trial", exactly as set up in Substack
+offer_link:         # the private link for that offer
+expensable:         # yes if your readers are professionals who might expense it as training
 founding_tier:      # optional: what the founding member tier includes and costs
-offer_link:         # optional: a discount or trial link you've created in Substack
 min_days:           # days subscribed before an upgrade ask (default 30)
 voice_notes:        # e.g. British spelling, first person, no exclamation marks
 ```
 
-Only ever mention benefits, prices and offers that are in this block or that the user gives you. Never invent a discount, a deadline or a testimonial.
+Only ever mention benefits, prices, proof and offers that are in this block or that the user gives you. Never invent a discount, a deadline or a testimonial. If `paid_promise` or `paid_gets` is blank, ask for them before drafting: they decide whether the email works.
 
 ## What it needs
 
@@ -100,28 +107,47 @@ Don't list emails or names. Refer to people by ID only if the user asks about a 
 
 ### 5. Draft the messages
 
-One draft per group that has members, in the user's voice (`voice_notes`). For each: two subject lines and the body, with `{first_name}` as the merge field and a fallback ("Hi there") for blank names.
+The drafts are where this Skill earns its keep, so read `references/upgrade-email-playbook.md` before writing. It has the evidence and sources behind every rule below.
 
-Rules for every draft:
-- **Personal and short.** 80–150 words. It reads like a note from the writer, not a campaign.
-- **Say why them.** "You've opened nearly every issue since the spring" is fine as a group truth; never name a specific behaviour the reader didn't do. Keep it true for the whole group, and don't compare them with paying readers ("you read more than most paid subscribers") unless the numbers show it for everyone in the group.
-- **One ask.** Upgrade, reply, review or check in. Not two.
-- **Only real benefits** from `paid_gets`, `price`, `founding_tier` and `offer_link`. No fake scarcity, no invented numbers or quotes.
-- **Easy to say no.** End without pressure ("If it's not for you, no problem, the free posts aren't going anywhere").
+**The rules for every message**
+- **Plain text.** No images, no banners, one link (or one Substack button). Plain-text emails got more clicks than designed ones in HubSpot's tests.
+- **Short.** Emails 120–180 words, personal notes under 80.
+- **Open with a true observation about the group, not about you.** "You've opened most of what I've sent this month" works because every reader in the group did it. Never claim something only some of them did, and don't compare them with paying readers unless the numbers show it for everyone in the group.
+- **Sell the outcome, then show it.** Lead with `paid_promise` (before and after), then two or three concrete items from `paid_gets`, then `paid_example` if there is one. Say in one line what stays free (`free_gets`), so nobody feels the free tier is being taken away.
+- **Proof only if it's real.** Use `proof` if given. Otherwise a concrete fact about the work. Never a made-up quote.
+- **One price, one link.** The price from `price`, the annual saving in one clause if there is one, then `upgrade_link` (or `offer_link` when there's an offer).
+- **`expensable: yes`** adds one line: "If your company has a training budget, you may be able to expense it." A possibility, never a promise.
+- **An easy no.** "If it's not for you, no problem. The free posts aren't going anywhere."
+- **End with a question** in a P.S. ("What's the one thing you'd want me to cover next?"). Replies are a warmer signal than clicks, and every reply is a conversation.
+- **Subject lines:** 36–50 characters, specific, honest. Name what they did or what they'd get. No clickbait, no fake "Re:", no names (Substack can't put names in subject lines).
+- **First names:** in Substack, write the greeting as `Hi %%first_name%%` with no comma straight after it (it shows blank when there's no name). In a mail merge, use `{first_name}` with a "Hi there" fallback. Say how many in the group have a name on file.
 
-Group by group:
-- **Ready to upgrade:** thank them for reading, say what paying gets them in one or two concrete lines, give the price and link (or `offer_link`). Add a separate three-line version for the top ten as personal notes.
-- **Rising:** welcome, ask one question about what they want to read. No upgrade ask.
-- **Paid superfans:** thank them, ask for one sentence you can quote (with permission) or for a referral.
-- **Paid at risk:** a check-in. Ask what would make it worth it again. No discount unless the user asks.
+**Ready to upgrade: a three-email sequence, a week apart**
 
-Save the drafts as `superfan-spotter/drafts.md`.
+| Email | Job | Ask |
+| --- | --- | --- |
+| 1. Thank-you | Recognise their reading, state `paid_promise`, list what they'd get, price, link | Soft: "if you want to go further" |
+| 2. Show it | One concrete thing from the paid tier: a paid post they'd have read, a Skill, a result. Quote a short real excerpt or describe it in two lines | Soft: link to `paid_example` or the upgrade page |
+| 3. Decide | Only if there's an `offer` with a real end date: the offer, the date, one line on what they get | Clear: "the offer ends on [date]" |
+
+With no offer, email 3 becomes a short "last note from me on this" with the same easy no. Never invent an offer or a deadline. Remove anyone who upgraded before each send.
+
+**Top ten: personal notes.** Three or four sentences, written to be sent one by one from the writer's own inbox. Leave a `[one specific thing about them]` slot for the writer to fill by hand (a comment they left, a post they shared, their job). Don't fill it in yourself.
+
+**Rising:** one welcome email. Recognise that they've read most of what they've received, ask what brought them and what they want next. No upgrade ask.
+
+**Paid superfans:** a thank-you, plus one ask: a sentence you can quote with permission, or a referral.
+
+**Paid at risk:** a check-in before renewal. Ask what would make it worth it again. No discount unless the user asks.
+
+Save everything as `superfan-spotter/drafts.md`, with a send date for each sequence email.
 
 ### 6. How to send (tell the user)
 
-Substack sends posts to all free or all paid readers, not to a custom list. So the drafts go out:
-- **Personally**, from the user's own inbox, for the top ten and for paid groups (usually small). This gets the best response.
-- **By mail merge** (for example Gmail with a mail-merge add-on, or their CRM) for a larger "ready to upgrade" group, using the segment CSV. Send in small batches and only to people on the list.
+- **From Substack (the default for groups).** Subscribers → Segments → start from scratch, then filter: free subscribers, activity 4–5 stars, signed up before the cut-off date in `summary.json` (`segment_filter`). Save it, select everyone and click *Send email*. It goes as a direct email and doesn't appear on the publication. Rebuild or refresh the segment before emails 2 and 3, so anyone who upgraded drops out.
+- **From their own inbox** for the top-ten personal notes, one at a time.
+- **Mail merge** with the segment CSV only if they'd rather not use Substack's segments.
+- **What to expect:** Substack's own benchmark is 3–10% of the whole free list converting over time. The superfan group should beat that, but don't promise a number. Rerun the Skill in a month and count who upgraded.
 
 ### 7. Run it again next month
 
@@ -132,5 +158,6 @@ Stars change monthly. Suggest a rerun in four to six weeks, and compare: who upg
 - [ ] Column check reported, gaps named
 - [ ] `summary.json`, `report.md`, the four segment CSVs and `drafts.md` in `superfan-spotter/`
 - [ ] No email address or name appeared in the conversation
-- [ ] Every draft uses only real benefits, prices and offers
+- [ ] Every draft uses only real benefits, prices, proof and offers, in plain text with one link
+- [ ] Ready to upgrade has the three-email sequence with send dates; top ten have personal notes with a slot to fill by hand
 - [ ] The user knows how to send and when to rerun

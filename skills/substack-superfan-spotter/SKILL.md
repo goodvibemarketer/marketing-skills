@@ -1,11 +1,11 @@
 ---
 name: substack-superfan-spotter
-description: Finds the Substack readers most likely to go paid from your subscriber export (activity stars, opens, clicks, comments, shares, how long they've subscribed), then drafts the upgrade email for them, plus notes for paying superfans and paying readers who've gone quiet. Emails are taken out on load and never shown in the chat. Use when asked to "find my superfans", "who should I ask to upgrade?", "run Superfan Spotter", "analyse my Substack subscribers", or when someone uploads a Substack subscriber export.
+description: Finds the Substack readers most likely to go paid from your subscriber export (activity stars, opens, clicks, comments, shares, how long they've subscribed), drafts the upgrade emails for them, plus notes for paying superfans and paying readers who've gone quiet, and can set the whole campaign up in Substack: segments built, emails written and scheduled. Emails are taken out on load and never shown in the chat. Use when asked to "find my superfans", "who should I ask to upgrade?", "run Superfan Spotter", "analyse my Substack subscribers", or when someone uploads a Substack subscriber export.
 ---
 
 # Superfan Spotter
 
-Your Substack dashboard tells you who reads. It doesn't tell you who to ask, or what to say. This Skill does both: it ranks your free readers by how much they behave like your paying ones, splits the list into four groups, and drafts the messages worth sending.
+Your Substack dashboard tells you who reads. It doesn't tell you who to ask, or what to say. This Skill does both: it ranks your free readers by how much they behave like your paying ones, splits the list into four groups, drafts the messages worth sending, and can set the campaign up in Substack for you.
 
 ## Make it yours (edit this block once)
 
@@ -35,7 +35,7 @@ Only ever mention benefits, prices, proof and offers that are in this block or t
 
 A Substack subscriber export. Either works:
 
-- **Subscriber CSV (best).** Dashboard → Subscribers → Export. This one includes the **activity stars**, opens, clicks and, if you add the columns before exporting, comments and shares. Tell the user: "In Subscribers, click Columns and switch on everything you can (activity, opens, clicks, comments, shares, start date), then Export."
+- **Subscriber CSV (best).** Dashboard → Subscribers → ⋯ → Export. This one includes the **activity stars**, opens, clicks and, if you add the columns before exporting, comments and shares. Tell the user: "In Subscribers, click Display and tick everything you can (activity, opens, clicks, comments, shares, post views, start date), save, then open the ⋯ menu and choose Export."
 - **Full ZIP export.** Settings → Exports → Create new export. It has the subscriber list and per-post opens, but no stars. The Skill works out reading habit from which posts each person opened over the last 90 days.
 
 Header names change from time to time, so the script finds columns by pattern, not exact name.
@@ -62,29 +62,15 @@ It prints how each column was read and what's missing. Tell the user in one or t
 ### 2. Run it
 
 ```bash
-python3 scripts/spot.py EXPORT.csv --out superfan-spotter --min-days 30 [--names OLD_LIST.csv]
+python3 scripts/spot.py EXPORT.csv --out superfan-spotter --min-days 30
 ```
 
 Use `min_days` from the config. Add `--today YYYY-MM-DD` only if the export is old.
 
 It writes:
 - `summary.json` and `report.md`: counts, the star split for free and paid, the four groups and the top 25 prospects by ID. No emails.
-- `segments/ready_to_upgrade.csv`, `rising.csv`, `paid_superfans.csv`, `paid_at_risk.csv`: the lists to act on, with email, name and first name, best first.
+- `segments/ready_to_upgrade.csv`, `rising.csv`, `paid_superfans.csv`, `paid_at_risk.csv`: the lists to act on, with email and name, best first.
 - `_private/id_map.csv`: IDs back to emails.
-
-### 2b. First names (do this for every run)
-
-A superfan shouldn't get "Hi there". Substack's own name field is often empty, especially for imported lists, so the script fills `first_name` in each segment CSV from, in order:
-
-1. **Substack's name field**, unless it looks like a username (`andymills`).
-2. **The user's own files**, if they pass them with `--names`: an export from a previous email tool (Mailchimp, beehiiv, ConvertKit), a CRM export, or a sheet of LinkedIn newsletter subscribers with profile links (`/in/jane-smith-…` gives "Jane"). Any CSV with an email column and a name, first name or profile column works. Repeat `--names` for several files.
-3. **The email address**: `jane.smith@` gives "Jane" (high), `tom@` gives "Tom" (medium), `janesmith@` gives "Jane" (check). It uses a bundled public-domain list of common first names (`references/first-names.txt`), so names from outside English-speaking countries are often missed. Role addresses (`info@`, `hello@`) are skipped.
-
-Each row gets a `name_source` and, for medium and check guesses, `check_name = yes`. Tell the user how many names came from each source (the report's "First names" section) and ask them to review the `check_name` rows before sending.
-
-**When most of a group has no Substack name, ask:** "Do you have an export from your old email tool, a CRM or a LinkedIn subscriber list? Names from it would fill in N of the gaps." Then rerun with `--names`.
-
-Never look subscribers up anywhere else: no enrichment services, no web searches, no LinkedIn lookups by email. Their own data and the address itself only.
 
 ### 3. How the score works (explain it in a sentence if asked)
 
@@ -133,8 +119,8 @@ The drafts are where this Skill earns its keep, so read `references/upgrade-emai
 - **`expensable: yes`** adds one line: "If your company has a training budget, you may be able to expense it." A possibility, never a promise.
 - **An easy no.** "If it's not for you, no problem. The free posts aren't going anywhere."
 - **End with a question** in a P.S. ("What's the one thing you'd want me to cover next?"). Replies are a warmer signal than clicks, and every reply is a conversation.
-- **Subject lines:** 36–50 characters, specific, honest. Name what they did or what they'd get. No clickbait, no fake "Re:", no names (Substack can't put names in subject lines).
-- **First names:** Substack's `%%first_name%%` only uses Substack's own name field, so the names filled in from files or email addresses only reach readers by mail merge or personal email. In a mail merge, greet with `Hi {first_name},` and set the fallback to the writer's choice for the few still blank. In a Substack send, write `Hi %%first_name%%` with no comma straight after it.
+- **Subject lines:** 36–50 characters, specific, honest. Name what they did or what they'd get. No clickbait, no fake "Re:".
+- **No name greeting.** Open straight on the first line. Substack only knows the names readers gave it, often only some of them, and newsletter readers are used to emails without their name. A greeting that works for some and reads "Hi ," for the rest costs more than it gains.
 
 **Ready to upgrade: a three-email sequence, a week apart**
 
@@ -148,7 +134,7 @@ The drafts are where this Skill earns its keep, so read `references/upgrade-emai
 
 With no offer, email 3 becomes a short "last note from me on this" with the same easy no. Never invent an offer or a deadline. Remove anyone who upgraded before each send.
 
-**Top ten: personal notes.** Three or four sentences, written to be sent one by one from the writer's own inbox. Leave a `[one specific thing about them]` slot for the writer to fill by hand (a comment they left, a post they shared, their job). Don't fill it in yourself.
+**Top ten: personal notes.** Three or four sentences, sent one by one from Substack (tick the one reader, then *Send email*). Leave a `[one specific thing about them]` slot for the writer to fill by hand (a comment they left, a post they shared, their job). Don't fill it in yourself.
 
 **Rising:** no email. They've already had your Substack welcome email, and a second welcome adds nothing. List how many there are in the report so the writer knows who's coming up; they move into Ready to upgrade on a later run.
 
@@ -158,13 +144,15 @@ With no offer, email 3 becomes a short "last note from me on this" with the same
 
 Save everything as `superfan-spotter/drafts.md`, with a send date for each sequence email.
 
-### 6. How to send (tell the user)
+### 6. Set it up in Substack
 
-- **Choose by names.** If more than about a fifth of the group has a first name only from a file or the email address (see the report), send the sequence by **mail merge** with the segment CSV, so every superfan is greeted by name. Otherwise send from Substack.
-- **Mail merge:** from the writer's own email (for example Gmail's mail merge, where the Google Workspace plan includes it, or a mail-merge add-on), small batches, plain text. These emails sit outside Substack's unsubscribe link, so end each one with "If you'd rather not get these, just reply and say so", and honour it.
-- **From Substack.** Subscribers → Segments → start from scratch, then filter: free subscribers, activity 4–5 stars, signed up before the cut-off date in `summary.json` (`segment_filter`). Save it, select everyone and click *Send email*. It goes as a direct email and doesn't appear on the publication. Rebuild or refresh the segment before emails 2 and 3, so anyone who upgraded drops out.
-- **From their own inbox** for the top-ten personal notes, one at a time.
-- **Mail merge** with the segment CSV only if they'd rather not use Substack's segments.
+Everything goes from Substack: it handles delivery and unsubscribes, and the writer doesn't need another tool.
+
+- **Build the segment.** Subscribers → Segments → Create segment → Start from scratch. Add the conditions from `summary.json` (`segment_filter`), e.g. *Type* is Free, *Activity* >= ★★★★, *Start date* is before the cut-off. Name it and save. Anyone who upgrades drops out of it, because they're no longer Free.
+- **Write each email.** Open the segment, tick everyone (untick the top ten for the thank-you, since they get a personal note), click *Send email*. It opens an editor like a post: subject as the title, the draft as the body. It goes as a direct email and doesn't appear on the publication.
+- **Test and schedule.** Settings (bottom right) → *Send test email* to yourself, then *Delivery options* → *Scheduling* for the send date and time.
+- **Check before emails 2 and 3** that anyone who upgraded is no longer in the audience (*Preview audience* at the top of the email). If in doubt, create emails 2 and 3 from the segment on the day.
+- **The easiest way: let Claude do it.** If a browser tool is connected (Claude in Chrome or Claude's own browser), offer to set the whole thing up: build the segment, create each email from it, paste the drafts, send a test to the writer and set the schedule. Show the writer the final schedule (date, time, audience size and subject for each email) and wait for a clear yes before turning scheduling on. Never press *Send email* yourself.
 - **What to expect:** Substack's own benchmark is 3–10% of the whole free list converting over time. The superfan group should beat that, but don't promise a number. Rerun the Skill in a month and count who upgraded.
 
 ### 7. Run it again next month
@@ -176,7 +164,6 @@ Stars change monthly. Suggest a rerun in four to six weeks, and compare: who upg
 - [ ] Column check reported, gaps named
 - [ ] `summary.json`, `report.md`, the four segment CSVs and `drafts.md` in `superfan-spotter/`
 - [ ] No email address or name appeared in the conversation
-- [ ] First-name sources reported; `check_name` rows flagged for review; asked for an old list if many are blank
 - [ ] Every draft uses only real benefits, prices, proof and offers, in plain text with one link
 - [ ] Ready to upgrade has the three-email sequence with send dates; top ten have personal notes with a slot to fill by hand
-- [ ] The user knows how to send and when to rerun
+- [ ] The user knows how to set it up in Substack (or has asked Claude to), and when to rerun

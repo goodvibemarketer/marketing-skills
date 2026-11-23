@@ -7,7 +7,7 @@ works on anonymous IDs. Writes:
 
   out/summary.json        what Claude reads: counts, signals, top IDs. No emails.
   out/report.md           the same, for a person to read. No emails.
-  out/segments/*.csv      the lists to act on, WITH emails and names, for the
+  out/segments/*.csv      the lists to act on, WITH emails, for the
                           user to open. Claude does not read these into the chat.
   out/_private/id_map.csv ID to email, so the user can trace any ID.
 
@@ -98,83 +98,6 @@ def plan(v):
 
 def truthy(v):
     return str(v or "").strip().lower() in ("true", "1", "yes", "y")
-
-# ------------------------------------------------------------------- names ---
-# A superfan should be greeted by name. Substack's own name field is often
-# empty (imported lists especially), so names come from, in order: Substack,
-# the user's own files (--names), then the email address itself. Nothing is
-# looked up anywhere else.
-NAMES_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "references", "first-names.txt")
-try:
-    with open(NAMES_FILE) as f: FIRST_NAMES = {l.strip() for l in f if l.strip()}
-except OSError:
-    FIRST_NAMES = set()
-ROLE = {"info", "hello", "contact", "admin", "team", "sales", "marketing", "office", "mail", "news", "hi",
-        "support", "enquiries", "enquiry", "accounts", "me", "post", "inbox", "newsletter", "press", "media",
-        "careers", "jobs", "billing", "help", "studio", "general", "reception", "hey", "mail", "noreply"}
-
-def first_from_name(name):
-    """First name from a full name, or None if it looks like a username."""
-    n = re.sub(r"\s+", " ", (name or "").strip())
-    parts = [p.strip(",.") for p in n.split(" ") if p.strip(",.")]
-    while parts and parts[0].lower() in ("dr", "mr", "mrs", "ms", "miss", "prof", "sir", "mx"): parts = parts[1:]
-    if not parts: return None
-    tok = parts[0]
-    if not tok.isalpha() or len(tok) < 2: return None
-    if len(parts) >= 2: return tok[:1].upper() + tok[1:]
-    if tok.lower() in FIRST_NAMES or (tok[0].isupper() and tok[1:].islower() and len(tok) <= 15):
-        return tok[:1].upper() + tok[1:].lower()
-    return None
-
-def first_from_email(email):
-    """(first name, how sure) guessed from the address, or (None, None)."""
-    local = (email or "").split("@")[0].lower()
-    local = re.sub(r"\d+", "", local)
-    if not local or local in ROLE: return None, None
-    toks = [t for t in re.split(r"[._\-+]", local) if t]
-    if len(toks) >= 2 and toks[0].isalpha() and len(toks[0]) >= 2 and toks[0] not in ROLE:
-        if toks[0] in FIRST_NAMES: return toks[0].title(), "high"
-        if len(toks[0]) >= 3 and toks[1].isalpha() and len(toks[1]) >= 2: return toks[0].title(), "check"
-    if len(toks) == 1 and toks[0].isalpha():
-        w = toks[0]
-        if w in FIRST_NAMES and len(w) >= 3: return w.title(), "medium"
-        for k in range(min(len(w) - 3, 10), 2, -1):     # janesmith -> jane
-            if w[:k] in FIRST_NAMES and len(w) - k >= 3: return w[:k].title(), "check"
-    return None, None
-
-def load_name_files(paths):
-    """email -> first name from the user's own exports (CRM, old ESP, LinkedIn list)."""
-    found = {}
-    for p in paths or []:
-        with open(p, newline="", encoding="utf-8-sig", errors="replace") as f:
-            rows = list(csv.DictReader(f))
-        if not rows: continue
-        heads = list(rows[0].keys())
-        em = next((h for h in heads if re.search(r"e-?mail", h, re.I)), None)
-        fn = next((h for h in heads if re.search(r"^first[ _]?name$|^given", h.strip(), re.I)), None)
-        nm = next((h for h in heads if re.search(r"^(full )?name$|display", h.strip(), re.I)), None)
-        url = next((h for h in heads if re.search(r"linkedin|profile", h, re.I)), None)
-        if not em: continue
-        for r in rows:
-            e = (r.get(em) or "").strip().lower()
-            if not e or e in found: continue
-            first = (r.get(fn) or "").strip().split(" ")[0] if fn else None
-            if not first and nm: first = first_from_name(r.get(nm))
-            if not first and url:   # linkedin.com/in/jane-smith-1a2b3c -> Jane
-                m = re.search(r"/in/([a-z]+)-", (r.get(url) or "").lower())
-                if m and m.group(1) in FIRST_NAMES: first = m.group(1).title()
-            if first and first.isalpha(): found[e] = first[:1].upper() + first[1:]
-    return found
-
-def resolve_names(rows, extra):
-    for r in rows:
-        first, src, check = first_from_name(r["name"]), "substack", False
-        if not first and r["email"] in extra: first, src = extra[r["email"]], "your file"
-        if not first:
-            g, how = first_from_email(r["email"])
-            if g: first, src, check = g, f"email ({how})", how != "high"
-        if not first: src = "none"
-        r["first_name"], r["name_source"], r["name_check"] = first or "", src, check
 
 # ------------------------------------------------------------------ loading ---
 def read_csv_text(text):
@@ -339,7 +262,6 @@ def main():
     ap.add_argument("--min-days", type=int, default=30, help="days subscribed before an upgrade ask (default 30)")
     ap.add_argument("--today", help="YYYY-MM-DD, defaults to today")
     ap.add_argument("--top", type=int, default=25)
-    ap.add_argument("--names", action="append", help="optional CSV of your own (old email tool, CRM, LinkedIn list) with email and name columns; repeatable")
     ap.add_argument("--columns", action="store_true", help="only show how the columns were read")
     a = ap.parse_args()
     today = datetime.strptime(a.today, "%Y-%m-%d").date() if a.today else date.today()
@@ -354,7 +276,6 @@ def main():
     # Emails out: everything from here works on anonymous IDs.
     rows.sort(key=lambda r: r["email"])
     for i, r in enumerate(rows, 1): r["id"] = f"S{i:05d}"
-    resolve_names(rows, load_name_files(a.names))
     has_stars = score_all(rows, today, a.min_days)
     segment(rows, has_stars, a.min_days)
 
@@ -366,9 +287,9 @@ def main():
     for seg in SEGMENTS:
         members = sorted([r for r in rows if r["segment"] == seg], key=lambda r: -r["score"])
         with open(os.path.join(a.out, "segments", f"{seg}.csv"), "w", newline="") as f:
-            w = csv.writer(f); w.writerow(["id", "email", "name", "first_name", "name_source", "check_name", "plan", "stars", "score", "subscribed_days", "signals"])
+            w = csv.writer(f); w.writerow(["id", "email", "name", "plan", "stars", "score", "subscribed_days", "signals"])
             for r in members:
-                w.writerow([r["id"], r["email"], r["name"], r["first_name"], r["name_source"], "yes" if r["name_check"] else "", r["plan"], "" if r["stars"] is None else int(r["stars"]), r["score"], r["tenure"] if r["tenure"] is not None else "", "; ".join(r["signals"])])
+                w.writerow([r["id"], r["email"], r["name"], r["plan"], "" if r["stars"] is None else int(r["stars"]), r["score"], r["tenure"] if r["tenure"] is not None else "", "; ".join(r["signals"])])
 
     free = [r for r in rows if r["plan"] in ("free", "gift") and not r["disabled"]]
     paid = [r for r in rows if r["plan"] in ("paid", "founding") and not r["disabled"]]
@@ -391,13 +312,11 @@ def main():
         "stars_available": has_stars,
         "stars_free": dist(free), "stars_paid": dist(paid), "paid_median_stars": paid_med,
         "segments": counts, "segment_meaning": SEGMENTS,
-        "names_on_file": {sg: sum(1 for r in rows if r["segment"] == sg and r["name_source"] == "substack") for sg in SEGMENTS},
-        "first_names": {sg: dict(sorted(((src, sum(1 for r in rows if r["segment"] == sg and r["name_source"] == src)) for src in {r["name_source"] for r in rows}), key=lambda x: -x[1])) for sg in SEGMENTS},
         "segment_filter": {
-            "ready_to_upgrade": f"Free subscribers, activity {'4-5 stars' if has_stars else 'high'}, signed up before {(today - timedelta(days=a.min_days)).isoformat()}",
-            "rising": f"Free subscribers, activity {'4-5 stars' if has_stars else 'high'}, signed up on or after {(today - timedelta(days=a.min_days)).isoformat()}",
-            "paid_superfans": "Paid subscribers, activity 4-5 stars",
-            "paid_at_risk": "Paid subscribers, activity 0-1 stars",
+            "ready_to_upgrade": f"Type is Free; Activity {'>= 4 stars' if has_stars else 'high'}; Start date is before {(today - timedelta(days=a.min_days)).strftime('%d/%m/%Y')}",
+            "rising": f"Type is Free; Activity {'>= 4 stars' if has_stars else 'high'}; Start date is on or after {(today - timedelta(days=a.min_days)).strftime('%d/%m/%Y')}",
+            "paid_superfans": "Type is Paid; Activity >= 4 stars",
+            "paid_at_risk": "Type is Paid; Activity <= 1 star",
         },
         "top_ready": [{"id": r["id"], "score": r["score"], "plan": r["plan"], "signals": r["signals"]} for r in top],
         "top_ready_signal_counts": signal_share,
@@ -417,19 +336,16 @@ def main():
         L.append("")
     L += ["## Segments", "", "| Segment | People | What it means |", "| --- | --- | --- |"]
     for s, meaning in SEGMENTS.items(): L.append(f"| {s.replace('_', ' ')} | {counts[s]} | {meaning} |")
-    L += ["", "## Rebuild these in Substack (Subscribers, then Segments)", ""]
+    L += ["", "## Build these in Substack (Subscribers, then Segments, then Create segment)", ""]
     for s, f in summary["segment_filter"].items():
-        if counts[s]: L.append(f"- **{s.replace('_', ' ')}** ({counts[s]}, {summary['names_on_file'][s]} with a name in Substack): {f}")
-    L += ["", "## First names", "", "Where each group's first names came from. Names from your own files or the email address only reach readers by mail merge or personal email: Substack's %%first_name%% uses Substack's own name field.", ""]
-    for s in SEGMENTS:
-        if counts[s]: L.append(f"- **{s.replace('_', ' ')}**: " + ", ".join(f"{k} {v}" for k, v in summary["first_names"][s].items() if v))
+        if counts[s]: L.append(f"- **{s.replace('_', ' ')}** ({counts[s]}): {f}")
     L += ["", f"## Top {len(top)} upgrade prospects (anonymous IDs)", "", "| ID | Score | Signals |", "| --- | --- | --- |"]
     for r in top: L.append(f"| {r['id']} | {r['score']} | {', '.join(r['signals'])} |")
     if summary["suspected_link_scanners"]:
         L += ["", f"{summary['suspected_link_scanners']} addresses click links but have never opened an email: most likely company email scanners, so their clicks aren't counted."]
     if summary["imported_share"] > 0.5:
         L += ["", f"{summary['imported_share']:.0%} of the list was imported, so 'subscribed N days' counts from the import date, not when they first signed up."]
-    L += ["", "Emails and names for each segment are in `segments/`. IDs map back to emails in `_private/id_map.csv`."]
+    L += ["", "Emails for each segment are in `segments/`. IDs map back to emails in `_private/id_map.csv`."]
     with open(os.path.join(a.out, "report.md"), "w") as f: f.write("\n".join(L) + "\n")
     print(json.dumps({k: summary[k] for k in ("subscribers", "free", "paid", "segments", "stars_available")}, indent=2))
     print(f"Wrote {a.out}/summary.json, report.md and segments/*.csv")

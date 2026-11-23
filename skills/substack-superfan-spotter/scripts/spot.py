@@ -327,7 +327,7 @@ def segment(rows, has_stars, min_days):
 
 SEGMENTS = {
     "ready_to_upgrade": "Free readers with the reading habit of a paying subscriber, past their first month. Your best upgrade prospects.",
-    "rising": "New free readers who are already highly active. Too early to sell; welcome them properly.",
+    "rising": "New free readers who are already highly active. Too early to sell, and your welcome email has already greeted them; they move into ready to upgrade on a later run.",
     "paid_superfans": "Paying readers who read everything. Ask for a testimonial, a referral or a reply.",
     "paid_at_risk": "Paying readers who have stopped opening. Check in before their renewal.",
 }

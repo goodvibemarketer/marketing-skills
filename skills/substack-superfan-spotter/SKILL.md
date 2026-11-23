@@ -1,11 +1,11 @@
 ---
 name: substack-superfan-spotter
-description: Finds the Substack readers most likely to go paid from your subscriber export (activity stars, opens, clicks, comments, shares, how long they've subscribed), then drafts the upgrade email for them, plus notes for new superfans, paying superfans and paying readers who've gone quiet. Emails are taken out on load and never shown in the chat. Use when asked to "find my superfans", "who should I ask to upgrade?", "run Superfan Spotter", "analyse my Substack subscribers", or when someone uploads a Substack subscriber export.
+description: Finds the Substack readers most likely to go paid from your subscriber export (activity stars, opens, clicks, comments, shares, how long they've subscribed), then drafts the upgrade email for them, plus notes for paying superfans and paying readers who've gone quiet. Emails are taken out on load and never shown in the chat. Use when asked to "find my superfans", "who should I ask to upgrade?", "run Superfan Spotter", "analyse my Substack subscribers", or when someone uploads a Substack subscriber export.
 ---
 
 # Superfan Spotter
 
-Your Substack dashboard tells you who reads. It doesn't tell you who to ask, or what to say. This Skill does both: it ranks your free readers by how much they behave like your paying ones, splits the list into four groups worth acting on, and drafts the message for each.
+Your Substack dashboard tells you who reads. It doesn't tell you who to ask, or what to say. This Skill does both: it ranks your free readers by how much they behave like your paying ones, splits the list into four groups, and drafts the messages worth sending.
 
 ## Make it yours (edit this block once)
 
@@ -103,7 +103,7 @@ The four groups:
 | Group | Who | What to do |
 | --- | --- | --- |
 | **Ready to upgrade** | Free, 4–5 stars (or score 60+ without stars), subscribed at least `min_days` | The upgrade email. Personal notes to the top ten. |
-| **Rising** | Free, 4–5 stars, newer than `min_days` | Don't sell yet. A short welcome that asks what brought them. |
+| **Rising** | Free, 4–5 stars, newer than `min_days` | Don't sell yet, and don't email them: your Substack welcome email has already greeted them. They move into Ready to upgrade on a later run. |
 | **Paid superfans** | Paying, 4–5 stars | Ask for a testimonial, a referral or what to write next. |
 | **Paid at risk** | Paying, 0–1 stars and no opens in 30 days | A check-in before renewal, not a discount. |
 
@@ -150,7 +150,7 @@ With no offer, email 3 becomes a short "last note from me on this" with the same
 
 **Top ten: personal notes.** Three or four sentences, written to be sent one by one from the writer's own inbox. Leave a `[one specific thing about them]` slot for the writer to fill by hand (a comment they left, a post they shared, their job). Don't fill it in yourself.
 
-**Rising:** one welcome email. Recognise that they've read most of what they've received, ask what brought them and what they want next. No upgrade ask.
+**Rising:** no email. They've already had your Substack welcome email, and a second welcome adds nothing. List how many there are in the report so the writer knows who's coming up; they move into Ready to upgrade on a later run.
 
 **Paid superfans:** a thank-you, plus one ask: a sentence you can quote with permission, or a referral.
 

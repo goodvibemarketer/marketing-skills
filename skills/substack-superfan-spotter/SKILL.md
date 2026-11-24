@@ -118,7 +118,8 @@ The drafts are where this Skill earns its keep, so read `references/upgrade-emai
 - **One price, one link.** The price from `price`, the annual saving in one clause if there is one, then `upgrade_link` (or `offer_link` when there's an offer).
 - **`expensable: yes`** adds one line: "If your company has a training budget, you may be able to expense it." A possibility, never a promise.
 - **An easy no.** "If it's not for you, no problem. The free posts aren't going anywhere."
-- **End with a question** in a P.S. ("What's the one thing you'd want me to cover next?"). Replies are a warmer signal than clicks, and every reply is a conversation.
+- **Every email has the call to action:** the upgrade link, or the offer link while an offer is live. A thank-you with no link is a missed sale.
+- **Email 1 ends with a question** in a P.S. ("What's the one thing you'd want me to cover next?"). Replies are a warmer signal than clicks, and every reply is a conversation.
 - **Subject lines:** 36–50 characters, specific, honest. Name what they did or what they'd get. No clickbait, no fake "Re:".
 - **No name greeting.** Open straight on the first line. Substack only knows the names readers gave it, often only some of them, and newsletter readers are used to emails without their name. A greeting that works for some and reads "Hi ," for the rest costs more than it gains.
 
@@ -126,15 +127,15 @@ The drafts are where this Skill earns its keep, so read `references/upgrade-emai
 
 | Email | Job | Ask |
 | --- | --- | --- |
-| 1. Thank-you | Recognise their reading, state `paid_promise`, list what they'd get, price, link | Soft: "if you want to go further" |
+| 1. Thank-you | Recognise their reading, state `paid_promise`, list what they'd get, price, link. If the offer is already live, put it in the price line with `offer_link` ("For Black Friday, you can now get 25% off for 12 months") | Soft: "if you want to go further" |
 | 2. Show it | One concrete thing from the paid tier: a paid post they'd have read, a Skill, a result. Quote a short real excerpt or describe it in two lines | Soft: link to `paid_example` or the upgrade page |
 | 3. Decide | Only if there's an `offer` with a real end date: the offer, the date, one line on what they get | Clear: "the offer ends on [date]" |
 
-**Seasonal moments.** If Black Friday and Cyber Monday, New Year or the publication's anniversary is close, suggest timing the sequence to it: Substack names holidays and milestones as good moments for an offer. For Black Friday: thank-you early that week, the offer on the Friday, "last day" on Cyber Monday. Only if the user sets up a real offer that ends then.
+**Seasonal moments.** If Black Friday and Cyber Monday, New Year or the publication's anniversary is close, suggest timing the sequence to it: Substack names holidays and milestones as good moments for an offer. For Black Friday: thank-you early that week with the offer already open (check the offer link works from that day), the offer email on the Friday, "last day" on Cyber Monday. Only if the user sets up a real offer that ends then.
 
 With no offer, email 3 becomes a short "last note from me on this" with the same easy no. Never invent an offer or a deadline. Remove anyone who upgraded before each send.
 
-**Top ten: personal notes.** Three or four sentences, sent one by one from Substack (tick the one reader, then *Send email*). Leave a `[one specific thing about them]` slot for the writer to fill by hand (a comment they left, a post they shared, their job). Don't fill it in yourself.
+**Top ten: personal notes.** Sent instead of email 1, subject "Thank you, properly". Three short paragraphs: thanks for reading nearly everything, what the paid tier adds, then the call to action on its own line (the offer and `offer_link` if one is live, otherwise the price and `upgrade_link`). No placeholders and no question; the writer can add a personal line if they want. In Substack, tag these readers (e.g. `superfan-top-ten`), build a segment from the tag, and send them one email: it still arrives as a one-to-one email.
 
 **Rising:** no email. They've already had your Substack welcome email, and a second welcome adds nothing. List how many there are in the report so the writer knows who's coming up; they move into Ready to upgrade on a later run.
 
@@ -149,7 +150,8 @@ Save everything as `superfan-spotter/drafts.md`, with a send date for each seque
 Everything goes from Substack: it handles delivery and unsubscribes, and the writer doesn't need another tool.
 
 - **Build the segment.** Subscribers → Segments → Create segment → Start from scratch. Add the conditions from `summary.json` (`segment_filter`), e.g. *Type* is Free, *Activity* >= ★★★★, *Start date* is before the cut-off. Name it and save. Anyone who upgrades drops out of it, because they're no longer Free.
-- **Write each email.** Open the segment, tick everyone (untick the top ten for the thank-you, since they get a personal note), click *Send email*. It opens an editor like a post: subject as the title, the draft as the body. It goes as a direct email and doesn't appear on the publication.
+- **Leave the top ten out of email 1.** Substack's segment builder can't exclude people by email, so tag the top ten and duplicate the segment with *Tags* includes none of that tag.
+- **Write each email.** Open the segment, tick everyone (*Select all*), click *Send email*. It opens an editor like a post: subject as the title, the draft as the body. It goes as a direct email and doesn't appear on the publication.
 - **Test and schedule.** Settings (bottom right) → *Send test email* to yourself, then *Delivery options* → *Scheduling* for the send date and time.
 - **Check before emails 2 and 3** that anyone who upgraded is no longer in the audience (*Preview audience* at the top of the email). If in doubt, create emails 2 and 3 from the segment on the day.
 - **The easiest way: let Claude do it.** If a browser tool is connected (Claude in Chrome or Claude's own browser), offer to set the whole thing up: build the segment, create each email from it, paste the drafts, send a test to the writer and set the schedule. Show the writer the final schedule (date, time, audience size and subject for each email) and wait for a clear yes before turning scheduling on. Never press *Send email* yourself.
@@ -165,5 +167,5 @@ Stars change monthly. Suggest a rerun in four to six weeks, and compare: who upg
 - [ ] `summary.json`, `report.md`, the four segment CSVs and `drafts.md` in `superfan-spotter/`
 - [ ] No email address or name appeared in the conversation
 - [ ] Every draft uses only real benefits, prices, proof and offers, in plain text with one link
-- [ ] Ready to upgrade has the three-email sequence with send dates; top ten have personal notes with a slot to fill by hand
+- [ ] Ready to upgrade has the three-email sequence with send dates, and every email has the upgrade or offer link; the top ten have their note
 - [ ] The user knows how to set it up in Substack (or has asked Claude to), and when to rerun

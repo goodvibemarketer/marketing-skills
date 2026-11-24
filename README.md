@@ -124,6 +124,18 @@ Edits a draft into sharper, more human writing while keeping your voice, or name
 
 See [`skills/ai-slop-pattern-linter/`](./skills/ai-slop-pattern-linter/) for the full skill.
 
+### `substack-superfan-spotter`
+
+Finds the Substack readers most likely to go paid, and drafts what to send them.
+
+**What it produces:** A short report, four lists (ready to upgrade, rising, paid superfans, paid at risk) as CSVs with names and emails for you to open, the Substack segment filter to rebuild each one, and the messages: a three-email upgrade sequence, personal notes for your top ten, and a message for each other group.
+
+**What it changes:** You stop guessing who to ask. You send a short personal note to the readers who already read like paying subscribers.
+
+**How it works:** Reads your subscriber export (the CSV from Subscribers, or the full ZIP), takes the email addresses out on load and works on anonymous IDs, so no subscriber's email appears in the chat. Each reader is scored out of 100 on activity stars, comments, shares and clicks, recent opens, time subscribed and last open. The drafts follow a playbook of what the evidence says converts (plain text, one link, the outcome first, real proof only, an easy no, a question at the end), with sources, and only mention the benefits, prices and offers you list in its "Make it yours" block. Standard-library Python, nothing to install.
+
+See [`skills/substack-superfan-spotter/`](./skills/substack-superfan-spotter/) for the full skill.
+
 ### The Social Content Engine (a paid subscriber workflow)
 
 The full weekly content engine from the [AI Marketing Engineer's Guide](https://goodvibemarketer.substack.com): trend radar, fact-checked trend report, posts in your voice, a branded infographic, GIF and carousel, all saved to Buffer as drafts by a Claude Code routine every week. It learns from your edits and from how your posts perform.
